@@ -24,6 +24,10 @@ class MainActivity : AppCompatActivity() {
             Log.d("TestLog", "find id")
             startActivity(Intent(this, FindIdActivity::class.java))
         }
+        binding.tvFindPw.setOnClickListener {
+            Log.d("TestLog", "find pw")
+            startActivity(Intent(this, FindPwActivity::class.java))
+        }
     }
 
     // 액티비티가 파괴될 때..

@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".FindIdActivity"/>
+        <activity android:name=".FindPwActivity"/>
     </application>
 
 </manifest>
