@@ -21,7 +21,6 @@
         <activity android:name=".FindIdActivity"/>
         <activity android:name=".FindPwActivity"/>
         <activity android:name=".MainActivity"/>
-        <activity android:name=".SearchActivity"/>
     </application>
 
 </manifest>
