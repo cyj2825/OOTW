@@ -6,21 +6,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <SearchView
+    <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:queryHint="검색어를 입력해주세요."
-        android:iconifiedByDefault="false"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="16dp"
-        android:queryBackground="@android:color/transparent"/>
+        app:queryHint="검색어를 입력해주세요."
+        app:queryBackground="@android:color/transparent"
+        app:iconifiedByDefault="false"/>
 
     <AutoCompleteTextView
         android:id="@+id/autoCompleteTextView"
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:layout_marginHorizontal="40dp"
         android:layout_marginBottom="420dp"
         android:completionHint="검색어를 입력해주세요."
         android:completionThreshold="1"
