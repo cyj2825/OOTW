@@ -1,7 +1,11 @@
 package com.example.ootw
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.TextView
 import com.example.ootw.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,5 +19,18 @@ class MainActivity : AppCompatActivity() {
         // 바인딩
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.tvFindId.setOnClickListener {
+            Log.d("TestLog", "find id")
+            startActivity(Intent(this, FindIdActivity::class.java))
+        }
     }
+
+    // 액티비티가 파괴될 때..
+    override fun onDestroy() {
+    // onDestroy 에서 binding class 인스턴스 참조를 정리해주어야 한다.
+        mBinding = null
+        super.onDestroy()
+    }
+
 }
