@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OOTW">
         <activity
+            android:name=".UserSetUpActivity"
+            android:exported="true" />
+
+        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
@@ -18,9 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FindIdActivity"/>
-        <activity android:name=".FindPwActivity"/>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".FindIdActivity" />
+        <activity android:name=".FindPwActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
