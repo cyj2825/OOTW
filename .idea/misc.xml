@@ -5,13 +5,14 @@
       <map>
         <entry key="../../../../../../layout/custom_preview.xml" value="0.2265625" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/drawable/bg_edit_text_gray.xml" value="0.18072916666666666" />
+        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_login.xml" value="0.14583333333333334" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_main.xml" value="0.14855072463768115" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_sign_up.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_user.xml" value="0.14356884057971014" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_user_set_up.xml" value="0.22" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/bottom_navigation_tab.xml" value="0.14583333333333334" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_bookmark.xml" value="0.14583333333333334" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_closet.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_closet.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_home.xml" value="0.14583333333333334" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_my_page.xml" value="0.14583333333333334" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_search.xml" value="0.14583333333333334" />
