@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="16dp"
-    tools:context=".fragment.MyPageFragment">
+    tools:context=".fragment.MyPageFragment"
+    android:id="@+id/fragment_my_page">
 
     <ImageView
         android:id="@+id/iv_my_page_logo"
