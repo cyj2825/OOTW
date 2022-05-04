@@ -1,12 +1,15 @@
 package com.example.ootw.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import com.example.ootw.CreatePostActivity
+import com.example.ootw.FindIdActivity
 import com.example.ootw.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -44,8 +47,11 @@ class ClosetFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btn_Closet_plus -> {
-                parentFragmentManager.beginTransaction()
-                    .replace(R.id.main_screen_panel, CreatePostFragment()).commitNow()
+//                parentFragmentManager.beginTransaction()
+//                    .replace(R.id.main_screen_panel, CreatePostFragment()).commitNow()
+                val intent = Intent(requireContext(), CreatePostActivity::class.java)
+                startActivity(intent)
+                requireActivity().overridePendingTransition(0, 0)
             }
 
             else -> {
