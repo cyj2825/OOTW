@@ -1,3 +1,4 @@
+// (현재)사용하지 않는 class
 package com.example.ootw.adapter
 
 import androidx.annotation.NonNull

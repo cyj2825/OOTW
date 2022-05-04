@@ -6,6 +6,8 @@ import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ootw.adapter.MainSPAdapter
 import com.example.ootw.databinding.ActivityMainBinding
+import com.example.ootw.fragment.*
+import nl.joery.animatedbottombar.AnimatedBottomBar
 
 class MainActivity: AppCompatActivity() {
     // 전역 변수로 바인딩 객체 선언
@@ -18,23 +20,65 @@ class MainActivity: AppCompatActivity() {
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configureBottomNavigation()
+        binding.bottomNavigation.setOnTabSelectListener(object :
+            AnimatedBottomBar.OnTabSelectListener {
+            override fun onTabSelected(
+                lastIndex: Int,
+                lastTab: AnimatedBottomBar.Tab?,
+                newIndex: Int,
+                newTab: AnimatedBottomBar.Tab
+            ) {
+                when (newIndex) {
+                    0 -> {
+                        // val calendarFragment= FriendCalMainFragment()
+                        // val calendarFragment= GroupCalMainFragment()
+                        val homeFragment = HomeFragment()
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.main_screen_panel, homeFragment).commit()
+                    }
+                    1 -> {
+                        val searchFragment = SearchFragment()
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.main_screen_panel, searchFragment).commit()
+                    }
+
+                    2 -> {
+                        val closetFragment = ClosetFragment()
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.main_screen_panel, closetFragment).commit()
+                    }
+                    3 -> {
+                        val bookmarkFragment = BookmarkFragment()
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.main_screen_panel, bookmarkFragment).commit()
+                    }
+                    4 -> {
+                        val myPageFragment = MyPageFragment()
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.main_screen_panel, myPageFragment).commit()
+                    }
+                }
+            }
+        })
+
+
+//        configureBottomNavigation()
     }
 
-    private fun configureBottomNavigation(){
-        binding.vpAcMainFragPager.adapter = MainSPAdapter(supportFragmentManager, 5)
-
-        binding.tlAcMainBottomMenu.setupWithViewPager(binding.vpAcMainFragPager)
-
-        val bottomNaviLayout: View = this.layoutInflater.inflate(R.layout.bottom_navigation_tab, null, false)
-
-        binding.tlAcMainBottomMenu.getTabAt(0)!!.customView = bottomNaviLayout.findViewById(R.id.btn_bottom_navi_home_tab) as RelativeLayout
-        binding.tlAcMainBottomMenu.getTabAt(1)!!.customView = bottomNaviLayout.findViewById(R.id.btn_bottom_navi_search_tab) as RelativeLayout
-        binding.tlAcMainBottomMenu.getTabAt(2)!!.customView = bottomNaviLayout.findViewById(R.id.btn_bottom_navi_closet_tab) as RelativeLayout
-        binding.tlAcMainBottomMenu.getTabAt(3)!!.customView = bottomNaviLayout.findViewById(R.id.btn_bottom_navi_bookmark_tab) as RelativeLayout
-        binding.tlAcMainBottomMenu.getTabAt(4)!!.customView = bottomNaviLayout.findViewById(R.id.btn_bottom_navi_my_page_tab) as RelativeLayout
-
-    }
+//    private fun configureBottomNavigation(){
+//        binding.vpAcMainFragPager.adapter = MainSPAdapter(supportFragmentManager, 5)
+//
+//        binding.tlAcMainBottomMenu.setupWithViewPager(binding.vpAcMainFragPager)
+//
+//        val bottomNaviLayout: View = this.layoutInflater.inflate(R.layout.bottom_navigation_tab, null, false)
+//
+//        binding.tlAcMainBottomMenu.getTabAt(0)!!.customView = bottomNaviLayout.findViewById(R.id.btn_bottom_navi_home_tab) as RelativeLayout
+//        binding.tlAcMainBottomMenu.getTabAt(1)!!.customView = bottomNaviLayout.findViewById(R.id.btn_bottom_navi_search_tab) as RelativeLayout
+//        binding.tlAcMainBottomMenu.getTabAt(2)!!.customView = bottomNaviLayout.findViewById(R.id.btn_bottom_navi_closet_tab) as RelativeLayout
+//        binding.tlAcMainBottomMenu.getTabAt(3)!!.customView = bottomNaviLayout.findViewById(R.id.btn_bottom_navi_bookmark_tab) as RelativeLayout
+//        binding.tlAcMainBottomMenu.getTabAt(4)!!.customView = bottomNaviLayout.findViewById(R.id.btn_bottom_navi_my_page_tab) as RelativeLayout
+//
+//    }
 
     // 액티비티가 파괴될 때..
     override fun onDestroy() {
