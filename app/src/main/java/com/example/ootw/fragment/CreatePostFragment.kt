@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
 import com.example.ootw.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -16,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ClosetFragment.newInstance] factory method to
+ * Use the [CreatePostFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ClosetFragment : Fragment(), View.OnClickListener {
+class CreatePostFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -36,21 +34,8 @@ class ClosetFragment : Fragment(), View.OnClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_closet, container, false)
-        view.findViewById<Button>(R.id.btn_Closet_plus).setOnClickListener(this)
-        return view
-    }
-
-    override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.btn_Closet_plus -> {
-                parentFragmentManager.beginTransaction()
-                    .replace(R.id.main_screen_panel, CreatePostFragment()).commitNow()
-            }
-
-            else -> {
-            }
-        }
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_create_post, container, false)
     }
 
     companion object {
@@ -60,17 +45,16 @@ class ClosetFragment : Fragment(), View.OnClickListener {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment ClosetFragment.
+         * @return A new instance of fragment CreatePostFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            ClosetFragment().apply {
+            CreatePostFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
                 }
             }
     }
-
 }
