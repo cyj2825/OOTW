@@ -8,6 +8,7 @@ import android.util.Log
 import com.example.ootw.databinding.ActivityCreatePostBinding
 import com.example.ootw.databinding.ActivityFindIdBinding
 import com.example.ootw.databinding.ActivityLoginBinding
+import com.example.ootw.fragment.MyFeedAllFragment
 import com.github.dhaval2404.imagepicker.ImagePicker
 
 class CreatePostActivity : AppCompatActivity() {
@@ -27,6 +28,15 @@ class CreatePostActivity : AppCompatActivity() {
             ImagePicker.with(this).galleryOnly().galleryMimeTypes(arrayOf("image/*")).crop()
                 .maxResultSize(400, 400).start()
         }
+
+//      닫기 버튼 누르면 뒤로가기와 같이 현재 액티비티 종료
+        binding.btnCreatePostCancle.setOnClickListener {
+            onBackPressed()
+        }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
