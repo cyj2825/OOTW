@@ -1,5 +1,6 @@
 package com.example.ootw
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +8,7 @@ import android.util.Log
 import com.example.ootw.databinding.ActivityCreatePostBinding
 import com.example.ootw.databinding.ActivityFindIdBinding
 import com.example.ootw.databinding.ActivityLoginBinding
+import com.github.dhaval2404.imagepicker.ImagePicker
 
 class CreatePostActivity : AppCompatActivity() {
     // 전역 변수로 바인딩 객체 선언
@@ -20,5 +22,19 @@ class CreatePostActivity : AppCompatActivity() {
         mBinding = ActivityCreatePostBinding.inflate(layoutInflater)
         setContentView(binding.root)
         Log.d("TestLog", "Create Post Activity!")
+
+        binding.btnCreatePostPickImg.setOnClickListener {
+            ImagePicker.with(this).galleryOnly().galleryMimeTypes(arrayOf("image/*")).crop()
+                .maxResultSize(400, 400).start()
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(resultCode== Activity.RESULT_OK && requestCode== ImagePicker.REQUEST_CODE) {
+            binding.ivCreatePostGallery?.setImageURI(data?.data)
+        }
+
     }
 }
