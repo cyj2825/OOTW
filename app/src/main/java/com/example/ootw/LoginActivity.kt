@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.ootw.databinding.ActivityLoginBinding
+import com.kakao.sdk.common.util.Utility
 
 class LoginActivity : AppCompatActivity() {
     // 전역 변수로 바인딩 객체 선언
@@ -17,6 +18,9 @@ class LoginActivity : AppCompatActivity() {
         // 바인딩
         mBinding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val KeyHash = Utility.getKeyHash(this)
+        Log.d("Hash", KeyHash)
 
         binding.tvFindId.setOnClickListener {
             Log.d("TestLog", "find id")

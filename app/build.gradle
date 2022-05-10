@@ -59,4 +59,7 @@ dependencies {
 
     // 하단 탭
     implementation 'nl.joery.animatedbottombar:library:1.1.0'
+
+    // 카카오 로그인
+    implementation "com.kakao.sdk:v2-user:2.0.1"
 }
