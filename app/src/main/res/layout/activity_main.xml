@@ -21,8 +21,6 @@
 <!--        android:background="#FFFFFF"-->
 <!--        android:elevation="5dp"-->
 <!--        app:tabIndicatorColor="#40D39F"></com.google.android.material.tabs.TabLayout>-->
-
-
 <!--</RelativeLayout>-->
 
 <androidx.constraintlayout.widget.ConstraintLayout
