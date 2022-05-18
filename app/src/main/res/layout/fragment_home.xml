@@ -1,14 +1,369 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
+        android:id="@+id/sv_Home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_Home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_Home_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cl_Home"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_Home_weather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_borderbox"
+                android:layout_marginHorizontal="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_Home_logo">
+
+                <TextView
+                    android:id="@+id/tv_Home_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginStart="20dp"
+                    android:text="0"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/cl_Home_weather"/>
+
+                <TextView
+                    android:id="@+id/tv_Home_month2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="월"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/tv_Home_month"
+                    app:layout_constraintTop_toTopOf="@+id/tv_Home_month"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_Home_month"/>
+
+                <TextView
+                    android:id="@+id/tv_Home_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="00"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/tv_Home_month2"
+                    app:layout_constraintTop_toTopOf="@+id/tv_Home_month"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_Home_month"/>
+
+                <TextView
+                    android:id="@+id/tv_Home_day2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="일"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/tv_Home_day"
+                    app:layout_constraintTop_toTopOf="@+id/tv_Home_month"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_Home_month"/>
+
+                <TextView
+                    android:id="@+id/tv_Home_weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="오늘의 날씨"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tv_Home_month"
+                    app:layout_constraintTop_toBottomOf="@id/tv_Home_month"/>
+
+                <ImageView
+                    android:id="@+id/iv_Home_weather1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/feed_profile"
+                    app:layout_constraintStart_toStartOf="@id/tv_Home_month"
+                    app:layout_constraintTop_toBottomOf="@id/tv_Home_weather"/>
+
+                <TextView
+                    android:id="@+id/tv_Home_weather1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0시"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/iv_Home_weather1"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_Home_weather1"
+                    app:layout_constraintTop_toBottomOf="@id/iv_Home_weather1"/>
+
+                <ImageView
+                    android:id="@+id/iv_Home_weather2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/feed_profile"
+                    app:layout_constraintStart_toEndOf="@+id/iv_Home_weather1"
+                    app:layout_constraintTop_toTopOf="@id/iv_Home_weather1"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_Home_weather1"/>
+
+                <TextView
+                    android:id="@+id/tv_Home_weather2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3시"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/iv_Home_weather2"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_Home_weather2"
+                    app:layout_constraintTop_toBottomOf="@id/iv_Home_weather2"/>
+
+                <ImageView
+                    android:id="@+id/iv_Home_weather3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/feed_profile"
+                    app:layout_constraintStart_toEndOf="@+id/iv_Home_weather2"
+                    app:layout_constraintTop_toTopOf="@id/iv_Home_weather2"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_Home_weather2"/>
+
+                <TextView
+                    android:id="@+id/tv_Home_weather3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6시"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/iv_Home_weather3"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_Home_weather3"
+                    app:layout_constraintTop_toBottomOf="@id/iv_Home_weather3"/>
+
+                <ImageView
+                    android:id="@+id/iv_Home_weather4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/feed_profile"
+                    app:layout_constraintStart_toEndOf="@+id/iv_Home_weather3"
+                    app:layout_constraintTop_toTopOf="@id/iv_Home_weather3"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_Home_weather3"/>
+
+                <TextView
+                    android:id="@+id/tv_Home_weather4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9시"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/iv_Home_weather4"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_Home_weather4"
+                    app:layout_constraintTop_toBottomOf="@id/iv_Home_weather4"/>
+
+                <ImageView
+                    android:id="@+id/iv_Home_weather5"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/feed_profile"
+                    app:layout_constraintStart_toEndOf="@+id/iv_Home_weather4"
+                    app:layout_constraintTop_toTopOf="@id/iv_Home_weather4"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_Home_weather4"/>
+
+                <TextView
+                    android:id="@+id/tv_Home_weather5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12시"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/iv_Home_weather5"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_Home_weather5"
+                    app:layout_constraintTop_toBottomOf="@id/iv_Home_weather5"/>
+
+                <ImageView
+                    android:id="@+id/iv_Home_weather6"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/feed_profile"
+                    app:layout_constraintStart_toEndOf="@+id/iv_Home_weather5"
+                    app:layout_constraintTop_toTopOf="@id/iv_Home_weather5"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_Home_weather5"/>
+
+                <TextView
+                    android:id="@+id/tv_Home_weather6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15시"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/iv_Home_weather6"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_Home_weather6"
+                    app:layout_constraintTop_toBottomOf="@id/iv_Home_weather6"/>
+
+                <ImageView
+                    android:id="@+id/iv_Home_weather7"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/feed_profile"
+                    app:layout_constraintStart_toEndOf="@+id/iv_Home_weather6"
+                    app:layout_constraintTop_toTopOf="@id/iv_Home_weather6"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_Home_weather6"/>
+
+                <TextView
+                    android:id="@+id/tv_Home_weather7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="18시"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/iv_Home_weather7"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_Home_weather7"
+                    app:layout_constraintTop_toBottomOf="@id/iv_Home_weather7"/>
+
+                <ImageView
+                    android:id="@+id/iv_Home_weather8"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/feed_profile"
+                    app:layout_constraintStart_toEndOf="@+id/iv_Home_weather7"
+                    app:layout_constraintTop_toTopOf="@id/iv_Home_weather7"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_Home_weather7"/>
+
+                <TextView
+                    android:id="@+id/tv_Home_weather8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="21시"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/iv_Home_weather8"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_Home_weather8"
+                    app:layout_constraintTop_toBottomOf="@id/iv_Home_weather8"/>
+
+                <ImageView
+                    android:id="@+id/iv_Home_question"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="28dp"
+                    android:src="@drawable/feed_profile"
+                    app:layout_constraintStart_toStartOf="@id/iv_Home_weather1"
+                    app:layout_constraintTop_toBottomOf="@id/tv_Home_weather1"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_Home_question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="오늘의 날씨 정보를 더 알고 싶다면?"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toEndOf="@id/iv_Home_question"
+                    app:layout_constraintTop_toTopOf="@id/iv_Home_question"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_Home_question"/>
+<!-- imageview에 알맞는 이미지 넣기 -->
+
+                <ImageView
+                    android:id="@+id/iv_Home_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintStart_toEndOf="@+id/iv_Home_weather8"
+                    app:layout_constraintTop_toTopOf="@id/tv_Home_weather"/>
+                <TextView
+                    android:id="@+id/tv_Home_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="사용자 위치"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/iv_Home_location"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/iv_Home_location"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_Home_location"/>
+
+                <ImageView
+                    android:id="@+id/iv_Home_locationmap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintStart_toStartOf="@id/iv_Home_location"
+                    app:layout_constraintTop_toBottomOf="@id/iv_Home_location"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_Home_recommend_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="오늘의 추천 아이템"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/cl_Home_weather"
+                app:layout_constraintTop_toBottomOf="@id/cl_Home_weather"/>
+
+            <Button
+                android:id="@+id/btn_Home_item1"
+                android:layout_width="168dp"
+                android:layout_height="168dp"
+                android:layout_marginTop="12dp"
+                android:text="얇은 셔츠"
+                app:layout_constraintStart_toStartOf="@id/tv_Home_recommend_item"
+                app:layout_constraintTop_toBottomOf="@id/tv_Home_recommend_item"/>
+
+            <Button
+                android:id="@+id/btn_Home_item2"
+                android:layout_width="168dp"
+                android:layout_height="168dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:text="반바지"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_Home_recommend_item"/>
+
+            <Button
+                android:id="@+id/btn_Home_item3"
+                android:layout_width="168dp"
+                android:layout_height="168dp"
+                android:layout_marginTop="8dp"
+                android:text="스커트"
+                app:layout_constraintStart_toStartOf="@id/btn_Home_item1"
+                app:layout_constraintTop_toBottomOf="@id/btn_Home_item1"/>
+
+            <Button
+                android:id="@+id/btn_Home_item4"
+                android:layout_width="168dp"
+                android:layout_height="168dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_Home_item1"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
