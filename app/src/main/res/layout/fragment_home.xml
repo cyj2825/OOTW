@@ -325,6 +325,46 @@
                 app:layout_constraintStart_toStartOf="@id/cl_Home_weather"
                 app:layout_constraintTop_toBottomOf="@id/cl_Home_weather"/>
 
+            <Button
+                android:id="@+id/btn_Home_item1"
+                android:layout_width="168dp"
+                android:layout_height="168dp"
+                android:layout_marginTop="12dp"
+                android:text="얇은 셔츠"
+                app:layout_constraintStart_toStartOf="@id/tv_Home_recommend_item"
+                app:layout_constraintTop_toBottomOf="@id/tv_Home_recommend_item"/>
+
+            <Button
+                android:id="@+id/btn_Home_item2"
+                android:layout_width="168dp"
+                android:layout_height="168dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:text="반바지"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_Home_recommend_item"/>
+
+            <Button
+                android:id="@+id/btn_Home_item3"
+                android:layout_width="168dp"
+                android:layout_height="168dp"
+                android:layout_marginTop="8dp"
+                android:text="스커트"
+                app:layout_constraintStart_toStartOf="@id/btn_Home_item1"
+                app:layout_constraintTop_toBottomOf="@id/btn_Home_item1"/>
+
+            <Button
+                android:id="@+id/btn_Home_item4"
+                android:layout_width="168dp"
+                android:layout_height="168dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_Home_item1"/>
+
+
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
