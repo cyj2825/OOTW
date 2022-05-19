@@ -37,6 +37,10 @@ class FindIdActivity : AppCompatActivity() {
             datePicker.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             datePicker.show()
         }
+
+        binding.tvFindidBack.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     // 액티비티가 파괴될 때..

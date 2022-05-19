@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.ootw.databinding.ActivityMainBinding
 import com.example.ootw.databinding.ActivitySignUpBinding
+import com.example.ootw.fragment.SignUpFragment1
 
 class SignUpActivity : AppCompatActivity() {
     // 전역 변수로 바인딩 객체 선언
@@ -16,5 +17,8 @@ class SignUpActivity : AppCompatActivity() {
         // 바인딩
         mBinding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.signup_screen_panel, SignUpFragment1()).commit()
     }
 }

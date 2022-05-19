@@ -16,6 +16,9 @@ class FindPwActivity: AppCompatActivity() {
         mBinding = ActivityFindPwBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.tvFindpwBack.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     // 액티비티가 파괴될 때..

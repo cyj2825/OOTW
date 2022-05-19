@@ -90,15 +90,17 @@
             android:hint="비밀번호 재입력"/>
     </LinearLayout>
 
+<!--    버튼 위치 이상함... 수정 필요 -->
     <Button
         android:id="@+id/btn_SignUp1_next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
         android:layout_marginBottom="48dp"
-        android:layout_marginHorizontal="48dp"
         android:text="다음"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
