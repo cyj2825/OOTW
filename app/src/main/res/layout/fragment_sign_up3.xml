@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context=".fragment.SignUpFragment3">
+
+    <TextView
+        android:id="@+id/tv_SignUp3_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="&lt;"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="16dp"
+        android:text="사용자 설정"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_SignUp3_back" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="48dp"
+        android:text="온도 민감도"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="8dp"
+        android:text="추위에 어느 정도 민감하신가요?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_SignUp3_cold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <CheckBox
+            android:id="@+id/cb_SignUp3_cold1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매우 둔함"
+            android:textSize="12sp"/>
+        <CheckBox
+            android:id="@+id/cb_SignUp3_cold2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="둔함"
+            android:textSize="12sp"/>
+        <CheckBox
+            android:id="@+id/cb_SignUp3_cold3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보통"
+            android:textSize="12sp"/>
+        <CheckBox
+            android:id="@+id/cb_SignUp3_cold4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="민감"
+            android:textSize="12sp"/>
+        <CheckBox
+            android:id="@+id/cb_SignUp3_cold5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매우 민감"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="16dp"
+        android:text="더위에 어느 정도 민감하신가요?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_SignUp3_cold" />
+
+    <LinearLayout
+        android:id="@+id/ll_SignUp3_heat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+        <CheckBox
+            android:id="@+id/cb_SignUp3_heat1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매우 둔함"
+            android:textSize="12sp"/>
+        <CheckBox
+            android:id="@+id/cb_SignUp3_heat2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="둔함"
+            android:textSize="12sp"/>
+        <CheckBox
+            android:id="@+id/cb_SignUp3_heat3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보통"
+            android:textSize="12sp"/>
+        <CheckBox
+            android:id="@+id/cb_SignUp3_heat4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="민감"
+            android:textSize="12sp"/>
+        <CheckBox
+            android:id="@+id/cb_SignUp3_heat5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매우 민감"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="24dp"
+        android:textStyle="bold"
+        android:text="지역"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_SignUp3_heat" />
+
+    <LinearLayout
+        android:id="@+id/ll_SignUp3_region"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="48dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <Spinner
+            android:id="@+id/spin_SignUp3_region1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"/>
+
+        <Spinner
+            android:id="@+id/spin_SignUp3_region2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_SignUp1_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:layout_marginHorizontal="48dp"
+        android:text="완료"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

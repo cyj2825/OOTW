@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp">
+    android:layout_margin="16dp"
+    tools:context=".fragment.SignUpFragment2">
 
     <TextView
-        android:id="@+id/tv_findid_back"
+        android:id="@+id/tv_SignUp2_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -22,25 +23,102 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="48dp"
         android:layout_marginTop="16dp"
-        android:text="아이디 찾기"
+        android:text="사용자 설정"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_findid_back" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_SignUp2_back" />
+
+    <LinearLayout
+        android:id="@+id/ll_SignUp2_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="48dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_SignUp_profileImg"
+            android:src="@drawable/feed_profile"
+            android:layout_gravity="center"
+            android:layout_width="120dp"
+            android:layout_height="120dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="닉네임"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_SignUp2_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="12sp"
+                android:hint="8자 이내 한글 혹은 영문"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="48dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
+        android:text="성별"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_SignUp2_name" />
+
+    <RadioGroup
+        android:id="@+id/rg_SignUp2_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="48dp"
+        android:layout_marginTop="8"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <RadioButton
+            android:id="@+id/rb_men"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="28dp"
+            android:text="남성"/>
+
+        <RadioButton
+            android:id="@+id/rb_women"
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="여성"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="24dp"
         android:text="생년월일"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/rg_SignUp2_gender" />
 
     <Button
-        android:id="@+id/btn_findid_pickdate"
+        android:id="@+id/btn_SignUp2_pickdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -49,7 +127,7 @@
         android:textColor="@color/black"
         style="?android:spinnerStyle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
         android:onClick="openDatePicker"/>
 
     <TextView
@@ -58,17 +136,17 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="48dp"
         android:layout_marginTop="24dp"
-        android:text="이메일"
         android:textStyle="bold"
+        android:text="이메일"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_findid_pickdate" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_SignUp2_pickdate" />
 
     <LinearLayout
         android:id="@+id/ll_findid_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,24 +174,13 @@
             android:layout_weight="1"/>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="4dp"
-        android:text="*회원가입 시 사용한 이메일을 입력해주세요."
-        android:textSize="11sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_findid_email" />
-
     <Button
-        android:id="@+id/btn_findid_submit"
+        android:id="@+id/btn_SignUp1_next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
         android:layout_marginHorizontal="48dp"
-        android:text="완료"
+        android:text="다음"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
