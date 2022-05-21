@@ -24,13 +24,13 @@ class CreatePostActivity : AppCompatActivity() {
         setContentView(binding.root)
         Log.d("TestLog", "Create Post Activity!")
 
-        binding.btnCreatePostPickImg.setOnClickListener {
+        binding.ivCreatePostGallery.setOnClickListener {
             ImagePicker.with(this).galleryOnly().galleryMimeTypes(arrayOf("image/*")).crop()
                 .maxResultSize(400, 400).start()
         }
 
 //      닫기 버튼 누르면 뒤로가기와 같이 현재 액티비티 종료
-        binding.btnCreatePostCancle.setOnClickListener {
+        binding.tvCreatePostCancel.setOnClickListener {
             onBackPressed()
         }
     }

@@ -7,13 +7,14 @@
     android:orientation="horizontal"
     tools:context=".CreatePostActivity">
 
-    <Button
-        android:id="@+id/btn_CreatePost_cancle"
+    <TextView
+        android:id="@+id/tv_CreatePost_cancel"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="X"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,32 +22,35 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="새 게시글"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_CreatePost_submit"
+    <TextView
+        android:id="@+id/tv_CreatePost_submit"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:text="완료"
+        android:textSize="20sp"
+        android:textAlignment="textEnd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:id="@+id/scrollView2"
+        android:id="@+id/sv_CreatePost_photo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_CreatePost_cancle">
+        app:layout_constraintTop_toBottomOf="@+id/textView8">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -63,59 +67,67 @@
         </LinearLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/btn_CreatePost_pick_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="사진 선택"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
-
     <!--    spinner 날씨 추가 필요   -->
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/ll_CreatePost_weather"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24sp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_CreatePost_pick_img">
+        app:layout_constraintTop_toBottomOf="@+id/sv_CreatePost_photo">
 
         <Spinner
             android:id="@+id/spin_CreatePost_weather"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:spinnerMode="dropdown" />
+            android:spinnerMode="dropdown"
+            android:layout_weight="0.8"
+            />
 
         <EditText
             android:id="@+id/et_CreatePost_temperature"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:layout_weight="0.5"/>
 
         <TextView
             android:id="@+id/btn_CreatePost_get_temperature"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="불러오기" />
+            android:layout_weight="1"
+            android:text="불러\n오기"
+            android:textAlignment="textEnd"/>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="정보 등록하기"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_CreatePost_weather" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="56dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="4dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -128,7 +140,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="아우터"
-                android:textAlignment="center" />
+                android:textAlignment="textStart" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -157,7 +169,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="상의"
-                android:textAlignment="center" />
+                android:textAlignment="textStart" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -186,7 +198,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="하의"
-                android:textAlignment="center" />
+                android:textAlignment="textStart" />
 
             <TextView
                 android:id="@+id/textView12"
@@ -216,7 +228,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="신발"
-                android:textAlignment="center" />
+                android:textAlignment="textStart" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -246,7 +258,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="기타"
-                android:textAlignment="center" />
+                android:textAlignment="textStart" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -269,35 +281,35 @@
         android:id="@+id/et_CreatePost_content"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="56dp"
+        android:layout_marginHorizontal="24dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="40dp"
         android:ems="10"
         android:gravity="start|top"
-        android:hint="내용을 입력하세요.\n#를 이용해 태그를 입력해보세요!(최대 20개)"
+        android:hint="게시글 작성.\n해시태그(#)를 이용해보세요!(최대 20개)"
         android:inputType="textMultiLine"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"/>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="24dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-            android:id="@+id/tv_find_id"
+            android:id="@+id/tv_CreatePost_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="임시저장"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <View
@@ -305,14 +317,15 @@
             android:layout_height="18dp"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
-            android:background="@color/black" />
+            android:background="@color/black"
+            android:layout_gravity="center"/>
 
         <TextView
-            android:id="@+id/tv_find_pw"
+            android:id="@+id/tv_CreatePost_save_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="보관함(0)"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
     </LinearLayout>
 
