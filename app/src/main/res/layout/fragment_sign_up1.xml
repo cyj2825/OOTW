@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="16dp"
-    tools:context=".FindIdActivity" >
+    tools:context=".fragment.SignUpFragment1">
 
     <TextView
-        android:id="@+id/tv_findid_back"
+        android:id="@+id/tv_SignUp1_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -23,11 +23,11 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="48dp"
         android:layout_marginTop="16dp"
-        android:text="아이디 찾기"
+        android:text="회원가입"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_findid_back" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_SignUp1_back" />
 
     <TextView
         android:id="@+id/textView2"
@@ -35,23 +35,21 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="48dp"
         android:layout_marginTop="48dp"
-        android:text="생년월일"
+        android:text="아이디"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <Button
-        android:id="@+id/btn_findid_pickdate"
-        android:layout_width="150dp"
+    <EditText
+        android:id="@+id/et_SignUp1_id"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:layout_marginHorizontal="48dp"
-        android:text="2022 - 01 - 01"
-        android:textColor="@color/black"
-        style="?android:spinnerStyle"
+        android:layout_marginTop="8dp"
+        android:textSize="12sp"
+        android:hint="아이디"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        android:onClick="openDatePicker"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView3"
@@ -59,64 +57,49 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="48dp"
         android:layout_marginTop="24dp"
-        android:text="이메일"
+        android:text="비밀번호"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_findid_pickdate" />
+        app:layout_constraintTop_toBottomOf="@+id/et_SignUp1_id" />
 
     <LinearLayout
-        android:id="@+id/ll_findid_email"
+        android:id="@+id/ll_SignUp1_pw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="48dp"
         android:layout_marginTop="4dp"
         android:gravity="center"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3">
 
         <EditText
-            android:id="@+id/et_findid_email"
-            android:layout_width="wrap_content"
+            android:id="@+id/et_SignUp1_pw"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textSize="12sp"
-            android:hint="입력"/>
+            android:hint="영문, 숫자, 특수문자 조합 8자리 이상"/>
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/et_SignUp1_pw_check"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="\@" />
-
-        <Spinner
-            android:id="@+id/spin_findid_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:textSize="12sp"
+            android:hint="비밀번호 재입력"/>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="4dp"
-        android:text="*회원가입 시 사용한 이메일을 입력해주세요."
-        android:textSize="11sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_findid_email" />
-
+<!--    버튼 위치 이상함... 수정 필요 -->
     <Button
-        android:id="@+id/btn_findid_submit"
+        android:id="@+id/btn_SignUp1_next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
         android:layout_marginHorizontal="48dp"
-        android:text="완료"
+        android:layout_marginBottom="48dp"
+        android:text="다음"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

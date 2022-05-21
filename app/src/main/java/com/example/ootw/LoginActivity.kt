@@ -99,6 +99,10 @@ class LoginActivity : AppCompatActivity() {
             Log.d("TestLog", "find pw")
             startActivity(Intent(this, FindPwActivity::class.java))
         }
+        binding.tvSignup.setOnClickListener {
+            Log.d("TestLog", "sign up")
+            startActivity(Intent(this, SignUpActivity::class.java))
+        }
         binding.btnMainLogin.setOnClickListener {
             Log.d("TestLog", "main")
             startActivity(Intent(this, MainActivity::class.java))
