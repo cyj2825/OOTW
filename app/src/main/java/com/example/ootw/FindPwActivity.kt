@@ -1,8 +1,14 @@
 package com.example.ootw
 
+import android.R
+import android.app.DatePickerDialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ootw.databinding.ActivityFindPwBinding
+import java.text.SimpleDateFormat
+import java.util.*
 
 class FindPwActivity: AppCompatActivity() {
     // 전역 변수로 바인딩 객체 선언
@@ -15,6 +21,21 @@ class FindPwActivity: AppCompatActivity() {
         // 바인딩
         mBinding = ActivityFindPwBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        var formatDate = SimpleDateFormat("yyyy - MM - dd", Locale.KOREA)
+        binding.btnFindpwPickdate.setOnClickListener {
+            val getDate: Calendar = Calendar.getInstance()
+            val datePicker = DatePickerDialog(this, R.style.Theme_Holo_Dialog_MinWidth, DatePickerDialog.OnDateSetListener{ datePicker, i, i2, i3 ->
+                val selectDate = Calendar.getInstance()
+                selectDate.set(Calendar.YEAR, i)
+                selectDate.set(Calendar.MONTH, i2)
+                selectDate.set(Calendar.DAY_OF_MONTH, i3)
+                val date = formatDate.format(selectDate.time)
+                binding.btnFindpwPickdate.text = date
+            }, getDate.get(Calendar.YEAR), getDate.get(Calendar.MONTH), getDate.get(Calendar.DAY_OF_MONTH))
+            datePicker.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            datePicker.show()
+        }
 
         binding.tvFindpwBack.setOnClickListener {
             onBackPressed()
