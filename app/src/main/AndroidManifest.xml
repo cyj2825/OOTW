@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ootw">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".GlobalApplication"
@@ -13,6 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OOTW">
+        <activity
+            android:name=".OnboardingActivity"
+            android:exported="true" />
         <activity
             android:name=".CreatePostActivity"
             android:exported="false" />
@@ -28,12 +31,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
@@ -45,7 +48,7 @@
         <activity android:name=".FindIdActivity" />
         <activity android:name=".FindPwActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".SignUpActivity"/>
+        <activity android:name=".SignUpActivity" />
     </application>
 
 </manifest>
