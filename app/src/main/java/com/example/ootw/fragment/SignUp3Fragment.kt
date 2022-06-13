@@ -9,7 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import com.example.ootw.R
 
-class SignUpFragment3 : Fragment(), View.OnClickListener {
+class SignUp3Fragment : Fragment(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +32,7 @@ class SignUpFragment3 : Fragment(), View.OnClickListener {
             }
             R.id.tv_SignUp3_back -> {
                 parentFragmentManager.beginTransaction()
-                    .replace(R.id.signup_screen_panel, SignUpFragment2()).commitNow()
+                    .replace(R.id.signup_screen_panel, SignUp2Fragment()).commitNow()
             }
             else -> {
             }

@@ -24,7 +24,7 @@ class FindIdActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         var formatDate = SimpleDateFormat("yyyy - MM - dd", Locale.KOREA)
-        binding.btnFindidPickdate.setOnClickListener {
+        binding.btnFindIdPickdate.setOnClickListener {
             val getDate: Calendar = Calendar.getInstance()
             val datePicker = DatePickerDialog(this, R.style.Theme_Holo_Dialog_MinWidth, DatePickerDialog.OnDateSetListener{ datePicker, i, i2, i3 ->
                 val selectDate = Calendar.getInstance()
@@ -32,13 +32,13 @@ class FindIdActivity : AppCompatActivity() {
                 selectDate.set(Calendar.MONTH, i2)
                 selectDate.set(Calendar.DAY_OF_MONTH, i3)
                 val date = formatDate.format(selectDate.time)
-                binding.btnFindidPickdate.text = date
+                binding.btnFindIdPickdate.text = date
             }, getDate.get(Calendar.YEAR), getDate.get(Calendar.MONTH), getDate.get(Calendar.DAY_OF_MONTH))
             datePicker.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             datePicker.show()
         }
 
-        binding.tvFindidBack.setOnClickListener {
+        binding.tvFindIdBack.setOnClickListener {
             onBackPressed()
         }
     }

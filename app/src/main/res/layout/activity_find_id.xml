@@ -8,7 +8,7 @@
     tools:context=".FindIdActivity" >
 
     <TextView
-        android:id="@+id/tv_findid_back"
+        android:id="@+id/tv_FindId_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -27,7 +27,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_findid_back" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_FindId_back" />
 
     <TextView
         android:id="@+id/textView2"
@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/btn_findid_pickdate"
+        android:id="@+id/btn_FindId_pickdate"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -62,54 +62,54 @@
         android:text="이메일"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_findid_pickdate" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_FindId_pickdate" />
 
-    <LinearLayout
-        android:id="@+id/ll_findid_email"
+    <EditText
+        android:id="@+id/et_FindId_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="48dp"
         android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:orientation="horizontal"
+        android:textSize="12sp"
+        android:hint="회원가입 시 사용한 이메일을 입력해주세요."
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3">
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-        <EditText
-            android:id="@+id/et_findid_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="12sp"
-            android:hint="입력"/>
+<!--    <LinearLayout-->
+<!--        android:id="@+id/ll_findid_email"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="48dp"-->
+<!--        android:layout_marginTop="4dp"-->
+<!--        android:gravity="center"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView3">-->
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="\@" />
+<!--        <EditText-->
+<!--            android:id="@+id/et_findid_email"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:textSize="12sp"-->
+<!--            android:hint="입력"/>-->
 
-        <Spinner
-            android:id="@+id/spin_findid_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"/>
-    </LinearLayout>
+<!--        <TextView-->
+<!--            android:id="@+id/textView9"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="\@" />-->
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="4dp"
-        android:text="*회원가입 시 사용한 이메일을 입력해주세요."
-        android:textSize="11sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_findid_email" />
+<!--        <Spinner-->
+<!--            android:id="@+id/spin_findid_email"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_weight="1"/>-->
+<!--    </LinearLayout>-->
 
     <Button
-        android:id="@+id/btn_findid_submit"
+        android:id="@+id/btn_FindId_submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
