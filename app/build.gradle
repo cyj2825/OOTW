@@ -66,4 +66,7 @@ dependencies {
 
     // 카카오 로그인
     implementation "com.kakao.sdk:v2-user:2.0.1"
+
+    // 사진 다중 선택
+    implementation 'com.github.esafirm:android-image-picker:x.y.z'
 }
