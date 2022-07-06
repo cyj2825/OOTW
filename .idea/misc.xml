@@ -24,7 +24,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1985" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.146" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_create_post.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_create_post.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_find_id.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_find_pw.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
@@ -33,6 +33,9 @@
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/activity_user_set_up.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/bottom_navigation_tab.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/ef_fragment_image_picker.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/ef_imagepicker_toolbar.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/ef_imagepikcer_snackbar.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/fragment_bookmark.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_closet.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/fragment_create_post.xml" value="0.37604166666666666" />
