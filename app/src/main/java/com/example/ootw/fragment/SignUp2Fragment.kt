@@ -1,8 +1,5 @@
 package com.example.ootw.fragment
 
-import android.app.DatePickerDialog
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,7 +11,7 @@ import com.example.ootw.R
 import java.text.SimpleDateFormat
 import java.util.*
 
-class SignUpFragment2 : Fragment(), View.OnClickListener {
+class SignUp2Fragment : Fragment(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,11 +33,11 @@ class SignUpFragment2 : Fragment(), View.OnClickListener {
         when (v?.id) {
             R.id.btn_SignUp2_next -> {
                 parentFragmentManager.beginTransaction()
-                    .replace(R.id.signup_screen_panel, SignUpFragment3()).commitNow()
+                    .replace(R.id.signup_screen_panel, SignUp3Fragment()).commitNow()
             }
             R.id.tv_SignUp2_back -> {
                 parentFragmentManager.beginTransaction()
-                    .replace(R.id.signup_screen_panel, SignUpFragment1()).commitNow()
+                    .replace(R.id.signup_screen_panel, SignUp1Fragment()).commitNow()
             }
             R.id.btn_SignUp2_pickdate -> {
                 var formatDate = SimpleDateFormat("yyyy - MM - dd", Locale.KOREA)

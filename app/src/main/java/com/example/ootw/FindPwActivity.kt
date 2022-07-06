@@ -23,7 +23,7 @@ class FindPwActivity: AppCompatActivity() {
         setContentView(binding.root)
 
         var formatDate = SimpleDateFormat("yyyy - MM - dd", Locale.KOREA)
-        binding.btnFindpwPickdate.setOnClickListener {
+        binding.btnFindPwPickdate.setOnClickListener {
             val getDate: Calendar = Calendar.getInstance()
             val datePicker = DatePickerDialog(this, R.style.Theme_Holo_Dialog_MinWidth, DatePickerDialog.OnDateSetListener{ datePicker, i, i2, i3 ->
                 val selectDate = Calendar.getInstance()
@@ -31,13 +31,13 @@ class FindPwActivity: AppCompatActivity() {
                 selectDate.set(Calendar.MONTH, i2)
                 selectDate.set(Calendar.DAY_OF_MONTH, i3)
                 val date = formatDate.format(selectDate.time)
-                binding.btnFindpwPickdate.text = date
+                binding.btnFindPwPickdate.text = date
             }, getDate.get(Calendar.YEAR), getDate.get(Calendar.MONTH), getDate.get(Calendar.DAY_OF_MONTH))
             datePicker.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             datePicker.show()
         }
 
-        binding.tvFindpwBack.setOnClickListener {
+        binding.tvFindPwBack.setOnClickListener {
             onBackPressed()
         }
     }
