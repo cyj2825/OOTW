@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
-    tools:context=".fragment.SignUpFragment2">
+    tools:context=".fragment.SignUp2Fragment">
 
     <TextView
         android:id="@+id/tv_SignUp2_back"

@@ -8,11 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import androidx.fragment.app.FragmentManager
 import com.example.ootw.LoginActivity
 import com.example.ootw.R
 
-class SignUpFragment1 : Fragment(), View.OnClickListener {
+class SignUp1Fragment : Fragment(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +31,7 @@ class SignUpFragment1 : Fragment(), View.OnClickListener {
         when (v?.id) {
             R.id.btn_SignUp1_next -> {
                 parentFragmentManager.beginTransaction()
-                    .replace(R.id.signup_screen_panel, SignUpFragment2()).commitNow()
+                    .replace(R.id.signup_screen_panel, SignUp2Fragment()).commitNow()
             }
             R.id.tv_SignUp1_back -> {
                 activity?.let{
