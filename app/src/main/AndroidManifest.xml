@@ -2,11 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ootw">
 
-<!--    날씨 API 가져오기 -->
+    <!-- 날씨 API 가져오기 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
     <application
         android:name=".GlobalApplication"
@@ -16,8 +17,8 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.OOTW"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.OOTW">
         <activity
             android:name=".OnboardingActivity"
             android:exported="true" />
@@ -54,7 +55,6 @@
         <activity android:name=".FindPwActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SignUpActivity" />
-
     </application>
 
 </manifest>
