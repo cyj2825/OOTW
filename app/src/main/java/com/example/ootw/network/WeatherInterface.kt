@@ -9,6 +9,7 @@ import retrofit2.http.Query
 interface WeatherInterface {
     // getUltraSrtFcst : 초단기 예보 조회 + 인증키
     @GET("getUltraSrtFcst?serviceKey=nwE8SY6xbAjBHO1%2FPxcD8Dx%2B%2BUkYM0%2BIm%2FR%2By8n9sds7xuH24Nh1%2Bzqbc3zU1JeInxNezKxtklmxABZKDKlDTQ%3D%3D")
+
     fun getWeather(
         @Query("numOfRows") num_of_rows: Int,   // 한 페이지 경과 수
         @Query("pageNo") page_no: Int,          // 페이지 번호

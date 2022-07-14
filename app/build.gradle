@@ -5,8 +5,8 @@ plugins {
 }
 
 // local.properties 사용을 위함
-// Properties properties = new Properties()
-// properties.load(project.rootProject.file('local.properties').newDataInputStream())
+ Properties properties = new Properties()
+ properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
 android {
     compileSdk 31
@@ -21,10 +21,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         // url 변수 지정
-        // buildConfigField "String", "URL_WEATHER", properties['url.weather']
+         buildConfigField "String", "URL_WEATHER", properties['url.weather']
 
         // api key 변수 지정
-        // buildConfigField "String", "API_KEY", properties['api.key']
+         buildConfigField "String", "API_KEY", properties['api.key']
     }
 
     buildFeatures{

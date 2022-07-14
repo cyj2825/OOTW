@@ -7,8 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ootw.R
 
-class BookmarkRVAdapter(private val dataSet: Array<String>):
-    RecyclerView.Adapter<BookmarkRVAdapter.ViewHolder>() {
+class PostListRVAdapter(private val dataSet: Array<String>):
+    RecyclerView.Adapter<PostListRVAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val date: TextView
@@ -22,7 +22,7 @@ class BookmarkRVAdapter(private val dataSet: Array<String>):
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.recycler_bookmark, viewGroup, false)
+            .inflate(R.layout.list_item_post, viewGroup, false)
 
         return ViewHolder(view)
     }
@@ -37,3 +37,4 @@ class BookmarkRVAdapter(private val dataSet: Array<String>):
 
 
 }
+
