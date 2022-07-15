@@ -1,39 +1,70 @@
 package com.example.ootw.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ootw.R
+import com.example.ootw.model.PostDTO
 
-class PostListRVAdapter(private val dataSet: Array<String>):
-    RecyclerView.Adapter<PostListRVAdapter.ViewHolder>() {
+class PostListRVAdapter(val context: Context, val postList: ArrayList<PostDTO>):
+    RecyclerView.Adapter<PostListRVAdapter.ItemViewHolder>() {
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val date: TextView
+    var mPosition = 0
 
-        init {
-            date = view.findViewById(R.id.tv_bookmark_date)
+    fun getPostion(): Int {
+        return mPosition
+    }
+
+    inner class ItemViewHolder(view: View): RecyclerView.ViewHolder(view) {
+//        val postUid = null
+//        var postUserId = null
+        var postImage = view.findViewById<ImageView>(R.id.iv_PostItem_image)
+        var postWeather = view.findViewById<TextView>(R.id.tv_PostItem_weather)
+        var postIcon = view.findViewById<ImageView>(R.id.iv_PostItem_weather_icon)
+        var postRegion = view.findViewById<TextView>(R.id.tv_PostItem_region)
+        var postExplain = view.findViewById<TextView>(R.id.tv_PostItem_explain)
+
+        fun bind(post: PostDTO, context: Context) {
+            if (post.imageUrl != "") {
+                val resourceId = context.resources.getIdentifier(post.imageUrl, "drawable", context.packageName)
+                postImage?.setImageResource(resourceId)
+            } else {
+                postImage?.setImageResource(R.mipmap.ic_launcher)
+            }
+
+            if (post.icon != "") {
+                val resourceId = context.resources.getIdentifier(post.imageUrl, "drawable", context.packageName)
+                postIcon?.setImageResource(resourceId)
+            } else {
+                postIcon?.setImageResource(R.mipmap.ic_launcher)
+            }
+
+            postWeather?.text = post.weather
+            postRegion?.text = post.region
+            postExplain?.text = post.explain
         }
     }
 
-    // Create new views (invoked by the layout manager)
-    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
-        // Create a new view, which defines the UI of the list item
-        val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.list_item_post, viewGroup, false)
-
-        return ViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
+        val view = LayoutInflater.from(context).inflate(R.layout.list_item_post, parent, false)
+        return ItemViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.date.text = dataSet[position]
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+        holder.bind(postList[position], context)
+
+        holder.itemView.setOnClickListener {
+
+        }
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
-    override fun getItemCount() = dataSet.size
-
+    override fun getItemCount(): Int {
+        return postList.size
+    }
 
 
 }

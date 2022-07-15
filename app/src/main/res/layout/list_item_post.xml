@@ -8,55 +8,62 @@
     android:padding="10dp">
 
     <TextView
-        android:id="@+id/tv_bookmark_date"
+        android:id="@+id/tv_PostItem_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:text="22.04.15"
+        android:textSize="16sp"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tv_PostItem_region"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <ImageView
-        android:id="@+id/iv_bookmark_weather_icon"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        app:srcCompat="@android:drawable/btn_star"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:id="@+id/iv_PostItem_weather_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_PostItem_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/btn_star" />
 
     <TextView
-        android:id="@+id/tv_bookmark_region"
+        android:id="@+id/tv_PostItem_region"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="지역"
-        app:layout_constraintTop_toBottomOf="@+id/tv_bookmark_date"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_PostItem_image"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/tv_bookmark_weather"
+        android:id="@+id/tv_PostItem_weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:text="기온"
-        app:layout_constraintTop_toBottomOf="@+id/tv_bookmark_date"
-        app:layout_constraintStart_toEndOf="@+id/tv_bookmark_region" />
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_PostItem_image"
+        app:layout_constraintStart_toEndOf="@+id/tv_PostItem_region" />
 
     <ImageView
-        android:id="@+id/iv_bookmark_image"
+        android:id="@+id/iv_PostItem_image"
         android:layout_width="180dp"
         android:layout_height="230dp"
         android:layout_marginTop="8dp"
         android:scaleType="center"
-        tools:srcCompat="@tools:sample/avatars"
-        app:layout_constraintTop_toBottomOf="@+id/tv_bookmark_region"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_PostItem_region"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/tv_bookmark_text"
+        android:id="@+id/tv_PostItem_explain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="작성 내용"
-        app:layout_constraintTop_toBottomOf="@+id/iv_bookmark_image"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@+id/iv_PostItem_image"
         app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
