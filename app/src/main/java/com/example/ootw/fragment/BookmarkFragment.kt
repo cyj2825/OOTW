@@ -1,6 +1,8 @@
 package com.example.ootw.fragment
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -33,6 +35,8 @@ class BookmarkFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
+
+//    그리드 화면 출력 안됨.............
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,6 +47,8 @@ class BookmarkFragment : Fragment() {
         recyvler_view.adapter = mAdapter
         val gridLayoutManager = GridLayoutManager(activity?.applicationContext, 3)
         recyvler_view.layoutManager = gridLayoutManager
+
+        Log.d("bookmark", "onCreateView: grid layout called!")
         return view
     }
 
