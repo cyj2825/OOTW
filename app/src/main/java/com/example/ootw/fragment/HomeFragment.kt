@@ -3,6 +3,7 @@ package com.example.ootw.fragment
 import android.Manifest
 import android.annotation.SuppressLint
 import android.graphics.Point
+import android.location.Geocoder
 import android.os.Build
 import android.os.Bundle
 import android.os.Looper
@@ -125,7 +126,7 @@ class HomeFragment : Fragment() {
                     binding.rvHomeWeather.adapter = WeatherAdapter(weatherArr)
 
                     // 토스트 띄우기
-                    Toast.makeText(getActivity(), it[0].fcstDate + ", " + it[0].fcstTime + "의 날씨 정보입니다.", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(getActivity(), it[0].fcstDate + ", " + it[0].fcstTime + "의 날씨 정보입니다.", Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -158,15 +159,19 @@ class HomeFragment : Fragment() {
                     Log.d(TAG,"btnclick6")
                     p0.let {
                         for (location in it.locations) {
-
-
+                            val lat = location.latitude
+                            val lon = location.longitude
                             // 현재 위치의 위경도를 격자 좌표로 변환
-                            curPoint = Common().dfsXyConv(location.latitude, location.longitude)
+                            curPoint = Common().dfsXyConv(lat, lon)
 
                             // 오늘 날짜 텍스트뷰 설정
 //                            binding.tvDate.text = SimpleDateFormat("MM월 dd일", Locale.getDefault()).format(Calendar.getInstance().time) + " 날씨"
                             // nx, ny지점의 날씨 가져와서 설정하기
                             setWeather(curPoint!!.x, curPoint!!.y)
+
+//                            사용자의 현재 위치 행정구역(시군구) 역지오코딩
+                            val city = Geocoder(context).getFromLocation(lat, lon, 1)
+                            binding.tvHomeLocation.setText(city[0].subLocality).toString()
                             Log.d(TAG,"btnclick7")
                         }
                     }

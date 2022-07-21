@@ -100,7 +100,7 @@
                         android:id="@+id/tv_Home_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
+                        android:layout_marginStart="24dp"
                         android:layout_marginTop="20dp"
                         android:text="0월 0일"
                         android:textColor="#000000"
@@ -115,7 +115,7 @@
                         android:layout_height="wrap_content"
                         android:text="오늘의 날씨"
                         android:textColor="#7FD3D1"
-                        android:textSize="16sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="@id/tv_Home_date"
                         app:layout_constraintTop_toBottomOf="@id/tv_Home_date" />
@@ -314,7 +314,7 @@
                         android:layout_marginBottom="20dp"
                         android:src="@drawable/ic_information"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="@id/rv_Home_weather"
+                        app:layout_constraintStart_toStartOf="@+id/tv_Home_weather"
                         app:layout_constraintTop_toBottomOf="@id/rv_Home_weather" />
 
                     <TextView
