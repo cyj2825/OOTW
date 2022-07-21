@@ -38,7 +38,7 @@ class FindIdActivity : AppCompatActivity() {
             datePicker.show()
         }
 
-        binding.tvFindIdBack.setOnClickListener {
+        binding.ivBack.setOnClickListener {
             onBackPressed()
         }
     }

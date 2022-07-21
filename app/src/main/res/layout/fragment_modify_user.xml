@@ -5,7 +5,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="16dp"
     tools:context=".fragment.ModifyUserFragment">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <ScrollView
         android:id="@+id/sv_ModifyUser"
@@ -13,13 +23,15 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/iv_back">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_ModifyUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="24dp">
+            
+            
 
             <TextView
                 android:id="@+id/tv_ModifyUser_nickname"
