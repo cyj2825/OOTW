@@ -1,6 +1,7 @@
 package com.example.ootw.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -46,6 +47,8 @@ class PostListRVAdapter(val context: Context, val postList: ArrayList<PostDTO>):
             postWeather?.text = post.weather
             postRegion?.text = post.region
             postExplain?.text = post.explain
+
+            Log.d("bookmark", "post: "+post.region)
         }
     }
 

@@ -40,7 +40,7 @@
         <entry key="app/src/main/res/layout/ef_fragment_image_picker.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/ef_imagepicker_toolbar.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/ef_imagepikcer_snackbar.xml" value="0.37604166666666666" />
-        <entry key="app/src/main/res/layout/fragment_bookmark.xml" value="0.2225609756097561" />
+        <entry key="app/src/main/res/layout/fragment_bookmark.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_closet.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/fragment_create_post.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.335" />
