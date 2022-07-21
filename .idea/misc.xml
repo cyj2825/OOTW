@@ -12,35 +12,40 @@
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/drawable/ic_mainlogo.xml" value="0.15822784810126583" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_main.xml" value="0.14855072463768115" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_onboarding.xml" value="0.147008547008547" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_sign_up.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_user.xml" value="0.14356884057971014" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_user_set_up.xml" value="0.22" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_closet.xml" value="0.22" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_modify_user.xml" value="0.13405797101449277" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_my_page.xml" value="0.22" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_search.xml" value="0.147008547008547" />
         <entry key="app/src/main/res/drawable-v24/searchview_background.xml" value="0.22" />
+        <entry key="app/src/main/res/drawable/bg_borderbox.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/bg_clothes_btn.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_edit_text_gray.xml" value="0.1985" />
+        <entry key="app/src/main/res/drawable/bg_image.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/bg_search.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_spinner_weather.xml" value="0.235" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1985" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.146" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_create_post.xml" value="0.25" />
+        <entry key="app/src/main/res/drawable/layout_weather_background.xml" value="0.1535" />
+        <entry key="app/src/main/res/layout/activity_create_post.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_find_id.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_find_pw.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25307718912760413" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.23072916666666668" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/activity_user_set_up.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/bottom_navigation_tab.xml" value="0.37604166666666666" />
-        <entry key="app/src/main/res/layout/fragment_bookmark.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/ef_fragment_image_picker.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/ef_imagepicker_toolbar.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/ef_imagepikcer_snackbar.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/fragment_bookmark.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_closet.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/fragment_create_post.xml" value="0.37604166666666666" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_like.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_like.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_modify_user.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/fragment_my_feed_all.xml" value="0.1425925925925926" />
         <entry key="app/src/main/res/layout/fragment_my_feed_autumn.xml" value="0.1425925925925926" />
@@ -54,9 +59,13 @@
         <entry key="app/src/main/res/layout/fragment_sign_up2.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_sign_up3.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_sign_up_fst.xml" value="0.3619791666666667" />
-        <entry key="app/src/main/res/layout/recycler_bookmark.xml" value="0.30185185185185187" />
+        <entry key="app/src/main/res/layout/list_item_post.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/list_item_weather.xml" value="0.8233448734989872" />
+        <entry key="app/src/main/res/layout/recycler_bookmark.xml" value="0.31098271122685184" />
+        <entry key="app/src/main/res/layout/recycler_weather.xml" value="0.6761904761904762" />
         <entry key="app/src/main/res/menu/bottom_navigation_main.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2075" />
+        <entry key="app/src/main/res/xml/network_security_config.xml" value="0.1" />
       </map>
     </option>
   </component>
