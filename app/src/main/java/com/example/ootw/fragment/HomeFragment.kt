@@ -27,7 +27,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class HomeFragment : Fragment() {
-    private var baseDate = "20210510"  // 발표 일자
+    private var baseDate = "20220701"  // 발표 일자
     private var baseTime = "1400"      // 발표 시각
     private var curPoint : Point? = null    // 현재 위치의 격자 좌표를 저장할 포인트
     private lateinit var locationClient: FusedLocationProviderClient
@@ -59,15 +59,15 @@ class HomeFragment : Fragment() {
         requestPermissions(permissionList, 1)
 
         // 오늘 날짜 텍스트뷰 설정
-        binding.tvDate.text = SimpleDateFormat("MM월 dd일", Locale.getDefault()).format(Calendar.getInstance().time) + "날씨"
+        binding.tvHomeDate.text = SimpleDateFormat("MM월 dd일", Locale.getDefault()).format(Calendar.getInstance().time)
 
         requestLocation()
 
         // <새로고침> 버튼 누를 때 위치 정보 & 날씨 정보 다시 가져오기 => 확인 완료
-        binding.btnRefresh.setOnClickListener {
-            requestLocation()
-            Log.d(TAG,"btnclick1")
-        }
+//        binding.btnRefresh.setOnClickListener {
+//            requestLocation()
+//            Log.d(TAG,"btnclick1")
+//        }
     }
 
     // 날씨 가져와서 설정하기
@@ -122,7 +122,7 @@ class HomeFragment : Fragment() {
                     for (i in 1..5) weatherArr[i].fcstTime = it[i].fcstTime
 
                     // 리사이클러 뷰에 데이터 연결
-                    binding.weatherRecyclerView.adapter = WeatherAdapter(weatherArr)
+                    binding.rvHomeWeather.adapter = WeatherAdapter(weatherArr)
 
                     // 토스트 띄우기
                     Toast.makeText(getActivity(), it[0].fcstDate + ", " + it[0].fcstTime + "의 날씨 정보입니다.", Toast.LENGTH_SHORT).show()
@@ -132,8 +132,8 @@ class HomeFragment : Fragment() {
             // 응답 실패 시
             override fun onFailure(call: Call<WEATHER>, t: Throwable) {
                 Log.d(TAG,"btnclick4")
-                binding.tvError.text = "api fail : " +  t.message.toString() + "\n 다시 시도해주세요."
-                binding.tvError.visibility = View.VISIBLE
+//                binding.tvError.text = "api fail : " +  t.message.toString() + "\n 다시 시도해주세요."
+//                binding.tvError.visibility = View.VISIBLE
                 Log.d("api fail", t.message.toString())
             }
         })
@@ -164,7 +164,7 @@ class HomeFragment : Fragment() {
                             curPoint = Common().dfsXyConv(location.latitude, location.longitude)
 
                             // 오늘 날짜 텍스트뷰 설정
-                            binding.tvDate.text = SimpleDateFormat("MM월 dd일", Locale.getDefault()).format(Calendar.getInstance().time) + " 날씨"
+//                            binding.tvDate.text = SimpleDateFormat("MM월 dd일", Locale.getDefault()).format(Calendar.getInstance().time) + " 날씨"
                             // nx, ny지점의 날씨 가져와서 설정하기
                             setWeather(curPoint!!.x, curPoint!!.y)
                             Log.d(TAG,"btnclick7")
