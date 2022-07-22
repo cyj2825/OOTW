@@ -1,9 +1,12 @@
 package com.example.ootw
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.ootw.databinding.ActivityLoginBinding
+import android.util.Log
+import androidx.lifecycle.lifecycleScope
 import com.example.ootw.databinding.ActivityOnboardingBinding
+import kotlinx.coroutines.delay
 
 class OnboardingActivity : AppCompatActivity() {
     // 전역 변수로 바인딩 객체 선언
@@ -16,5 +19,13 @@ class OnboardingActivity : AppCompatActivity() {
         // 바인딩
         mBinding = ActivityOnboardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        lifecycleScope.launchWhenStarted {
+            delay(2000)
+            Log.i("Work Login", "로그인이 시작되면 됩니다.")
+            val nextIntent = Intent(this@OnboardingActivity, LoginActivity::class.java)
+            startActivity(nextIntent)
+            finish()
+        }
     }
 }
