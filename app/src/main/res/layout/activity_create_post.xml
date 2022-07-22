@@ -121,7 +121,7 @@
             android:layout_marginStart="8dp"
             android:background="@drawable/layout_weather_background"
             android:orientation="horizontal"
-            android:layout_weight="1">
+            android:layout_weight="1.5">
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="4"
-                android:text="불러\n오기"
+                android:text="자동\n입력"
                 android:textSize="12sp"/>
         </LinearLayout>
 

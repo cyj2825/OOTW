@@ -12,7 +12,9 @@ import android.util.Base64.NO_WRAP
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.ImageView
+import android.widget.Spinner
 import com.example.ootw.databinding.ActivityCreatePostBinding
 import com.example.ootw.databinding.ActivityFindIdBinding
 import com.example.ootw.databinding.ActivityLoginBinding
@@ -49,15 +51,89 @@ class CreatePostActivity : AppCompatActivity() {
 
         }
 
-//        날씨 spinner
-//        binding.spinCreatePostWeather.onItemSelectedListener = object :AdapterView.OnItemSelectedListener {
-//            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-//                if (!binding.spinCreatePostWeather.getItemAtPosition(position).equals("선택")) {
-//
-//                }
-//   택        }
-//        }
+        // 날씨 spinner
+        binding.spinCreatePostWeather.adapter = ArrayAdapter.createFromResource(this, R.array.spinner_weather, android.R.layout.simple_spinner_item)
+        binding.spinCreatePostWeather.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                when (position) {
+                    // 직접입력
+                    0 -> {
+
+                    }
+                }
+            }
+        }
+
+        // 옷 상위 카테고리 spinner 선택시 해당 하위 카테고리가 뜨도록.... 안뜸 날씨 스피너 강종됨....
+        var bigCate: Int? = null
+        binding.spinCreatePostCategory1.adapter = ArrayAdapter.createFromResource(this, R.array.spinner_clothes_category1, android.R.layout.simple_spinner_item
+        )
+        binding.spinCreatePostWeather.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                when (position) {
+                    // 직접입력
+                    0 -> {
+
+                    }
+                    // 상의
+                    1 -> {
+                        binding.spinCreatePostCategory2.adapter = ArrayAdapter.createFromResource(CreatePostActivity(), R.array.spinner_clothes_top, android.R.layout.simple_spinner_item)
+                        binding.spinCreatePostWeather.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                            override fun onNothingSelected(parent: AdapterView<*>?) {
+                            }
+                            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                                when (position) {
+                                    0 -> {
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // 하의
+                    2 -> {
+                        binding.spinCreatePostCategory2.adapter = ArrayAdapter.createFromResource(CreatePostActivity(), R.array.spinner_clothes_bottom, android.R.layout.simple_spinner_item)
+                        binding.spinCreatePostWeather.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                            override fun onNothingSelected(parent: AdapterView<*>?) {
+                            }
+                            override fun onItemSelected(
+                                parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                                when (position) {
+                                    0 -> {
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // 신발
+                    3 -> {
+                        binding.spinCreatePostCategory2.adapter = ArrayAdapter.createFromResource(CreatePostActivity(), R.array.spinner_clothes_shoes, android.R.layout.simple_spinner_item)
+                        binding.spinCreatePostWeather.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                            override fun onNothingSelected(parent: AdapterView<*>?) {
+                            }
+
+                            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                                when (position) {
+                                    0 -> {
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
+
 
     override fun onBackPressed() {
         super.onBackPressed()

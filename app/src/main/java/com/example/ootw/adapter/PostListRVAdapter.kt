@@ -9,9 +9,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ootw.R
-import com.example.ootw.model.PostDTO
+import com.example.ootw.model.Post
 
-class PostListRVAdapter(val context: Context, val postList: ArrayList<PostDTO>):
+class PostListRVAdapter(val context: Context, val postList: ArrayList<Post>):
     RecyclerView.Adapter<PostListRVAdapter.ItemViewHolder>() {
 
     var mPosition = 0
@@ -29,7 +29,7 @@ class PostListRVAdapter(val context: Context, val postList: ArrayList<PostDTO>):
         var postRegion = view.findViewById<TextView>(R.id.tv_PostItem_region)
         var postExplain = view.findViewById<TextView>(R.id.tv_PostItem_explain)
 
-        fun bind(post: PostDTO, context: Context) {
+        fun bind(post: Post, context: Context) {
             if (post.imageUrl != "") {
                 val resourceId = context.resources.getIdentifier(post.imageUrl, "drawable", context.packageName)
                 postImage?.setImageResource(resourceId)
