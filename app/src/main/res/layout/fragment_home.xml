@@ -38,7 +38,6 @@
             android:gravity="center"
             android:visibility="gone" />
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/weatherRecyclerView"
             android:orientation="horizontal"

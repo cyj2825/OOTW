@@ -7,32 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
+import com.example.ootw.CalendarActivity
 import com.example.ootw.CreatePostActivity
-import com.example.ootw.FindIdActivity
 import com.example.ootw.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ClosetFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ClosetFragment : Fragment(), View.OnClickListener {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
@@ -41,6 +23,7 @@ class ClosetFragment : Fragment(), View.OnClickListener {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_closet, container, false)
         view.findViewById<Button>(R.id.btn_Closet_plus).setOnClickListener(this)
+        view.findViewById<Button>(R.id.btn_Closet_Calendar).setOnClickListener(this)
         return view
     }
 
@@ -54,29 +37,14 @@ class ClosetFragment : Fragment(), View.OnClickListener {
                 requireActivity().overridePendingTransition(0, 0)
             }
 
+            R.id.btn_Closet_Calendar -> {
+                val intent = Intent(requireContext(), CalendarActivity::class.java)
+                startActivity(intent)
+                requireActivity().overridePendingTransition(0, 0)
+            }
+
             else -> {
             }
         }
     }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ClosetFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ClosetFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
-
 }
