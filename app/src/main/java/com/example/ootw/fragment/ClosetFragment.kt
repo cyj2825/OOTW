@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import com.example.ootw.CalendarActivity
 import com.example.ootw.CreatePostActivity
+import com.example.ootw.PostActivity
 import com.example.ootw.R
 
 class ClosetFragment : Fragment(), View.OnClickListener {
