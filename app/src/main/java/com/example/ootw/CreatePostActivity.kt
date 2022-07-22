@@ -10,6 +10,8 @@ import android.os.Bundle
 import android.util.Base64
 import android.util.Base64.NO_WRAP
 import android.util.Log
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ImageView
 import com.example.ootw.databinding.ActivityCreatePostBinding
 import com.example.ootw.databinding.ActivityFindIdBinding
@@ -46,6 +48,15 @@ class CreatePostActivity : AppCompatActivity() {
         binding.tvCreatePostSubmit.setOnClickListener {
 
         }
+
+//        날씨 spinner
+//        binding.spinCreatePostWeather.onItemSelectedListener = object :AdapterView.OnItemSelectedListener {
+//            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+//                if (!binding.spinCreatePostWeather.getItemAtPosition(position).equals("선택")) {
+//
+//                }
+//   택        }
+//        }
     }
 
     override fun onBackPressed() {

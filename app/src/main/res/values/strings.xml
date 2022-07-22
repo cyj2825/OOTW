@@ -11,5 +11,46 @@
         <item>눈</item>
     </string-array>
 
+    <string-array name="spinner_clothes_category1">
+        <item>선택</item>
+        <item>상의</item>
+        <item>하의</item>
+        <item>신발</item>
+    </string-array>
 
+    <string-array name="spinner_clothes_top">
+        <item>패딩</item>
+        <item>두꺼운 니트</item>
+        <item>기모 후드티</item>
+        <item>야상</item>
+        <item>코트</item>
+        <item>패딩조끼</item>
+        <item>긴팔니트</item>
+        <item>후드티</item>
+        <item>야구점퍼</item>
+        <item>트렌치 코트</item>
+        <item>블레이저</item>
+        <item>긴팔티</item>
+        <item>긴팔셔츠</item>
+        <item>긴팔티</item>
+        <item>원피스</item>
+        <item>반팔셔츠</item>
+        <item>반팔티</item>
+        <item>나시</item>
+    </string-array>
+
+    <string-array name="spinner_clothes_bottom">
+        <item>긴바지</item>
+        <item>슬랙스</item>
+        <item>청바지</item>
+        <item>치마</item>
+        <item>반바지</item>
+    </string-array>
+
+    <string-array name="spinner_clothes_shoes">
+        <item>운동화</item>
+        <item>구두</item>
+        <item>장화</item>
+        <item>부츠</item>
+    </string-array>
 </resources>

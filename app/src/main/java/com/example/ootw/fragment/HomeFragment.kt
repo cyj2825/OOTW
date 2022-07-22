@@ -107,6 +107,7 @@ class HomeFragment : Fragment() {
                     // 배열 채우기
                     var index = 0
                     val totalCount = response.body()!!.response.body.totalCount - 1
+                    Log.d("HomeFragment", "total count: "+ totalCount)
                     for (i in 0..totalCount) {
                         index %= 6
                         when(it[i].category) {
