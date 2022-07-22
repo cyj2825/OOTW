@@ -5,199 +5,178 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="16dp"
     tools:context=".UserSetUpActivity">
 
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
     <TextView
-        android:id="@+id/tv_UserSetUp_title"
-        android:layout_width="match_parent"
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
-        android:gravity="center"
         android:text="사용자 설정"
-        android:textSize="28sp"
+        android:textSize="32sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/iv_back" />
 
     <ScrollView
-        android:id="@+id/sv_UserSetUp"
+        android:id="@+id/sv_ModifyUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_UserSetUp_title">
+        app:layout_constraintTop_toBottomOf="@+id/tv_title">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_UserSetUp"
+            android:id="@+id/cl_ModifyUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="24dp"
-            android:layout_marginHorizontal="20dp">
+            android:layout_marginVertical="24dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_profileImg"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:src="@drawable/feed_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cl_ModifyUser" />
 
             <TextView
-                android:id="@+id/tv_UserSetUp_temperature"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="온도 민감도"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/cl_UserSetUp"/>
-
-            <TextView
-                android:id="@+id/tv_UserSetUp_question1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="추위에 어느 정도 민감하신가요?"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_UserSetUp_temperature"/>
-
-            <LinearLayout
-                android:id="@+id/ll_UserSetUp_one"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="5"
-                android:orientation="horizontal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_UserSetUp_question1">
-
-                <CheckBox
-                    android:id="@+id/cb_UserSetUp_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="매우 둔함"
-                    android:textSize="12sp" />
-                <CheckBox
-                    android:id="@+id/cb_UserSetUp_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="둔함"
-                    android:textSize="12sp" />
-                <CheckBox
-                    android:id="@+id/cb_UserSetUp_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="보통"
-                    android:textSize="12sp" />
-                <CheckBox
-                    android:id="@+id/cb_UserSetUp_4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="민감"
-                    android:textSize="12sp" />
-                <CheckBox
-                    android:id="@+id/cb_UserSetUp_5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="매우 민감"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/tv_UserSetUp_question2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="더위에 어느 정도 민감하신가요?"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ll_UserSetUp_one"/>
-
-            <LinearLayout
-                android:id="@+id/ll_UserSetUp_two"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="5"
-                android:orientation="horizontal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_UserSetUp_question2">
-
-                <CheckBox
-                    android:id="@+id/cb_UserSetUp_6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="매우 둔함"
-                    android:textSize="12sp" />
-                <CheckBox
-                    android:id="@+id/cb_UserSetUp_7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="둔함"
-                    android:textSize="12sp" />
-                <CheckBox
-                    android:id="@+id/cb_UserSetUp_8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="보통"
-                    android:textSize="12sp" />
-                <CheckBox
-                    android:id="@+id/cb_UserSetUp_9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="민감"
-                    android:textSize="12sp" />
-                <CheckBox
-                    android:id="@+id/cb_UserSetUp_10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="매우 민감"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/tv_UserSetUp_area"
+                android:id="@+id/tv_ModifyUser_nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="지역 설정"
+                android:layout_marginStart="24dp"
+                android:text="닉네임"
                 android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ll_UserSetUp_two"/>
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/iv_profileImg"
+                app:layout_constraintTop_toTopOf="@+id/cl_ModifyUser"/>
 
-            <!-- spinner 수정 필요 -->
-            <Spinner
-                android:id="@+id/spin_UserSetUp_do"
+            <EditText
+                android:id="@+id/et_ModifyUser_nickname"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:hint="8자 이내 한글 혹은 영문"
+                android:paddingStart="12sp"
+                android:backgroundTint="#B4EFEC"
+                app:layout_constraintStart_toEndOf="@+id/tv_ModifyUser_nickname"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_ModifyUser_nickname"/>
+
+            <TextView
+                android:id="@+id/tv_ModifyUser_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:spinnerMode="dropdown"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="24dp"
+                android:text="성별"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_UserSetUp_area"/>
+                app:layout_constraintTop_toBottomOf="@+id/iv_profileImg"/>
 
-            <Spinner
-                android:id="@+id/spin_UserSetUp_gu"
+            <RadioGroup
+                android:id="@+id/rg_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:spinnerMode="dropdown"
-                app:layout_constraintStart_toEndOf="@+id/spin_UserSetUp_do"
-                app:layout_constraintTop_toBottomOf="@+id/tv_UserSetUp_area"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toStartOf="@+id/tv_ModifyUser_gender"
+                app:layout_constraintTop_toBottomOf="@id/tv_ModifyUser_gender">
+
+                <RadioButton
+                    android:id="@+id/rb_men"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="28dp"
+                    android:text="남성"/>
+
+                <RadioButton
+                    android:id="@+id/rb_women"
+                    android:layout_marginStart="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="여성"/>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_ModifyUser_birth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="52dp"
+                android:layout_marginStart="24dp"
+                android:text="생년월일"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rg_gender"/>
 
             <Button
-                android:id="@+id/btn_UserSetUp_finish"
+                android:id="@+id/btn_ModifyUser_pickdate"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="24dp"
+                android:text="2022 - 01 - 01"
+                android:textColor="@color/black"
+                style="?android:spinnerStyle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ModifyUser_birth" />
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="52dp"
+                android:text="이메일"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_ModifyUser_pickdate" />
+
+            <EditText
+                android:id="@+id/et_ModifyUser_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="4dp"
+                android:textSize="12sp"
+                android:hint="회원가입 시 사용한 이메일을 입력해주세요."
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+
+            <Button
+                android:id="@+id/btn_ModifyUser_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="완료"
-                android:textSize="16sp"
+                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spin_UserSetUp_do"/>
+                app:layout_constraintTop_toBottomOf="@+id/et_ModifyUser_email"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

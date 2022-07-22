@@ -37,7 +37,7 @@ class FindPwActivity: AppCompatActivity() {
             datePicker.show()
         }
 
-        binding.tvFindPwBack.setOnClickListener {
+        binding.ivBack.setOnClickListener {
             onBackPressed()
         }
     }
