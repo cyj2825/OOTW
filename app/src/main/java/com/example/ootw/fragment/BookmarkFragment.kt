@@ -13,8 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.ootw.R
-import com.example.ootw.adapter.PostListRVAdapter
-import com.example.ootw.databinding.FragmentBookmarkBinding
 import com.example.ootw.model.PostDTO
 import kotlinx.android.synthetic.main.fragment_bookmark.view.*
 
