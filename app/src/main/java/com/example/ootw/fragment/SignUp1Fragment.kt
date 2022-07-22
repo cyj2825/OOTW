@@ -23,7 +23,7 @@ class SignUp1Fragment : Fragment(), View.OnClickListener {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_sign_up1, container, false)
         view.findViewById<Button>(R.id.btn_SignUp1_next).setOnClickListener(this)
-        view.findViewById<TextView>(R.id.tv_SignUp1_back).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.iv_back).setOnClickListener(this)
         return view
     }
 
@@ -33,7 +33,7 @@ class SignUp1Fragment : Fragment(), View.OnClickListener {
                 parentFragmentManager.beginTransaction()
                     .replace(R.id.signup_screen_panel, SignUp2Fragment()).commitNow()
             }
-            R.id.tv_SignUp1_back -> {
+            R.id.iv_back -> {
                 activity?.let{
                     val intent = Intent(context, LoginActivity::class.java)
                     startActivity(intent)
