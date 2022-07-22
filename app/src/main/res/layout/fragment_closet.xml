@@ -84,12 +84,6 @@
         app:layout_constraintTop_toBottomOf="@id/tv_Closet_name" />
 
     <!-- 옷걸이 이미지 넣기 => margin값 변경 필요 -->
-    <ImageView
-        android:id="@+id/iv_Closet_gotocalendar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Closet_plus" />
 
     <View
         android:id="@+id/view_one"
@@ -158,7 +152,7 @@
             android:textSize="15sp"/>
     </LinearLayout>
 
-    <View
+  <!--  <View
         android:id="@+id/view_two"
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -166,7 +160,7 @@
         android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ll_Closet_one" />
+        app:layout_constraintTop_toBottomOf="@id/ll_Closet_one" /> -->
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
@@ -175,7 +169,7 @@
         android:fillViewport="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view_two">
+        app:layout_constraintTop_toBottomOf="@id/ll_Closet_one">
 
         <FrameLayout
             android:id="@+id/view_Closet"
