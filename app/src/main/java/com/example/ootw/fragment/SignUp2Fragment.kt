@@ -5,14 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
+import android.widget.*
 import com.example.ootw.R
 import java.text.SimpleDateFormat
 import java.util.*
 
 class SignUp2Fragment : Fragment(), View.OnClickListener {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -23,10 +21,42 @@ class SignUp2Fragment : Fragment(), View.OnClickListener {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_sign_up2, container, false)
         view.findViewById<Button>(R.id.btn_SignUp2_next).setOnClickListener(this)
-        view.findViewById<TextView>(R.id.tv_SignUp2_back).setOnClickListener(this)
+        view.findViewById<ImageView>(R.id.iv_SignUp2_back).setOnClickListener(this)
         view.findViewById<Button>(R.id.btn_SignUp2_pickdate).setOnClickListener(this)
 
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // 이메일 도메인 spinner
+        var spinner: Spinner = requireView().findViewById(R.id.spin_SignUp2_email)
+        spinner.adapter = ArrayAdapter.createFromResource(requireActivity(), com.example.ootw.R.array.spinner_email, android.R.layout.simple_spinner_item)
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                var etEmail: EditText = requireView().findViewById(R.id.et_SignUp2_email2)
+                when (position) {
+                    0 -> {
+                        etEmail.setText("")
+                    } 1 -> {
+                        etEmail.setText("gmail.com")
+                    } 2 -> {
+                        etEmail.setText("naver.com")
+                    } 3 -> {
+                        etEmail.setText("daum.net")
+                    } 4 -> {
+                        etEmail.setText("hanmail.net")
+                    } 5 -> {
+                        etEmail.setText("nate.com")
+                    }
+                }
+            }
+        }
     }
 
     override fun onClick(v: View?) {
@@ -35,7 +65,7 @@ class SignUp2Fragment : Fragment(), View.OnClickListener {
                 parentFragmentManager.beginTransaction()
                     .replace(R.id.signup_screen_panel, SignUp3Fragment()).commitNow()
             }
-            R.id.tv_SignUp2_back -> {
+            R.id.iv_SignUp2_back -> {
                 parentFragmentManager.beginTransaction()
                     .replace(R.id.signup_screen_panel, SignUp1Fragment()).commitNow()
             }

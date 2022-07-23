@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="00시"
-        android:textSize="14sp"
+        android:textSize="11sp"
         android:gravity="center" />
 
     <ImageView
@@ -22,7 +22,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/sun"
-        android:layout_marginVertical="10dp" />
+        android:layout_margin="8dp" />
 
     <TextView
         android:id="@+id/tvTemp"
