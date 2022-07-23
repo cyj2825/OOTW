@@ -21,8 +21,6 @@ class PostListRVAdapter(val context: Context, val postList: ArrayList<Post>):
     }
 
     inner class ItemViewHolder(view: View): RecyclerView.ViewHolder(view) {
-//        val postUid = null
-//        var postUserId = null
         var postImage = view.findViewById<ImageView>(R.id.iv_PostItem_image)
         var postWeather = view.findViewById<TextView>(R.id.tv_PostItem_weather)
         var postIcon = view.findViewById<ImageView>(R.id.iv_PostItem_weather_icon)

@@ -2,6 +2,7 @@ package com.example.ootw.fragment
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Point
 import android.location.Geocoder
 import android.os.Build
@@ -12,7 +13,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.RequiresApi
+import com.bumptech.glide.Glide
+import com.example.ootw.CalendarActivity
+import com.example.ootw.PostActivity
 import com.example.ootw.adapter.WeatherAdapter
 import com.example.ootw.component.Common
 import com.example.ootw.data.ITEM
@@ -42,6 +47,12 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        binding.btnHomeItem1.setOnClickListener {
+            val intent = Intent(requireContext(), PostActivity::class.java)
+            startActivity(intent)
+            requireActivity().overridePendingTransition(0, 0)
+        }
         return binding.root
     }
 
@@ -105,7 +116,6 @@ class HomeFragment : Fragment() {
                     // 배열 채우기
                     var index = 0
                     val totalCount = response.body()!!.response.body.totalCount - 1
-                    Log.d("HomeFragment", "total count: "+ totalCount)
                     for (i in 0..totalCount) {
                         index %= 6
                         when(it[i].category) {

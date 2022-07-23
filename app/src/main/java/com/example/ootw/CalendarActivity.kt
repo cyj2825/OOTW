@@ -30,5 +30,16 @@ class CalendarActivity : AppCompatActivity() {
         }
         val snap = PagerSnapHelper()
         snap.attachToRecyclerView(binding.calendarCustom)
+
+        binding.ivBack.setOnClickListener {
+            onBackPressed()
+        }
+    }
+
+    // 액티비티가 파괴될 때..
+    override fun onDestroy() {
+        // onDestroy 에서 binding class 인스턴스 참조를 정리해주어야 한다.
+        mBinding = null
+        super.onDestroy()
     }
 }
