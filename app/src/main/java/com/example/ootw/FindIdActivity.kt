@@ -6,6 +6,9 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ootw.databinding.ActivityFindIdBinding
 import java.text.SimpleDateFormat
@@ -38,8 +41,35 @@ class FindIdActivity : AppCompatActivity() {
             datePicker.show()
         }
 
-        binding.ivBack.setOnClickListener {
+        // 뒤로가기
+        binding.ivFindIdBack.setOnClickListener {
             onBackPressed()
+        }
+
+        // 이메일 도메인 spinner
+        binding.spinFindIdEmail.adapter = ArrayAdapter.createFromResource(this, com.example.ootw.R.array.spinner_email, android.R.layout.simple_spinner_item)
+        binding.spinFindIdEmail.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                when (position) {
+                    0 -> {
+                        binding.etFindIdEmail2.setText("")
+                    } 1 -> {
+                        binding.etFindIdEmail2.setText("gmail.com")
+                    } 2 -> {
+                        binding.etFindIdEmail2.setText("naver.com")
+                    } 3 -> {
+                        binding.etFindIdEmail2.setText("daum.net")
+                    } 4 -> {
+                        binding.etFindIdEmail2.setText("hanmail.net")
+                    } 5 -> {
+                        binding.etFindIdEmail2.setText("nate.com")
+                    }
+                }
+            }
         }
     }
 

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import com.example.ootw.LoginActivity
 import com.example.ootw.R
@@ -23,8 +24,12 @@ class SignUp1Fragment : Fragment(), View.OnClickListener {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_sign_up1, container, false)
         view.findViewById<Button>(R.id.btn_SignUp1_next).setOnClickListener(this)
-        view.findViewById<TextView>(R.id.tv_SignUp1_back).setOnClickListener(this)
+        view.findViewById<ImageView>(R.id.iv_SignUp1_back).setOnClickListener(this)
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 
     override fun onClick(v: View?) {
@@ -33,7 +38,7 @@ class SignUp1Fragment : Fragment(), View.OnClickListener {
                 parentFragmentManager.beginTransaction()
                     .replace(R.id.signup_screen_panel, SignUp2Fragment()).commitNow()
             }
-            R.id.tv_SignUp1_back -> {
+            R.id.iv_SignUp1_back -> {
                 activity?.let{
                     val intent = Intent(context, LoginActivity::class.java)
                     startActivity(intent)

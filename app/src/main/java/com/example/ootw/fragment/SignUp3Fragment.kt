@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import com.example.ootw.R
 
@@ -21,7 +22,7 @@ class SignUp3Fragment : Fragment(), View.OnClickListener {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_sign_up3, container, false)
         view.findViewById<Button>(R.id.btn_SignUp3_submit).setOnClickListener(this)
-        view.findViewById<TextView>(R.id.tv_SignUp3_back).setOnClickListener(this)
+        view.findViewById<ImageView>(R.id.iv_SignUp3_back).setOnClickListener(this)
         return view
     }
 
@@ -30,7 +31,7 @@ class SignUp3Fragment : Fragment(), View.OnClickListener {
             R.id.btn_SignUp3_submit -> {
 
             }
-            R.id.tv_SignUp3_back -> {
+            R.id.iv_SignUp3_back -> {
                 parentFragmentManager.beginTransaction()
                     .replace(R.id.signup_screen_panel, SignUp2Fragment()).commitNow()
             }

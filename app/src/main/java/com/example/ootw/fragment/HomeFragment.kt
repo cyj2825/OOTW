@@ -12,9 +12,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.annotation.RequiresApi
-import com.bumptech.glide.Glide
 import com.example.ootw.adapter.WeatherAdapter
 import com.example.ootw.component.Common
 import com.example.ootw.data.ITEM
