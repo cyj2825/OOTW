@@ -3,8 +3,8 @@ package com.example.ootw.spinner
 import android.view.View
 import android.widget.AdapterView
 
-class ClothesItemSpinnerListener : AdapterView.OnItemSelectedListener, ClothesItemSpinnerObserver {
-    private val observables = ArrayList<ClothesItemSpinnerObservable>()
+class PrimarySpinnerListener : AdapterView.OnItemSelectedListener, PrimarySpinnerObserver {
+    private val observables = ArrayList<PrimarySpinnerObservable>()
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         // An item was selected. You can retrieve the selected item using
@@ -20,15 +20,15 @@ class ClothesItemSpinnerListener : AdapterView.OnItemSelectedListener, ClothesIt
         notifyPosition(position)
     }
 
-    override fun subscribe(observable: ClothesItemSpinnerObservable) {
+    override fun subscribe(observable: PrimarySpinnerObservable) {
         observables.add(observable)
     }
 
-    override fun unsubscribe(observable: ClothesItemSpinnerObservable) {
+    override fun unsubscribe(observable: PrimarySpinnerObservable) {
         observables.remove(observable)
     }
 
     override fun notifyPosition(position: Int) {
-        observables.forEach{observable -> observable.updateSecondary(position) }
+        observables.forEach{observable -> observable.updatePrimary(position) }
     }
 }

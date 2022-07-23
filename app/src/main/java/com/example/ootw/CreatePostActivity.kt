@@ -14,15 +14,15 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.example.ootw.databinding.ActivityCreatePostBinding
-import com.example.ootw.spinner.ClothesCategorySpinnerListener
-import com.example.ootw.spinner.ClothesCategorySpinnerObservable
-import com.example.ootw.spinner.ClothesItemSpinnerListener
-import com.example.ootw.spinner.ClothesItemSpinnerObservable
+import com.example.ootw.spinner.PrimarySpinnerListener
+import com.example.ootw.spinner.PrimarySpinnerObservable
+import com.example.ootw.spinner.SecondarySpinnerListener
+import com.example.ootw.spinner.SecondarySpinnerObservable
 import com.github.dhaval2404.imagepicker.ImagePicker
 import java.io.ByteArrayOutputStream
 import java.io.InputStream
 
-class CreatePostActivity : AppCompatActivity(), ClothesCategorySpinnerObservable, ClothesItemSpinnerObservable {
+class CreatePostActivity : AppCompatActivity(), PrimarySpinnerObservable, SecondarySpinnerObservable {
     // 전역 변수로 바인딩 객체 선언
     private var mBinding: ActivityCreatePostBinding? = null
     // 매번 null 체크를 할 필요없이 편의성을 위해 바인딩 변수 재선언
@@ -36,8 +36,8 @@ class CreatePostActivity : AppCompatActivity(), ClothesCategorySpinnerObservable
     private val CLOTHES_BOTTOM_ARRAY = listOf("선택", "긴바지", "슬랙스", "청바지", "치마", "원피스")
     private val CLOTHES_SHOES_ARRAY = listOf("선택", "운동화", "장화", "구두", "부츠")
 
-    private lateinit var categorySpinnerListner: ClothesCategorySpinnerListener
-    private lateinit var itemSpinnerListener: ClothesItemSpinnerListener
+    private lateinit var categorySpinnerListner: PrimarySpinnerListener
+    private lateinit var itemSpinnerListener: SecondarySpinnerListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -80,8 +80,8 @@ class CreatePostActivity : AppCompatActivity(), ClothesCategorySpinnerObservable
             }
         }
 
-        categorySpinnerListner = ClothesCategorySpinnerListener()
-        itemSpinnerListener = ClothesItemSpinnerListener()
+        categorySpinnerListner = PrimarySpinnerListener()
+        itemSpinnerListener = SecondarySpinnerListener()
 
         categorySpinnerListner.subscribe(this)
         itemSpinnerListener.subscribe(this)
@@ -97,7 +97,7 @@ class CreatePostActivity : AppCompatActivity(), ClothesCategorySpinnerObservable
         binding.spinCreatePostCategory1.adapter = arrayAdapter
     }
 
-    // 1차 스피너로부터 포지션이 온다.
+    // 1차 스피너(카테고리)로부터 포지션이 오면 해당하는 2차 스피너(아이템) 연결
     override fun updatePrimary(position: Int) {
         Log.d("test", "updatePrimary")
         when (position) {
@@ -106,7 +106,6 @@ class CreatePostActivity : AppCompatActivity(), ClothesCategorySpinnerObservable
             // 상의
             1 -> {
                 Log.d("test", "updatePrimary 1")
-                // 일번일 경우
                 val arrayAdapter = ArrayAdapter<String>(
                     this, android.R.layout.simple_spinner_item, CLOTHES_TOP_ARRAY
                 )
@@ -116,7 +115,6 @@ class CreatePostActivity : AppCompatActivity(), ClothesCategorySpinnerObservable
             // 하의
             2 -> {
                 Log.d("test", "updatePrimary 2")
-                // 일번일 경우
                 val arrayAdapter = ArrayAdapter<String>(
                     this, android.R.layout.simple_spinner_item, CLOTHES_BOTTOM_ARRAY
                 )
@@ -126,15 +124,14 @@ class CreatePostActivity : AppCompatActivity(), ClothesCategorySpinnerObservable
             // 신발
             3 -> {
                 Log.d("test", "updatePrimary 3")
-                // 일번일 경우
                 val arrayAdapter = ArrayAdapter<String>(
                     this, android.R.layout.simple_spinner_item, CLOTHES_SHOES_ARRAY
                 )
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                 binding.spinCreatePostCategory2.adapter = arrayAdapter
             }
+            // error
             else -> {
-                // error
                 Log.d("test", "error")
                 return
             }

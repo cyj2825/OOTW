@@ -1,5 +1,5 @@
 package com.example.ootw.spinner
 
-interface ClothesItemSpinnerObservable {
+interface SecondarySpinnerObservable {
     fun updateSecondary(position: Int)
 }
