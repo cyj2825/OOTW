@@ -13,13 +13,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.annotation.RequiresApi
-import com.bumptech.glide.Glide
-import com.example.ootw.CalendarActivity
 import com.example.ootw.PostActivity
 import com.example.ootw.adapter.WeatherAdapter
 import com.example.ootw.component.Common
+import com.example.ootw.constants.mSkyState
+import com.example.ootw.constants.mTemperature
 import com.example.ootw.data.ITEM
 import com.example.ootw.data.ModelWeather
 import com.example.ootw.data.WEATHER
@@ -32,6 +31,9 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class HomeFragment : Fragment() {
+    companion object {
+
+    }
     private var baseDate = "20220701"  // 발표 일자
     private var baseTime = "1400"      // 발표 시각
     private var curPoint : Point? = null    // 현재 위치의 격자 좌표를 저장할 포인트
@@ -73,12 +75,6 @@ class HomeFragment : Fragment() {
         binding.tvHomeDate.text = SimpleDateFormat("MM월 dd일", Locale.getDefault()).format(Calendar.getInstance().time)
 
         requestLocation()
-
-        // <새로고침> 버튼 누를 때 위치 정보 & 날씨 정보 다시 가져오기 => 확인 완료
-//        binding.btnRefresh.setOnClickListener {
-//            requestLocation()
-//            Log.d(TAG,"btnclick1")
-//        }
     }
 
     // 날씨 가져와서 설정하기
@@ -131,6 +127,9 @@ class HomeFragment : Fragment() {
                     weatherArr[0].fcstTime = "지금"
                     // 각 날짜 배열 시간 설정
                     for (i in 1..5) weatherArr[i].fcstTime = it[i].fcstTime
+                    // 상수로 저장
+                    mSkyState = weatherArr[0].skyState
+                    mTemperature = weatherArr[0].temperature
 
                     // 리사이클러 뷰에 데이터 연결
                     binding.rvHomeWeather.adapter = WeatherAdapter(weatherArr)
