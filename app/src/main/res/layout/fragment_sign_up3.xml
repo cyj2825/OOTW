@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="16dp"
     tools:context=".fragment.SignUp3Fragment">
 
     <ImageView
@@ -21,11 +22,12 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
         android:text="사용자 설정"
-        android:textSize="28sp"
+        android:textSize="32sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_SignUp3_back" />
 
@@ -33,11 +35,12 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="52dp"
         android:text="온도 민감도"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -45,9 +48,11 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
         android:text="추위에 어느 정도 민감하신가요?"
+        android:textSize="16sp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -56,8 +61,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginHorizontal="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4">
 
@@ -66,40 +71,42 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="매우둔함"
-            android:textSize="10sp"/>
+            android:textSize="11sp"/>
         <RadioButton
             android:id="@+id/rb_SignUp3_cold2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="둔함"
-            android:textSize="10sp"/>
+            android:textSize="11sp"/>
         <RadioButton
             android:id="@+id/rb_SignUp3_cold3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="보통"
-            android:textSize="10sp"/>
+            android:textSize="11sp"/>
         <RadioButton
             android:id="@+id/rb_SignUp3_cold4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="민감"
-            android:textSize="10sp"/>
+            android:textSize="11sp"/>
         <RadioButton
             android:id="@+id/rb_SignUp3_cold5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="매우민감"
-            android:textSize="10sp"/>
+            android:textSize="11sp"/>
     </RadioGroup>
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
         android:text="더위에 어느 정도 민감하신가요?"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rg_SignUp3_cold" />
 
@@ -108,8 +115,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginHorizontal="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
@@ -118,39 +125,40 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="매우둔함"
-            android:textSize="10sp"/>
+            android:textSize="11sp"/>
         <RadioButton
             android:id="@+id/rb_SignUp3_heat2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="둔함"
-            android:textSize="10sp"/>
+            android:textSize="11sp"/>
         <RadioButton
             android:id="@+id/rb_SignUp3_heat3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="보통"
-            android:textSize="10sp"/>
+            android:textSize="11sp"/>
         <RadioButton
             android:id="@+id/rb_SignUp3_heat4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="민감"
-            android:textSize="10sp"/>
+            android:textSize="11sp"/>
         <RadioButton
             android:id="@+id/rb_SignUp3_heat5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="매우민감"
-            android:textSize="10sp"/>
+            android:textSize="11sp"/>
     </RadioGroup>
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="48dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="20sp"
         android:text="지역 설정"
@@ -161,8 +169,8 @@
         android:id="@+id/ll_SignUp3_region"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="4dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
@@ -187,9 +195,11 @@
         android:id="@+id/btn_SignUp3_submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
-        android:layout_marginHorizontal="48dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginHorizontal="24dp"
         android:text="완료"
+        android:textSize="20sp"
+        android:textColor="@color/black"
         android:background="@drawable/bg_basicbtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
