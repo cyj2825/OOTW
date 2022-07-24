@@ -31,7 +31,7 @@ class CalendarActivity : AppCompatActivity() {
         val snap = PagerSnapHelper()
         snap.attachToRecyclerView(binding.calendarCustom)
 
-        binding.ivBack.setOnClickListener {
+        binding.ivCalendarBack.setOnClickListener {
             onBackPressed()
         }
     }

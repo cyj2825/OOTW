@@ -2,14 +2,4 @@
     <string name="app_name">OOTW</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string-array name="spinner_weather">
-        <item>맑음</item>
-        <item>흐림</item>
-        <item>구름 많음</item>
-        <item>비</item>
-        <item>바람</item>
-        <item>눈</item>
-    </string-array>
-
-
 </resources>

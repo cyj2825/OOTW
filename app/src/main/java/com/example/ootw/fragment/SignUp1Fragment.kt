@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import com.example.ootw.LoginActivity
 import com.example.ootw.R
@@ -25,6 +26,10 @@ class SignUp1Fragment : Fragment(), View.OnClickListener {
         view.findViewById<Button>(R.id.btn_SignUp1_next).setOnClickListener(this)
         view.findViewById<TextView>(R.id.iv_back).setOnClickListener(this)
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 
     override fun onClick(v: View?) {

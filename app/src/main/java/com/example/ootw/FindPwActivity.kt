@@ -5,6 +5,9 @@ import android.app.DatePickerDialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ootw.databinding.ActivityFindPwBinding
 import java.text.SimpleDateFormat
@@ -37,8 +40,35 @@ class FindPwActivity: AppCompatActivity() {
             datePicker.show()
         }
 
-        binding.ivBack.setOnClickListener {
+        // 뒤로가기
+        binding.ivFindPwBack.setOnClickListener {
             onBackPressed()
+        }
+
+        // 이메일 도메인 spinner
+        binding.spinFindPwEmail.adapter = ArrayAdapter.createFromResource(this, com.example.ootw.R.array.spinner_email, android.R.layout.simple_spinner_item)
+        binding.spinFindPwEmail.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                when (position) {
+                    0 -> {
+                        binding.etFindPwEmail2.setText("")
+                    } 1 -> {
+                    binding.etFindPwEmail2.setText("gmail.com")
+                } 2 -> {
+                    binding.etFindPwEmail2.setText("naver.com")
+                } 3 -> {
+                    binding.etFindPwEmail2.setText("daum.net")
+                } 4 -> {
+                    binding.etFindPwEmail2.setText("hanmail.net")
+                } 5 -> {
+                    binding.etFindPwEmail2.setText("nate.com")
+                }
+                }
+            }
         }
     }
 
