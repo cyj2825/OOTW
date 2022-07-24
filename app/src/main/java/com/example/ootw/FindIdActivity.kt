@@ -42,7 +42,7 @@ class FindIdActivity : AppCompatActivity() {
         }
 
         // 뒤로가기
-        binding.ivFindIdBack.setOnClickListener {
+        binding.ivBack.setOnClickListener {
             onBackPressed()
         }
 

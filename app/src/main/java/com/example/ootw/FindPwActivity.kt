@@ -41,7 +41,7 @@ class FindPwActivity: AppCompatActivity() {
         }
 
         // 뒤로가기
-        binding.ivFindPwBack.setOnClickListener {
+        binding.ivBack.setOnClickListener {
             onBackPressed()
         }
 
