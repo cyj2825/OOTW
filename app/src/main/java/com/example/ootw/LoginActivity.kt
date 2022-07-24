@@ -70,6 +70,7 @@ class LoginActivity : AppCompatActivity() {
                         Log.d("datavalue", "data 값 => "+ requestLoginData)
                         val data = response.body().toString()
                         Log.d("responsevalue", "response 값 => "+ data)
+                        // 회원가입 된 아이디와 비밀번호일 경우 해당 if문 실행
                         if(data == "ResponseLoginData(message=login success)"){
                             // 통신 성공시 toast 메시지
                             Toast.makeText(this@LoginActivity, "로그인 완료!!", Toast.LENGTH_SHORT).show()
