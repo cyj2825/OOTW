@@ -75,7 +75,8 @@
                 android:id="@+id/iv_CreatePost_gallery"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@android:drawable/ic_input_add" />
+                android:background="@drawable/layout_weather_background"
+                android:src="@android:drawable/ic_menu_add"/>
 
         </LinearLayout>
     </ScrollView>

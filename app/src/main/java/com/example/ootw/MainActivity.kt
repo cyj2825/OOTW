@@ -50,7 +50,7 @@ class MainActivity: AppCompatActivity() {
                     3 -> {
                         val bookmarkFragment = BookmarkFragment()
                         supportFragmentManager.beginTransaction()
-                            .replace(R.id.main_screen_panel, bookmarkFragment).commit()
+                            .replace(R.id.main_screen_panel, LikeFragment()).commit()
                     }
                     4 -> {
                         val myPageFragment = MyPageFragment()

@@ -25,13 +25,13 @@ class LoginActivity : AppCompatActivity() {
     private val binding get() = mBinding!!
 
     // 서버 주소
-    val url = "ec2-15-164-49-16.ap-northeast-2.compute.amazonaws.com:80?temp=10"
+//    val url = "ec2-15-164-49-16.ap-northeast-2.compute.amazonaws.com:80?temp=10"
     // retrofit 연결
-    val retrofit = Retrofit.Builder()
-        .baseUrl(url)
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-    var server = retrofit.create(APIInterface::class.java)
+//    val retrofit = Retrofit.Builder()
+//        .baseUrl(url)
+//        .addConverterFactory(GsonConverterFactory.create())
+//        .build()
+//    var server = retrofit.create(APIInterface::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
