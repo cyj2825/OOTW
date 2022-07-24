@@ -6,12 +6,18 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageButton
 import android.widget.Toast
+import com.example.ootw.api.LoginServiceCreator
+import com.example.ootw.data.request.RequestLoginData
+import com.example.ootw.data.response.ResponseLoginData
 import com.example.ootw.databinding.ActivityLoginBinding
 import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.AuthErrorCause
 import com.kakao.sdk.common.util.Utility
 import com.kakao.sdk.user.UserApiClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
     // 전역 변수로 바인딩 객체 선언
@@ -39,8 +45,44 @@ class LoginActivity : AppCompatActivity() {
         }
         binding.btnMainLogin.setOnClickListener {
             Log.d("TestLog", "main")
-            startActivity(Intent(this, MainActivity::class.java))
+
+            // 서버로 보낼 로그인 데이터 생성
+            val requestLoginData = RequestLoginData(
+                email = binding.etMainId.text.toString(),
+                password = binding.etMainPw.text.toString()
+            )
+            // 현재 사용자의 정보를 받아올 것을 명시
+            // 서버 통신은 I/O 작업이므로 비동기적으로 받아올 Callback 내부 코드는 나중에 데이터를 받아오고 실행
+            val call: Call<ResponseLoginData> = LoginServiceCreator.loginService.postLogin(requestLoginData)
+
+            // enqueue 함수를 이용해 Call이 비동기 작업 이후 동작한 Callback을 등록할 수 있다
+            // 해당 함수 호출은 Callback을 등록만하고 실제 서버 통신을 요청 이후 통신 결과가 나왔을 때 실행
+            // object 키워드로 Callback을 구현할 익명 클래스를 생성
+            call.enqueue(object : Callback<ResponseLoginData>{
+                override fun onResponse(
+                    call: Call<ResponseLoginData>,
+                    response: Response<ResponseLoginData>
+                ) {
+                    // 네트워크 통신에 성공한 경우
+                    if(response.isSuccessful){
+                        // response body 자체가 nullable 데이터, 서버에서 오는 data도 nullable
+                        Log.d("NetworkTest", "success")
+                        //통신 성공시 toast 메시지
+                        Toast.makeText(this@LoginActivity, "로그인 완료!!", Toast.LENGTH_SHORT).show()
+
+                        val nextIntent = Intent(this@LoginActivity, MainActivity::class.java)
+                        startActivity(nextIntent)
+                    }else{
+
+                    }
+                }
+                override fun onFailure(call: Call<ResponseLoginData>, t: Throwable) {
+                    Log.d("NetworkTest", "error!!!")
+                }
+            })
+            //startActivity(Intent(this, MainActivity::class.java))
         }
+
     }
 
     // 액티비티가 파괴될 때..
