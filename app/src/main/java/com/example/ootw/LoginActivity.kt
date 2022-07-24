@@ -51,6 +51,7 @@ class LoginActivity : AppCompatActivity() {
                 email = binding.etMainId.text.toString(),
                 password = binding.etMainPw.text.toString()
             )
+
             // 현재 사용자의 정보를 받아올 것을 명시
             // 서버 통신은 I/O 작업이므로 비동기적으로 받아올 Callback 내부 코드는 나중에 데이터를 받아오고 실행
             val call: Call<ResponseLoginData> = LoginServiceCreator.loginService.postLogin(requestLoginData)
@@ -65,24 +66,31 @@ class LoginActivity : AppCompatActivity() {
                 ) {
                     // 네트워크 통신에 성공한 경우
                     if(response.isSuccessful){
-                        // response body 자체가 nullable 데이터, 서버에서 오는 data도 nullable
                         Log.d("NetworkTest", "success")
-                        //통신 성공시 toast 메시지
-                        Toast.makeText(this@LoginActivity, "로그인 완료!!", Toast.LENGTH_SHORT).show()
+                        Log.d("datavalue", "data 값 => "+ requestLoginData)
+                        val data = response.body().toString()
+                        Log.d("responsevalue", "response 값 => "+ data)
+                        // 회원가입 된 아이디와 비밀번호일 경우 해당 if문 실행
+                        if(data == "ResponseLoginData(message=login success)"){
+                            // 통신 성공시 toast 메시지
+                            Toast.makeText(this@LoginActivity, "로그인 완료!!", Toast.LENGTH_SHORT).show()
 
-                        val nextIntent = Intent(this@LoginActivity, MainActivity::class.java)
-                        startActivity(nextIntent)
+                            // 통신 성공할 경우 MainActivity로 넘어가도록 함
+                            val nextIntent = Intent(this@LoginActivity, MainActivity::class.java)
+                            startActivity(nextIntent)
+                        }
+
                     }else{
-
+                        // 이곳은 에러 발생할 경우 실행됨
                     }
                 }
+                // 네트워크 통신 자체가 실패한 경우 해당 함수를 retrofit이 실행!
                 override fun onFailure(call: Call<ResponseLoginData>, t: Throwable) {
-                    Log.d("NetworkTest", "error!!!")
+                    Log.d("NetworkTest", "error!")
                 }
             })
             //startActivity(Intent(this, MainActivity::class.java))
         }
-
     }
 
     // 액티비티가 파괴될 때..
