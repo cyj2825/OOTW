@@ -29,9 +29,6 @@ class CreatePostActivity : AppCompatActivity(), PrimarySpinnerObservable, Second
     private val binding get() = mBinding!!
 
     // 2차 스피너(옷 아이템)
-//    private val CLOTHES_TOP_ARRAY = resources.getStringArray(R.array.spinner_clothes_top)
-//    private val CLOTHES_BOTTOM_ARRAY = resources.getStringArray(R.array.spinner_clothes_bottom)
-//    private val CLOTHES_SHOES_ARRAY = resources.getStringArray(R.array.spinner_clothes_shoes)
     private val CLOTHES_TOP_ARRAY = listOf("선택", "패딩", "두꺼운 니트", "기모 후드티", "야상", "코트", "패딩조끼", "긴팔니트", "후드티", "야구점퍼", "트렌치 코트", "블레이저", "긴팔티", "원피스", "반팔셔츠", "반팔티", "나시")
     private val CLOTHES_BOTTOM_ARRAY = listOf("선택", "긴바지", "슬랙스", "청바지", "치마", "원피스")
     private val CLOTHES_SHOES_ARRAY = listOf("선택", "운동화", "장화", "구두", "부츠")
@@ -148,13 +145,13 @@ class CreatePostActivity : AppCompatActivity(), PrimarySpinnerObservable, Second
         super.onBackPressed()
     }
 
-//    이미지 단일 선택 및 편집
+    // 이미지 단일 선택 및 편집
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-//        if(resultCode== Activity.RESULT_OK && requestCode== ImagePicker.REQUEST_CODE) {
-//            binding.ivCreatePostGallery?.setImageURI(data?.data)
-//        }
+        if(resultCode== Activity.RESULT_OK && requestCode== ImagePicker.REQUEST_CODE) {
+            binding.ivCreatePostGallery?.setImageURI(data?.data)
+        }
 
         if (requestCode == ImagePicker.REQUEST_CODE && resultCode == Activity.RESULT_OK){
             var currentImageURL = data?.data

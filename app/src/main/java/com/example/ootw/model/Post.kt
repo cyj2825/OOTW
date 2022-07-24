@@ -1,6 +1,6 @@
 package com.example.ootw.model
 
-data class Post(var uid: String? = null,
+class Post(var uid: String? = null,
            var userId: String? = null,
            var imageUrl: String? = null,
            var weather: String? = null,
