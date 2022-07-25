@@ -50,21 +50,26 @@ class LoginActivity : AppCompatActivity() {
             var etPw = binding.etLoginPw.text.toString().trim()
 
             // 아이디 or 비밀번호 공백일 경우 에러메시지 띄우고 커서를 입력창으로 전환
-            if (etId.isEmpty()) {
-                binding.etLoginId.error = "아이디를 입력해주세요."
-                binding.etLoginId.requestFocus()
-                return@setOnClickListener
-            }
-            if (etPw.isEmpty()) {
-                binding.etLoginPw.error = "비밀번호를 입력해주세요."
-                binding.etLoginPw.requestFocus()
-                return@setOnClickListener
-            }
+//            todo: 테스트 끝나면 주석 풀기
+//            if (etId.isEmpty()) {
+//                binding.etLoginId.error = "아이디를 입력하세요."
+//                binding.etLoginId.requestFocus()
+//                return@setOnClickListener
+//            }
+//            if (etPw.isEmpty()) {
+//                binding.etLoginPw.error = "비밀번호를 입력하세요."
+//                binding.etLoginPw.requestFocus()
+//                return@setOnClickListener
+//            }
 
             // 서버로 보낼 로그인 데이터 생성
             val requestLoginData = RequestLoginData(
-                email = etId,
-                password = etPw
+//                todo: 테스트 끝나면 주석 풀기
+//                email = etId,
+//                password = etPw
+                // test용 계정
+                email = "jeehee7948@naver.com",
+                password = "5518abcds"
             )
 
             // 현재 사용자의 정보를 받아올 것을 명시
@@ -97,7 +102,7 @@ class LoginActivity : AppCompatActivity() {
                         }
                         // 로그인 실패 시
                         else {
-                            TODO("로그인 실패")
+                            // TODO: 로그인 실패
                         }
 
                     } else {

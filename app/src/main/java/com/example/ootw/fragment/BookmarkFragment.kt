@@ -68,7 +68,7 @@ class BookmarkFragment : Fragment() {
 
         override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
             var imageview = (holder as CustomViewHolder).imageview
-            Glide.with(holder.itemView.context).load(postDTOs[position].imageUrl).apply(
+            Glide.with(holder.itemView.context).load(postDTOs[position].imgURL).apply(
                 RequestOptions().centerCrop()).into(imageview)
             Log.d("bookmark", "post: "+postDTOs[position].uid)
 
