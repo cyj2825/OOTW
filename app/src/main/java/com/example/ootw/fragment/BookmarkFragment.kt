@@ -36,18 +36,8 @@ class BookmarkFragment : Fragment() {
 
     inner class BookmarkFragmentRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         var postDTOs = arrayListOf<Post>(
-            Post("test1", "user1", "", "27", "", "성북구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            Post("test2", "user2", "", "27", "", "영등포구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            Post("test3", "user3", "", "27", "", "도봉구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            Post("test4", "user4", "", "27", "", "노원구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            Post("test5", "user5", "", "27", "", "영등포구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            Post("test6", "user6", "", "27", "", "중구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            Post("test7", "user7", "", "27", "", "강남구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            Post("test8", "user8", "", "27", "", "송파구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            Post("test9", "user9", "", "27", "", "서초구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            Post("test10", "user10", "", "27", "", "양천구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            Post("test11", "user11", "", "27", "", "강서구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            Post("test12", "user12", "", "27", "", "금천구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
+            Post("test1", "", "오늘은 참 덥네요!", "", 26, "나시", "2022-07-20T07:20:07.000Z", "2022-07-20T07:20:07.000Z", "user1", ""),
+
         )
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -70,7 +60,7 @@ class BookmarkFragment : Fragment() {
             var imageview = (holder as CustomViewHolder).imageview
             Glide.with(holder.itemView.context).load(postDTOs[position].imgURL).apply(
                 RequestOptions().centerCrop()).into(imageview)
-            Log.d("bookmark", "post: "+postDTOs[position].uid)
+            Log.d("bookmark", "post: "+postDTOs[position].id)
 
         }
     }
