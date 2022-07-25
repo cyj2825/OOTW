@@ -7,7 +7,7 @@ data class User(
 
     @SerializedName("password") val password: String,
 
-    @SerializedName("email") val email: String,
+    @SerializedName("email") val email: String, // email로 로그인
 
     @SerializedName("birth") val birth: String, // DB 변수타입은 DATEONLY
 

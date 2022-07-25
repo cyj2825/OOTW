@@ -1,6 +1,7 @@
 package com.example.ootw
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +20,10 @@ class MainActivity: AppCompatActivity() {
         // 바인딩
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // login Activity에서 값 넘겨받기
+        val loginValue = intent.getStringExtra("login_email")
+        Log.d("loginTest", "onCreate: ")
 
         binding.bottomNavigation.setOnTabSelectListener(object :
             AnimatedBottomBar.OnTabSelectListener {

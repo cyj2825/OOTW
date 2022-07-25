@@ -31,25 +31,40 @@ class LoginActivity : AppCompatActivity() {
         mBinding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.tvFindId.setOnClickListener {
+        binding.tvLoginFindId.setOnClickListener {
             Log.d("TestLog", "find id")
             startActivity(Intent(this, FindIdActivity::class.java))
         }
-        binding.tvFindPw.setOnClickListener {
+        binding.tvLoginFindPw.setOnClickListener {
             Log.d("TestLog", "find pw")
             startActivity(Intent(this, FindPwActivity::class.java))
         }
-        binding.tvSignup.setOnClickListener {
+        binding.tvLoginSignup.setOnClickListener {
             Log.d("TestLog", "sign up")
             startActivity(Intent(this, SignUpActivity::class.java))
         }
-        binding.btnMainLogin.setOnClickListener {
+        binding.btnLoginLogin.setOnClickListener {
             Log.d("TestLog", "main")
+
+            var etId = binding.etLoginId.text.toString().trim() // trim(): 문자열 양 끝의 공백 제거
+            var etPw = binding.etLoginPw.text.toString().trim()
+
+            // 아이디 or 비밀번호 공백일 경우 에러메시지 띄우고 커서를 입력창으로 전환
+            if (etId.isEmpty()) {
+                binding.etLoginId.error = "아이디를 입력해주세요."
+                binding.etLoginId.requestFocus()
+                return@setOnClickListener
+            }
+            if (etPw.isEmpty()) {
+                binding.etLoginPw.error = "비밀번호를 입력해주세요."
+                binding.etLoginPw.requestFocus()
+                return@setOnClickListener
+            }
 
             // 서버로 보낼 로그인 데이터 생성
             val requestLoginData = RequestLoginData(
-                email = binding.etMainId.text.toString(),
-                password = binding.etMainPw.text.toString()
+                email = etId,
+                password = etPw
             )
 
             // 현재 사용자의 정보를 받아올 것을 명시
@@ -70,17 +85,22 @@ class LoginActivity : AppCompatActivity() {
                         Log.d("datavalue", "data 값 => "+ requestLoginData)
                         val data = response.body().toString()
                         Log.d("responsevalue", "response 값 => "+ data)
-                        // 회원가입 된 아이디와 비밀번호일 경우 해당 if문 실행
+                        // 회원가입 된 이메일과 비밀번호일 경우 해당 if문 실행
                         if(data == "ResponseLoginData(message=login success)"){
                             // 통신 성공시 toast 메시지
                             Toast.makeText(this@LoginActivity, "로그인 완료!!", Toast.LENGTH_SHORT).show()
 
                             // 통신 성공할 경우 MainActivity로 넘어가도록 함
                             val nextIntent = Intent(this@LoginActivity, MainActivity::class.java)
+                            nextIntent.putExtra("login_email", requestLoginData.email)
                             startActivity(nextIntent)
                         }
+                        // 로그인 실패 시
+                        else {
+                            TODO("로그인 실패")
+                        }
 
-                    }else{
+                    } else {
                         // 이곳은 에러 발생할 경우 실행됨
                     }
                 }
