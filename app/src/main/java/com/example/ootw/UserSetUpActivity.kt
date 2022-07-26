@@ -5,16 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.EditText
-import android.widget.Spinner
+import android.widget.*
+import com.example.ootw.api.SignUpServiceCreator
+import com.example.ootw.data.request.RequestSignupData
+import com.example.ootw.data.response.ResponseSignupData
 import com.example.ootw.databinding.ActivityUserSetUpBinding
 import com.example.ootw.spinner.PrimarySpinnerListener
 import com.example.ootw.spinner.PrimarySpinnerObservable
 import com.example.ootw.spinner.SecondarySpinnerListener
 import com.example.ootw.spinner.SecondarySpinnerObservable
 import kotlinx.android.synthetic.main.fragment_sign_up1.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -23,6 +26,9 @@ class UserSetUpActivity : AppCompatActivity(), PrimarySpinnerObservable, Seconda
     private var mBinding: ActivityUserSetUpBinding? = null
     // 매번 null 체크를 할 필요없이 편의성을 위해 바인딩 변수 재선언
     private val binding get() = mBinding!!
+    var result1: String = ""
+    var result2: Int = 0
+    var result3: Int = 0
 
     private lateinit var sidoSpinnerListener : PrimarySpinnerListener
     private lateinit var sigunguSpinnerListener : SecondarySpinnerListener
@@ -55,8 +61,82 @@ class UserSetUpActivity : AppCompatActivity(), PrimarySpinnerObservable, Seconda
             Log.d("TestLog", "user set up")
             startActivity(Intent(this, LoginActivity::class.java))
         }
+        binding.rgSignUpGender.setOnCheckedChangeListener { radioGroup, i ->
+            when(i){
+                R.id.rb_men -> result1 = "남성"
+                R.id.rb_women -> result1 = "여성"
+            }
+        }
+        binding.rgSignUp3Cold.setOnCheckedChangeListener { radioGroup, i ->
+            when(i){
+                R.id.rb_SignUp3_cold1 -> result2 = 1
+                R.id.rb_SignUp3_cold2 -> result2 = 2
+                R.id.rb_SignUp3_cold3 -> result2 = 3
+                R.id.rb_SignUp3_cold4 -> result2 = 4
+                R.id.rb_SignUp3_cold5 -> result2 = 5
+            }
+        }
+        binding.rgSignUp3Heat.setOnCheckedChangeListener { radioGroup, i ->
+            when(i){
+                R.id.rb_SignUp3_heat1 -> result3 = 1
+                R.id.rb_SignUp3_heat2 -> result3 = 2
+                R.id.rb_SignUp3_heat3 -> result3 = 3
+                R.id.rb_SignUp3_heat4 -> result3 = 4
+                R.id.rb_SignUp3_heat5 -> result3 = 5
+            }
+        }
         binding.btnSignUp1Next.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
+            // 서버로 보낼 회원가입 데이터 생성
+            val requestSignupData = RequestSignupData(
+                login_id = binding.etSignUp1Id.text.toString(),
+                password = binding.etSignUp1Pw.text.toString(),
+                email = binding.etSignUpEmail1.text.toString()+"@"+binding.etSignUpEmail2.text.toString(),
+                birth = binding.btnSignUp2Pickdate.text.toString(),
+                nickname = binding.etSignUpName.text.toString(),
+                gender = result1,
+                cold_sensitivity = result2,
+                hot_sensitivity = result3,
+                // todo: 이 밑에 부분에 문제가 있나...... 서버 통신 안되고 area, area_detail, profile_img 해결 안됨
+                area ="서울시",
+                // area = binding.spinSignUp3Region1.toString(),
+                area_detail = "동작구",
+                // area_detail = binding.spinSignUp3Region2.toString(),
+                // todo: 이부분 URL로 받아야할 것 같은데 어떻게 해야 할지 고민할 필요있음
+                profile_img = "https://ziriootw.s3.ap-northeast-2.amazonaws.com/original/1658373729961%C3%AB%C2%B0%C2%B1%C3%AC%C2%97%C2%94%C3%AB%C2%93%C2%9C.jpg"
+                // profile_img = binding.ivSignUpProfileImg.toString()
+            )
+            // 현재 사용자의 정보를 받아올 것을 명시!
+            // 서버 통신은 I/O 작업이므로 비동기적으로 받아올 Callback 내부 코드는 나중에 데이터를 받아오고 실행
+            val call: Call<ResponseSignupData> = SignUpServiceCreator.signupService.postSignup(requestSignupData)
+
+            // enqueue 함수를 이용해 Call이 비동기 작업 이후 동작할 Callback을 등록할 수 있다.
+            // 해당 함수 호출은 Callback을 등록만하고 실제 서버 통신을 요청 이후 통신 결과가 나왔을때 실행
+            // object 키워드로 Callback을 구현할 익명 클래스를 생성
+            call.enqueue(object : Callback<ResponseSignupData>{
+                // 네트워크 통신 Response가 있는 경우 해당 함수를 retrofit이 호출
+                override fun onResponse(
+                    call: Call<ResponseSignupData>,
+                    response: Response<ResponseSignupData>
+                ) {
+                    Log.d("Network2", "값 => "+ requestSignupData)
+                    // 네트워크 통신에 성공한 경우 실행
+                    if(response.isSuccessful){
+                        Log.d("NetworkTest2", "success")
+                        // 회원가입 완료 및 통신 성공시 toast 메시지
+                        Toast.makeText(this@UserSetUpActivity, "회원가입 완료!!", Toast.LENGTH_SHORT).show()
+                        // 통신 성공할 경우 LoginActivity로 넘어가도록 함
+                        val nextIntent = Intent(this@UserSetUpActivity, LoginActivity::class.java)
+                        startActivity(nextIntent)
+                    }else{
+                        // 이곳은 에러 발생할 경우 실행됨
+                    }
+                }
+                // 네트워크 통신 자체가 실패한 경우 해당 함수를 retrofit이 실행!
+                override fun onFailure(call: Call<ResponseSignupData>, t: Throwable) {
+                    Log.d("NetworkTest2", "error!")
+                }
+            })
+            // startActivity(Intent(this, LoginActivity::class.java))
         }
 
         // 이메일 도메인 spinner

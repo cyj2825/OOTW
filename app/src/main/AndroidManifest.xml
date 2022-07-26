@@ -18,11 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OOTW"
         android:usesCleartextTraffic="true">
+
         <activity
             android:name=".PostActivity"
-            android:exported="true" />
-        <activity
-            android:name=".UserSetupTwoActivity"
             android:exported="true" />
         <activity
             android:name=".CalendarActivity"
