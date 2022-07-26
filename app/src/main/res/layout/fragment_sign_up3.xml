@@ -166,7 +166,7 @@
         app:layout_constraintTop_toBottomOf="@+id/rg_SignUp3_heat" />
 
     <LinearLayout
-        android:id="@+id/ll_SignUp3_region"
+        android:id="@+id/ll_SignUp3_region4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
@@ -177,14 +177,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3">
 
         <Spinner
-            android:id="@+id/spin_SignUp3_region1"
+            android:id="@+id/spin_SignUp3_region5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"/>
 
         <Spinner
-            android:id="@+id/spin_SignUp3_region2"
+            android:id="@+id/spin_SignUp3_region6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
