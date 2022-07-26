@@ -67,7 +67,7 @@ class SignUp3Fragment : Fragment(), View.OnClickListener, PrimarySpinnerObservab
             requireActivity(), android.R.layout.simple_spinner_item, listOf("선택", "서울시", "부산시", "대구시", "인천시", "광주시", "대전시", "울산시", "세종시", "경기도", "강원도", "충청북도", "충청남도", "전라북도", "전라남도", "경상북도", "경상남도", "제주도")
         )
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spin_SignUp3_region1.adapter = arrayAdapter
+        spin_SignUp3_region5.adapter = arrayAdapter
     }
 
     override fun onClick(v: View?) {
@@ -94,119 +94,119 @@ class SignUp3Fragment : Fragment(), View.OnClickListener, PrimarySpinnerObservab
                 Log.d("test", "updatePrimary 1")
                 val arrayAdapter = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_item, SIGUNGU_SEOUL_ARRAY)
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spin_SignUp3_region2.adapter = arrayAdapter
+                spin_SignUp3_region6.adapter = arrayAdapter
             }
             // 부산
             2 -> {
                 Log.d("test", "updatePrimary 1")
                 val arrayAdapter = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_item, SIGUNGU_BUSAN_ARRAY)
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spin_SignUp3_region2.adapter = arrayAdapter
+                spin_SignUp3_region6.adapter = arrayAdapter
             }
             // 대구
             3 -> {
                 Log.d("test", "updatePrimary 1")
                 val arrayAdapter = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_item, SIGUNGU_DAEGU_ARRAY)
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spin_SignUp3_region2.adapter = arrayAdapter
+                spin_SignUp3_region6.adapter = arrayAdapter
             }
             // 인천
             4 -> {
                 Log.d("test", "updatePrimary 1")
                 val arrayAdapter = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_item, SIGUNGU_INCHEON_ARRAY)
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spin_SignUp3_region2.adapter = arrayAdapter
+                spin_SignUp3_region6.adapter = arrayAdapter
             }
             // 광주
             5 -> {
                 Log.d("test", "updatePrimary 1")
                 val arrayAdapter = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_item, SIGUNGU_GWANGJU_ARRAY)
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spin_SignUp3_region2.adapter = arrayAdapter
+                spin_SignUp3_region6.adapter = arrayAdapter
             }
             // 대전
             6 -> {
                 Log.d("test", "updatePrimary 1")
                 val arrayAdapter = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_item, SIGUNGU_DAEJEON_ARRAY)
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spin_SignUp3_region2.adapter = arrayAdapter
+                spin_SignUp3_region6.adapter = arrayAdapter
             }
             // 울산
             7 -> {
                 Log.d("test", "updatePrimary 1")
                 val arrayAdapter = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_item, SIGUNGU_ULSAN_ARRAY)
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spin_SignUp3_region2.adapter = arrayAdapter
+                spin_SignUp3_region6.adapter = arrayAdapter
             }
             // 세종
             8 -> {
                 Log.d("test", "updatePrimary 1")
                 val arrayAdapter = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_item, SIGUNGU_SEJONG_ARRAY)
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spin_SignUp3_region2.adapter = arrayAdapter
+                spin_SignUp3_region6.adapter = arrayAdapter
             }
             // 경기
             9 -> {
                 Log.d("test", "updatePrimary 1")
                 val arrayAdapter = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_item, SIGUNGU_GYEONGGI_ARRAY)
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spin_SignUp3_region2.adapter = arrayAdapter
+                spin_SignUp3_region6.adapter = arrayAdapter
             }
             // 강원
             10 -> {
                 Log.d("test", "updatePrimary 1")
                 val arrayAdapter = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_item, SIGUNGU_GANGWON_ARRAY)
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spin_SignUp3_region2.adapter = arrayAdapter
+                spin_SignUp3_region6.adapter = arrayAdapter
             }
             // 충북
             11 -> {
                 Log.d("test", "updatePrimary 1")
                 val arrayAdapter = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_item, SIGUNGU_CHUNGBUK_ARRAY)
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spin_SignUp3_region2.adapter = arrayAdapter
+                spin_SignUp3_region6.adapter = arrayAdapter
             }
             // 충남
             12 -> {
                 Log.d("test", "updatePrimary 1")
                 val arrayAdapter = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_item, SIGUNGU_CHUNGNAM_ARRAY)
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spin_SignUp3_region2.adapter = arrayAdapter
+                spin_SignUp3_region6.adapter = arrayAdapter
             }
             // 전북
             13 -> {
                 Log.d("test", "updatePrimary 1")
                 val arrayAdapter = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_item, SIGUNGU_JEONBUK_ARRAY)
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spin_SignUp3_region2.adapter = arrayAdapter
+                spin_SignUp3_region6.adapter = arrayAdapter
             }
             // 전남
             14 -> {
                 Log.d("test", "updatePrimary 1")
                 val arrayAdapter = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_item, SIGUNGU_JEONNAM_ARRAY)
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spin_SignUp3_region2.adapter = arrayAdapter
+                spin_SignUp3_region6.adapter = arrayAdapter
             }
             // 경북
             15 -> {
                 Log.d("test", "updatePrimary 1")
                 val arrayAdapter = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_item, SIGUNGU_GYEONGBUK_ARRAY)
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spin_SignUp3_region2.adapter = arrayAdapter
+                spin_SignUp3_region6.adapter = arrayAdapter
             }
             // 경남
             16 -> {
                 Log.d("test", "updatePrimary 1")
                 val arrayAdapter = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_item, SIGUNGU_GYEONGNAM_ARRAY)
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spin_SignUp3_region2.adapter = arrayAdapter
+                spin_SignUp3_region6.adapter = arrayAdapter
             }
             // 제주
             17 -> {
                 Log.d("test", "updatePrimary 1")
                 val arrayAdapter = ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_item, SIGUNGU_JEJU_ARRAY)
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spin_SignUp3_region2.adapter = arrayAdapter
+                spin_SignUp3_region6.adapter = arrayAdapter
             }
             // error
             else -> {
@@ -217,7 +217,7 @@ class SignUp3Fragment : Fragment(), View.OnClickListener, PrimarySpinnerObservab
     }
 
     override fun updateSecondary(position: Int) {
-        val adapter = spin_SignUp3_region2.adapter
+        val adapter = spin_SignUp3_region6.adapter
         Log.d("test", "updateSecondary item : ${adapter.getItem(position).toString()}")
     }
 }

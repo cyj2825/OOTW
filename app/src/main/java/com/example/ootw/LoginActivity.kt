@@ -41,7 +41,8 @@ class LoginActivity : AppCompatActivity() {
         }
         binding.tvLoginSignup.setOnClickListener {
             Log.d("TestLog", "sign up")
-            startActivity(Intent(this, SignUpActivity::class.java))
+            startActivity(Intent(this, UserSetUpActivity::class.java))
+            // startActivity(Intent(this, SignUpActivity::class.java))
         }
         binding.btnLoginLogin.setOnClickListener {
             Log.d("TestLog", "main")

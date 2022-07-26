@@ -62,24 +62,48 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-<!--            <ImageView-->
-<!--                android:layout_width="100dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:src="@android:drawable/ic_menu_gallery" />-->
-<!--            <ImageView-->
-<!--                android:layout_width="100dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:src="@android:drawable/ic_menu_gallery" />-->
+            <!--            <ImageView-->
+            <!--                android:layout_width="100dp"-->
+            <!--                android:layout_height="100dp"-->
+            <!--                android:src="@android:drawable/ic_menu_gallery" />-->
+            <!--            <ImageView-->
+            <!--                android:layout_width="100dp"-->
+            <!--                android:layout_height="100dp"-->
+            <!--                android:src="@android:drawable/ic_menu_gallery" />-->
 
             <ImageView
                 android:id="@+id/iv_CreatePost_gallery"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:background="@drawable/layout_weather_background"
-                android:src="@android:drawable/ic_menu_add"/>
+                android:src="@android:drawable/ic_input_add" />
 
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/tv_CreatePost_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="게시물 제목"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sv_CreatePost_photo" />
+
+    <EditText
+        android:id="@+id/et_CreatePost_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="4dp"
+        android:textSize="12sp"
+        android:hint="게시물 제목"
+        android:backgroundTint="#B4EFEC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_CreatePost_title"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -91,12 +115,12 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sv_CreatePost_photo" />
+        app:layout_constraintTop_toBottomOf="@+id/et_CreatePost_title" />
 
     <LinearLayout
         android:id="@+id/ll_CreatePost_weather"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="36dp"
         android:orientation="horizontal"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="8dp"
@@ -107,66 +131,39 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/layout_weather_background"
-            android:layout_weight="3.2">
-            <TextView
-                android:id="@+id/tv_CreatePost_weather_auto"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="자동\n입력"
-                android:textSize="12sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginStart="8dp"
-            android:background="@drawable/layout_weather_background"
             android:layout_weight="2">
-
-            <TextView
-                android:id="@+id/tv_CreatePost_skyState"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:padding="8dp"
-                android:textSize="14sp"
-                android:textColor="@color/black"
-                android:layout_weight="1"/>
             <Spinner
                 android:id="@+id/spin_CreatePost_weather"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_weight="2"
                 android:spinnerMode="dropdown" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:background="@drawable/layout_weather_background"
             android:orientation="horizontal"
-            android:layout_weight="2">
+            android:layout_weight="1.5">
 
             <EditText
-                android:id="@+id/et_CreatePost_temperature"
+                android:id="@+id/et_temp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
-                android:textSize="16sp"
+                android:textSize="11sp"
                 android:hint="현재 온도"
-                android:layout_weight="2"/>
+                android:layout_weight="1"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:layout_weight="5"
-                android:text="°C"
-                android:textSize="12sp" />
-
+                android:layout_weight="4"
+                android:text="자동\n입력"
+                android:textSize="12sp"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -187,7 +184,7 @@
     <LinearLayout
         android:id="@+id/ll_CreatePost_clothes"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="36dp"
         android:orientation="horizontal"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="8dp"
@@ -242,7 +239,6 @@
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="32dp"
-        android:padding="8dp"
         android:gravity="start|top"
         android:hint="게시글 작성\n해시태그(#)를 이용해보세요!(최대 20개)"
         android:inputType="textMultiLine"
@@ -269,7 +265,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="임시저장"
-            android:textSize="14sp"/>
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
 
         <View
             android:layout_width="2dp"
@@ -284,22 +282,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="보관함("
-            android:textSize="14sp"/>
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
         <TextView
             android:id="@+id/tv_CreatePost_save_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
-            android:textSize="14sp"
-            android:textStyle="bold"/>
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
         <TextView
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=")"
-            android:textSize="14sp"
-            android:textStyle="bold"/>
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
