@@ -2,15 +2,19 @@ package com.example.ootw.fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import com.example.ootw.CalendarActivity
-import com.example.ootw.CreatePostActivity
-import com.example.ootw.PostActivity
-import com.example.ootw.R
+import com.example.ootw.*
+import com.example.ootw.api.LogoutService
+import com.example.ootw.api.LogoutServiceCreator
+import com.example.ootw.data.response.ResponseLogoutData
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class ClosetFragment : Fragment(), View.OnClickListener {
 
@@ -43,7 +47,23 @@ class ClosetFragment : Fragment(), View.OnClickListener {
                 startActivity(intent)
                 requireActivity().overridePendingTransition(0, 0)
             }
+            R.id.btn_logout -> {
+                // todo: 로그아웃 서버 통신
+                // LogoutServiceCreator.logoutService.getRequest().enqueue(object : Callback<ResponseLogoutData>{
+                    // override fun onResponse(
+                        // call: Call<ResponseLogoutData>,
+                        // response: Response<ResponseLogoutData>
+                    // ) {
+                        // Log.d("logout결과", "성공!!")
+                        // val intent = Intent(requireContext(), LoginActivity::class.java)
+                        // startActivity(intent)
+                    // }
 
+                    // override fun onFailure(call: Call<ResponseLogoutData>, t: Throwable) {
+                        // Log.d("logout결과", "실패ㅠㅠ")
+                    // }
+                // })
+            }
             else -> {
             }
         }

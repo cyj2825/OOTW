@@ -13,12 +13,21 @@ import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
+import com.example.ootw.api.PostWriteServiceCreator
+import com.example.ootw.data.request.RequestPostWriteData
+import com.example.ootw.data.response.ResponsePostWriteData
 import com.example.ootw.databinding.ActivityCreatePostBinding
+import com.example.ootw.fragment.BookmarkFragment
+import com.example.ootw.fragment.ClosetFragment
 import com.example.ootw.spinner.PrimarySpinnerListener
 import com.example.ootw.spinner.PrimarySpinnerObservable
 import com.example.ootw.spinner.SecondarySpinnerListener
 import com.example.ootw.spinner.SecondarySpinnerObservable
 import com.github.dhaval2404.imagepicker.ImagePicker
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.ByteArrayOutputStream
 import java.io.InputStream
 
@@ -56,11 +65,52 @@ class CreatePostActivity : AppCompatActivity(), PrimarySpinnerObservable, Second
 
         // 닫기 버튼 누르면 뒤로가기와같이 현재 액티비티 종료
         binding.tvCreatePostCancel.setOnClickListener {
+            Log.d("test", "back!!")
             onBackPressed()
         }
 
         binding.tvCreatePostSubmit.setOnClickListener {
+            Log.d("Network", "creatpost")
+            // 서버로 보낼 게시글 데이터 생성
+            val requestPostWriteData = RequestPostWriteData(
+                title = binding.etCreatePostTitle.text.toString(),
+                body = binding.etCreatePostContent.text.toString(),
+                temp = binding.etTemp.text.toString().toInt(),
+                item = binding.spinCreatePostCategory2.toString(),
+                imgURL = binding.ivCreatePostGallery.toString()
+            )
+            // 현재 사용자의 정보를 받아올 것을 명시
+            // 서버 통신은 I/O 작업이므로 비동기적으로 받아올 Callback 내부 코드는 나중에 데이터를 받아오고 실행
+            val call: Call<ResponsePostWriteData> = PostWriteServiceCreator.postwriteService.postPostWrite(requestPostWriteData)
 
+            // enqueue 함수를 이용해 Call이 비동기 작업 이후 동작한 Callback을 등록할 수 있다
+            // 해당 함수 호출은 Callback을 등록만하고 실제 서버 통신을 요청 이후 통신 결과가 나왔을 때 실행
+            // object 키워드로 Callback을 구현할 익명 클래스를 생성
+            call.enqueue(object : Callback<ResponsePostWriteData> {
+                override fun onResponse(
+                    call: Call<ResponsePostWriteData>,
+                    response: Response<ResponsePostWriteData>
+                ) {
+                    // 네트워크 통신에 성공한 경우
+                    if(response.isSuccessful){
+                        Log.d("NetworkTest", "게시물 생성 success")
+                        Log.d("datavalue", "data 값 => "+ requestPostWriteData)
+                        // val data = response.body().toString()
+                        // Log.d("responsevalue", "response 값 => "+ data)
+                        // 통신 성공시 toast 메시지
+                        Toast.makeText(this@CreatePostActivity, "게시물 생성 완료!!", Toast.LENGTH_SHORT).show()
+
+                        // 통신 성공할 경우 ClosetFragment로 넘어가도록 함
+                        finish()
+                    }else{
+                        // 이곳은 에러 발생할 경우 실행됨
+                    }
+                }
+                // 네트워크 통신 자체가 실패한 경우 해당 함수를 retrofit이 실행!
+                override fun onFailure(call: Call<ResponsePostWriteData>, t: Throwable) {
+                    Log.d("NetworkTest", "게시물 생성 error!")
+                }
+            })
         }
 
         // 날씨 spinner
