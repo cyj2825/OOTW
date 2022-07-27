@@ -236,7 +236,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:layout_marginHorizontal="24dp"
-                android:text="2022 - 01 - 01"
+                android:text="1999-03-15"
                 android:textColor="@color/black"
                 style="?android:spinnerStyle"
                 app:layout_constraintStart_toStartOf="parent"

@@ -77,7 +77,7 @@ class CreatePostActivity : AppCompatActivity(), PrimarySpinnerObservable, Second
                 body = binding.etCreatePostContent.text.toString(),
                 temp = binding.etTemp.text.toString().toInt(),
                 item = binding.spinCreatePostCategory2.toString(),
-                imgURL = binding.ivCreatePostGallery.toString()
+                imgURL = binding.ivCreatePostGallery?.toString()
             )
             // 현재 사용자의 정보를 받아올 것을 명시
             // 서버 통신은 I/O 작업이므로 비동기적으로 받아올 Callback 내부 코드는 나중에 데이터를 받아오고 실행
