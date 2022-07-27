@@ -88,21 +88,21 @@ class UserSetUpActivity : AppCompatActivity(), PrimarySpinnerObservable, Seconda
         binding.btnSignUp1Next.setOnClickListener {
             // 서버로 보낼 회원가입 데이터 생성
             val requestSignupData = RequestSignupData(
-                login_id = binding.etSignUp1Id.text.toString(),
+                loginId = binding.etSignUp1Id.text.toString(),
                 password = binding.etSignUp1Pw.text.toString(),
                 email = binding.etSignUpEmail1.text.toString()+"@"+binding.etSignUpEmail2.text.toString(),
                 birth = binding.btnSignUp2Pickdate.text.toString(),
                 nickname = binding.etSignUpName.text.toString(),
                 gender = result1,
-                cold_sensitivity = result2,
-                hot_sensitivity = result3,
+                coldSensitivity = result2,
+                hotSensitivity = result3,
                 // todo: 이 밑에 부분에 문제가 있나...... 서버 통신 안되고 area, area_detail, profile_img 해결 안됨
                 area ="서울시",
                 // area = binding.spinSignUp3Region1.toString(),
-                area_detail = "동작구",
+                areaDetail = "동작구",
                 // area_detail = binding.spinSignUp3Region2.toString(),
                 // todo: 이부분 URL로 받아야할 것 같은데 어떻게 해야 할지 고민할 필요있음
-                profile_img = "https://ziriootw.s3.ap-northeast-2.amazonaws.com/original/1658373729961%C3%AB%C2%B0%C2%B1%C3%AC%C2%97%C2%94%C3%AB%C2%93%C2%9C.jpg"
+                profileImg = "https://ziriootw.s3.ap-northeast-2.amazonaws.com/original/1658373729961%C3%AB%C2%B0%C2%B1%C3%AC%C2%97%C2%94%C3%AB%C2%93%C2%9C.jpg"
                 // profile_img = binding.ivSignUpProfileImg.toString()
             )
             // 현재 사용자의 정보를 받아올 것을 명시!
@@ -119,6 +119,8 @@ class UserSetUpActivity : AppCompatActivity(), PrimarySpinnerObservable, Seconda
                     response: Response<ResponseSignupData>
                 ) {
                     Log.d("Network2", "값 => "+ requestSignupData)
+                    val data = response.body().toString()
+                    Log.d("responsevalue", "response 값~!! => "+ data)
                     // 네트워크 통신에 성공한 경우 실행
                     if(response.isSuccessful){
                         Log.d("NetworkTest2", "success")

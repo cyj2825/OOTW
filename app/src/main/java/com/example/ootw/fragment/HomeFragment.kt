@@ -198,5 +198,8 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun getPost() {
+    }
+
 
 }

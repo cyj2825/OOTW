@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import com.example.ootw.*
 import com.example.ootw.api.LogoutService
 import com.example.ootw.api.LogoutServiceCreator
@@ -28,7 +29,7 @@ class ClosetFragment : Fragment(), View.OnClickListener {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_closet, container, false)
         view.findViewById<Button>(R.id.btn_Closet_plus).setOnClickListener(this)
-        view.findViewById<Button>(R.id.btn_Closet_Calendar).setOnClickListener(this)
+        view.findViewById<ImageButton>(R.id.btn_Closet_Calendar).setOnClickListener(this)
         return view
     }
 

@@ -195,6 +195,7 @@ class CreatePostActivity : AppCompatActivity(), PrimarySpinnerObservable, Second
     }
 
     override fun onBackPressed() {
+        Log.d("CreatePostActivity", "onBackPressed!!")
         super.onBackPressed()
     }
 
