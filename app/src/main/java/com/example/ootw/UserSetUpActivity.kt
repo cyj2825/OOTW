@@ -33,7 +33,7 @@ class UserSetUpActivity : AppCompatActivity(), PrimarySpinnerObservable, Seconda
     private lateinit var sidoSpinnerListener : PrimarySpinnerListener
     private lateinit var sigunguSpinnerListener : SecondarySpinnerListener
 
-    private val SIGUNGU_SEOUL_ARRAY = listOf("선택", "종로구", "중구", "용산구", "성동구", "광진구", "동대문구", "중랑구", "성북구", "강북구", "도봉구", "노원구", "은평구", "서대문구", "마포구", "양천구", "강서구", "구로구", "금천구", "영등포구", "동작구", "관악구", "서초구", "강남구", "송파구", "강동구")
+    private val SIGUNGU_SEOUL_ARRAY = listOf("선택", "종로구 혜화동", "중구 명동", "용산구 청파동", "성동구 행당동", "광진구 화양동", "동대문구 신설동", "중랑구 면목동", "성북구 성북동", "강북구 미아동", "도봉구 쌍문동", "노원구 월계동", "은평구 수색동", "서대문구 합동", "마포구 마포동", "양천구 목동", "강서구 등촌동", "구로구 구로동", "금천구 가산동", "영등포구 당산동", "동작구 흑석동", "관악구 신림동", "서초구 잠원동", "강남구 압구정동", "송파구 잠실동", "강동구 상일동")
     private val SIGUNGU_BUSAN_ARRAY = listOf("선택", "중구", "서구", "동구", "영도구", "부산진구", "동래구", "남구", "북구", "강서구", "해운대구", "사하구", "금정구", "연제구", "수영구", "사상구", "기장군")
     private val SIGUNGU_DAEGU_ARRAY = listOf("선택", "중구", "동구", "서구", "남구", "북구", "수성구", "달서구", "달성군")
     private val SIGUNGU_INCHEON_ARRAY = listOf("선택", "중구", "동구", "미추홀구", "연수구", "남동구", "부평구", "계양구", "서구", "강화군", "웅진군")
@@ -100,7 +100,7 @@ class UserSetUpActivity : AppCompatActivity(), PrimarySpinnerObservable, Seconda
                 // todo: 나중에 수정 필요
                 area ="서울특별시",
                 // area = binding.spinSignUp3Region1.toString(),
-                areaDetail = "중구 회현동",
+                areaDetail = "종로구 혜화동",
                 // area_detail = binding.spinSignUp3Region2.toString(),
                 // todo: 이부분 URL로 받아야할 것 같은데 어떻게 해야 할지 고민할 필요있음
                 profileImg = "https://ziriootw.s3.ap-northeast-2.amazonaws.com/original/1658373729961%C3%AB%C2%B0%C2%B1%C3%AC%C2%97%C2%94%C3%AB%C2%93%C2%9C.jpg"
