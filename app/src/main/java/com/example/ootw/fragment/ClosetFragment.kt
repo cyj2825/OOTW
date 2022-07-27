@@ -8,9 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import com.example.ootw.*
+import com.example.ootw.api.GetProfileService
+import com.example.ootw.api.GetProfileServiceCreator
 import com.example.ootw.api.LogoutService
 import com.example.ootw.api.LogoutServiceCreator
+import com.example.ootw.data.response.ResponseGetProfileData
 import com.example.ootw.data.response.ResponseLogoutData
 import retrofit2.Call
 import retrofit2.Callback
@@ -28,8 +32,34 @@ class ClosetFragment : Fragment(), View.OnClickListener {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_closet, container, false)
         view.findViewById<Button>(R.id.btn_Closet_plus).setOnClickListener(this)
-        view.findViewById<Button>(R.id.btn_Closet_Calendar).setOnClickListener(this)
+        view.findViewById<ImageButton>(R.id.btn_Closet_Calendar).setOnClickListener(this)
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // test용 아이디 입력
+        val call: Call<ResponseGetProfileData> = GetProfileServiceCreator.getProfileService.getProfile("1")
+        call.enqueue(object : Callback<ResponseGetProfileData> {
+            override fun onResponse(
+                call: Call<ResponseGetProfileData>,
+                response: Response<ResponseGetProfileData>
+            ) {
+                if (response.isSuccessful) {
+                    // 로그 출력 안됨..
+                    Log.d("NetworkTest-ClosetFragment", "success")
+                    val data = response.body()
+                    Log.d("ResponseValues-ClosetFragment", "response 값-> "+ data.toString())
+
+                } else {
+                    // 에러 발생할 경우
+                }
+            }
+            override fun onFailure(call: Call<ResponseGetProfileData>, t: Throwable) {
+                Log.d("NetworkTest", "error!")
+            }
+        })
     }
 
     override fun onClick(v: View?) {
@@ -63,8 +93,6 @@ class ClosetFragment : Fragment(), View.OnClickListener {
                         // Log.d("logout결과", "실패ㅠㅠ")
                     // }
                 // })
-            }
-            else -> {
             }
         }
     }

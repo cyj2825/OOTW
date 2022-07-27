@@ -22,31 +22,32 @@ class PostListRVAdapter(val context: Context, val postList: ArrayList<Post>):
 
     inner class ItemViewHolder(view: View): RecyclerView.ViewHolder(view) {
         var postImage = view.findViewById<ImageView>(R.id.iv_PostItem_image)
-        var postWeather = view.findViewById<TextView>(R.id.tv_PostItem_weather)
+        var postWeather = view.findViewById<TextView>(R.id.tv_PostItem_temperature)
         var postIcon = view.findViewById<ImageView>(R.id.iv_PostItem_weather_icon)
         var postRegion = view.findViewById<TextView>(R.id.tv_PostItem_region)
-        var postExplain = view.findViewById<TextView>(R.id.tv_PostItem_explain)
+        var postBody = view.findViewById<TextView>(R.id.tv_PostItem_body)
 
         fun bind(post: Post, context: Context) {
-            if (post.imageUrl != "") {
-                val resourceId = context.resources.getIdentifier(post.imageUrl, "drawable", context.packageName)
+            if (post.imgURL != "") {
+                val resourceId = context.resources.getIdentifier(post.imgURL, "drawable", context.packageName)
                 postImage?.setImageResource(resourceId)
             } else {
                 postImage?.setImageResource(R.mipmap.ic_launcher)
             }
 
-            if (post.icon != "") {
-                val resourceId = context.resources.getIdentifier(post.imageUrl, "drawable", context.packageName)
+            if (post.imgURL != "") {
+                val resourceId = context.resources.getIdentifier(post.imgURL, "drawable", context.packageName)
                 postIcon?.setImageResource(resourceId)
             } else {
                 postIcon?.setImageResource(R.mipmap.ic_launcher)
             }
 
-            postWeather?.text = post.weather
-            postRegion?.text = post.region
-            postExplain?.text = post.explain
+            postWeather?.text = post.temp.toString()
+            // TODO: User 모델클래스의 area 필드 가져와야
+//            postRegion?.text = post.region
+            postBody?.text = post.body
 
-            Log.d("bookmark", "post: "+post.region)
+            Log.d("postList", "body: "+post.body)
         }
     }
 
