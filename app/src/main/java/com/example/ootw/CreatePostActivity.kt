@@ -77,7 +77,7 @@ class CreatePostActivity : AppCompatActivity(), PrimarySpinnerObservable, Second
             val requestPostWriteData = RequestPostWriteData(
                 title = binding.etCreatePostTitle.text.toString(),
                 body = binding.etCreatePostContent.text.toString(),
-                temp = binding.etTemp.text.toString().toInt(),
+                temp = binding.etCreatePostTemperature.text.toString().toInt(),
                 item = binding.spinCreatePostCategory2.toString(),
                 imgURL = binding.ivCreatePostGallery.toString()
             )
