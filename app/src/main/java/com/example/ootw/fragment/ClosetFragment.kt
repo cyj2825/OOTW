@@ -41,7 +41,25 @@ class ClosetFragment : Fragment(), View.OnClickListener {
 
         // test용 아이디 입력
         val call: Call<ResponseGetProfileData> = GetProfileServiceCreator.getProfileService.getProfile("1")
+        call.enqueue(object : Callback<ResponseGetProfileData> {
+            override fun onResponse(
+                call: Call<ResponseGetProfileData>,
+                response: Response<ResponseGetProfileData>
+            ) {
+                if (response.isSuccessful) {
+                    // 로그 출력 안됨..
+                    Log.d("NetworkTest-ClosetFragment", "success")
+                    val data = response.body()
+                    Log.d("ResponseValues-ClosetFragment", "response 값-> "+ data.toString())
 
+                } else {
+                    // 에러 발생할 경우
+                }
+            }
+            override fun onFailure(call: Call<ResponseGetProfileData>, t: Throwable) {
+                Log.d("NetworkTest", "error!")
+            }
+        })
     }
 
     override fun onClick(v: View?) {
