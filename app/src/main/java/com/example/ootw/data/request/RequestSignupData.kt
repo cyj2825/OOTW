@@ -1,15 +1,23 @@
 package com.example.ootw.data.request
 
+import com.google.gson.annotations.SerializedName
+
 data class RequestSignupData(
-    val login_id: String,
-    val password: String,
+    @SerializedName("login_id")
+    val loginId: String,
     val email: String,
+    val password: String,
     val birth: String,
     val nickname: String,
     val gender: String,
-    val cold_sensitivity: Int,
-    val hot_sensitivity: Int,
+    @SerializedName("cold_sensitivity")
+    val coldSensitivity: Int,
+    @SerializedName("hot_sensitivity")
+    val hotSensitivity: Int,
     val area: String,
-    val area_detail: String,
-    val profile_img: String,     // img 파일이 아닌 img 주소
+    @SerializedName("area_detail")
+    val areaDetail: String,
+    @SerializedName("profile_img")
+    val profileImg: String       // img 파일이 아닌 img 주소
 )
+
