@@ -10,8 +10,11 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
 import com.example.ootw.*
+import com.example.ootw.api.GetProfileService
+import com.example.ootw.api.GetProfileServiceCreator
 import com.example.ootw.api.LogoutService
 import com.example.ootw.api.LogoutServiceCreator
+import com.example.ootw.data.response.ResponseGetProfileData
 import com.example.ootw.data.response.ResponseLogoutData
 import retrofit2.Call
 import retrofit2.Callback
@@ -31,6 +34,14 @@ class ClosetFragment : Fragment(), View.OnClickListener {
         view.findViewById<Button>(R.id.btn_Closet_plus).setOnClickListener(this)
         view.findViewById<ImageButton>(R.id.btn_Closet_Calendar).setOnClickListener(this)
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // test용 아이디 입력
+        val call: Call<ResponseGetProfileData> = GetProfileServiceCreator.getProfileService.getProfile("1")
+
     }
 
     override fun onClick(v: View?) {
@@ -64,8 +75,6 @@ class ClosetFragment : Fragment(), View.OnClickListener {
                         // Log.d("logout결과", "실패ㅠㅠ")
                     // }
                 // })
-            }
-            else -> {
             }
         }
     }

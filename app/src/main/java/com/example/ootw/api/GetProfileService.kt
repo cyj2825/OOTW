@@ -7,6 +7,7 @@ import retrofit2.http.Query
 
 interface GetProfileService {
     @GET("/profile")
-    fun getProfile(@Query("login_id") logindId: String)
-    : Call<ResponseGetProfileData>
+    fun getProfile(
+        @Query("login_id") logindId: String
+    ) : Call<ResponseGetProfileData>
 }
