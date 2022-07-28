@@ -23,6 +23,7 @@ class AdapterDay(val tempMonth:Int, val dayList: MutableList<Date>): RecyclerVie
     override fun onBindViewHolder(holder: DayView, position: Int) {
         holder.layout.item_day_layout.setOnClickListener {
             Toast.makeText(holder.layout.context, "${dayList[position]}", Toast.LENGTH_SHORT).show()
+
         }
         holder.layout.item_day_text.text = dayList[position].date.toString()
 

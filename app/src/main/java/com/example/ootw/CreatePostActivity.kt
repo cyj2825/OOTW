@@ -72,6 +72,9 @@ class CreatePostActivity : AppCompatActivity(), PrimarySpinnerObservable, Second
         }
 
         binding.tvCreatePostSubmit.setOnClickListener {
+            onBackPressed()
+            Toast.makeText(this, "게시물 작성 완료!!", Toast.LENGTH_SHORT).show()
+            /*
             Log.d("Network", "creatpost")
             // 서버로 보낼 게시글 데이터 생성
             val requestPostWriteData = RequestPostWriteData(
@@ -112,7 +115,7 @@ class CreatePostActivity : AppCompatActivity(), PrimarySpinnerObservable, Second
                 override fun onFailure(call: Call<ResponsePostWriteData>, t: Throwable) {
                     Log.d("NetworkTest_CreatePost", "게시물 생성 error!")
                 }
-            })
+            })*/
         }
 
         // 날씨 자동 입력
