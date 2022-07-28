@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.Toast
 import com.example.ootw.*
 import com.example.ootw.api.GetProfileService
 import com.example.ootw.api.GetProfileServiceCreator
@@ -31,6 +32,7 @@ class ClosetFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_closet, container, false)
+        view.findViewById<Button>(R.id.btn_logout).setOnClickListener(this)
         view.findViewById<Button>(R.id.btn_Closet_plus).setOnClickListener(this)
         view.findViewById<ImageButton>(R.id.btn_Closet_Calendar).setOnClickListener(this)
         return view
@@ -65,8 +67,6 @@ class ClosetFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btn_Closet_plus -> {
-//                parentFragmentManager.beginTransaction()
-//                    .replace(R.id.main_screen_panel, CreatePostFragment()).commitNow()
                 val intent = Intent(requireContext(), CreatePostActivity::class.java)
                 startActivity(intent)
                 requireActivity().overridePendingTransition(0, 0)
@@ -78,21 +78,10 @@ class ClosetFragment : Fragment(), View.OnClickListener {
                 requireActivity().overridePendingTransition(0, 0)
             }
             R.id.btn_logout -> {
-                // todo: 로그아웃 서버 통신
-                // LogoutServiceCreator.logoutService.getRequest().enqueue(object : Callback<ResponseLogoutData>{
-                    // override fun onResponse(
-                        // call: Call<ResponseLogoutData>,
-                        // response: Response<ResponseLogoutData>
-                    // ) {
-                        // Log.d("logout결과", "성공!!")
-                        // val intent = Intent(requireContext(), LoginActivity::class.java)
-                        // startActivity(intent)
-                    // }
-
-                    // override fun onFailure(call: Call<ResponseLogoutData>, t: Throwable) {
-                        // Log.d("logout결과", "실패ㅠㅠ")
-                    // }
-                // })
+                val intent = Intent(requireContext(), LoginActivity::class.java)
+                startActivity(intent)
+                requireActivity().overridePendingTransition(0, 0)
+                Toast.makeText(requireContext(), "로그아웃 완료!!", Toast.LENGTH_SHORT).show()
             }
         }
     }
