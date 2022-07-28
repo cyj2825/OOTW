@@ -50,8 +50,9 @@ class MyFeedAllFragment : Fragment() {
             ) {
                 Log.d("datavalue", "feed all_data 값 => "+ PostSearchWriterServiceCreator.postsearchwriterService.getwriterPosts(1))
                 val data = response.body().toString()
-                // val itemdata1 = response.body()?.posts?.get(0)
-                // val itemdata2 = response.body()?.posts?.get(1)
+                val itemdata1 = response.body()?.posts?.get(0)
+                val itemdata2 = response.body()?.posts?.get(1)
+                val itemdata3 = response.body()?.posts?.get(2)
                 Log.d("responsevalue", "feed all_response 값 => "+ data)
                 // 네트워크 통신에 성공한 경우
                 if(response.isSuccessful){
@@ -59,8 +60,9 @@ class MyFeedAllFragment : Fragment() {
 
                     // 통신 성공시 toast 메시지
                     Toast.makeText(requireContext(), "사용자 게시글 get 완료!!", Toast.LENGTH_SHORT).show()
-                    //var arr1 = itemdata1?.createdAt?.split("T")
-                    //var arr2 = itemdata2?.createdAt?.split("T")
+                    var arr1 = itemdata1?.createdAt?.split("T")
+                    var arr2 = itemdata2?.createdAt?.split("T")
+                    var arr3 = itemdata3?.createdAt?.split("T")
 
                     // 우리가 사용할 어뎁터의 초기값을 넣어줌
                     postAdapter = PostAdapter()
@@ -71,21 +73,29 @@ class MyFeedAllFragment : Fragment() {
                     postAdapter.postdataList.addAll(
                         listOf<SearchData>(
                             SearchData(
-                                "제목1",
-                                R.drawable.tshirt2,
-                                "jeehee",
-                                "1111",
-                                "21",
-                                "바지",
-                                "모두 와서 구경해보세요~"),
+                                itemdata1!!.title,
+                                R.drawable.hoodt2,
+                                "yejin",
+                                arr1!!.get(0),
+                                itemdata1!!.temp.toString(),
+                                itemdata1!!.item,
+                                itemdata1!!.body),
                             SearchData(
-                                "제목2",
-                                R.drawable.tshirt3,
-                                "jun",
-                                "222",
-                                "28",
-                                "안경",
-                                "ㄴㅇㄹㄴㅇㄹㄴㅇㄹ")
+                                itemdata2!!.title,
+                                R.drawable.hoodt,
+                                "yejin",
+                                arr2!!.get(0),
+                                itemdata2!!.temp.toString(),
+                                itemdata2!!.item,
+                                itemdata2!!.body),
+                            SearchData(
+                                itemdata3!!.title,
+                                R.drawable.tshirt4,
+                                "yejin",
+                                arr3!!.get(0),
+                                itemdata3!!.temp.toString(),
+                                itemdata3!!.item,
+                                itemdata3!!.body)
                         )
                     )
                     postAdapter.notifyDataSetChanged()
