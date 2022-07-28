@@ -45,28 +45,6 @@ class ClosetFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        // test용 아이디 입력
-        val call: Call<ResponseGetProfileData> = GetProfileServiceCreator.getProfileService.getProfile(1)
-        call.enqueue(object : Callback<ResponseGetProfileData> {
-            override fun onResponse(
-                call: Call<ResponseGetProfileData>,
-                response: Response<ResponseGetProfileData>
-            ) {
-                if (response.isSuccessful) {
-                    Log.d("NetworkTest-ClosetFragment", "success")
-                    val data = response.body()
-                    Log.d("ResponseValues-ClosetFragment", "response 값-> "+ data.toString())
-
-                } else {
-                    // 에러 발생할 경우
-                }
-            }
-            // 실패로그 뜸.. todo: 예진님께 회원가입 서버 통신 어떻게 성공했냐고 여쭤보기
-            override fun onFailure(call: Call<ResponseGetProfileData>, t: Throwable) {
-                Log.d("NetworkTest-ClosetFragment", "error!")
-            }
-        })
     }
 
     override fun onClick(v: View?) {
@@ -83,7 +61,6 @@ class ClosetFragment : Fragment(), View.OnClickListener {
                 startActivity(intent)
                 requireActivity().overridePendingTransition(0, 0)
             }
-
             R.id.tv_Closet_all -> {
                 requireActivity().supportFragmentManager.beginTransaction()
                     .replace(R.id.view_Closet, MyFeedAllFragment())

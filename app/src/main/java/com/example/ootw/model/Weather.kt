@@ -7,7 +7,7 @@ data class ModelWeather (
     @SerializedName("rainType") var rainType: String = "",           // 강수 형태
     @SerializedName("humidity") var humidity: String = "",           // 습도
     @SerializedName("skyState") var skyState: String = "",           // 하늘 상태
-    @SerializedName("temperature") var temperature: String = "",     // 강수 형태
+    @SerializedName("temperature") var temperature: String = "",     // 기온
     @SerializedName("fcstTime") var fcstTime: String = "",           // 예보시각
 )
 

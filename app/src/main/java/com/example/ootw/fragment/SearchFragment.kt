@@ -79,7 +79,7 @@ class SearchFragment : Fragment() {
                                         itemdata1!!.title,
                                         R.drawable.tshirt2,
                                         "jeehee",
-                                        R.drawable.emptyheart,
+                                        R.drawable.fullheart,
                                         arr1!!.get(0),
                                         itemdata1!!.temp.toString(),
                                         itemdata1!!.item,
