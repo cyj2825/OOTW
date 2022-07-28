@@ -85,6 +85,7 @@ class UserSetUpActivity : AppCompatActivity(), PrimarySpinnerObservable, Seconda
                 R.id.rb_SignUp3_heat5 -> result3 = 5
             }
         }
+
         binding.btnSignUp1Next.setOnClickListener {
             Log.d("userset", "성공???")
             // 서버로 보낼 회원가입 데이터 생성

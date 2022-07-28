@@ -5,30 +5,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
     tools:context=".fragment.ModifyUserFragment">
 
     <ImageView
-        android:id="@+id/iv_SignUp2_back"
+        android:id="@+id/iv_ModifyUser_back"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginTop="24dp"
+        android:layout_marginStart="4dp"
         android:src="@drawable/ic_back"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
-
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:text="사용자 설정"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_SignUp2_back" />
 
     <ScrollView
         android:id="@+id/sv_ModifyUser"
@@ -36,124 +23,151 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title">
+        app:layout_constraintTop_toBottomOf="@+id/iv_ModifyUser_back">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_ModifyUser"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="24dp">
+            android:layout_height="match_parent"
+            android:paddingBottom="80dp">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/iv_profileImg"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center"
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:src="@drawable/feed_profile"
+                android:layout_marginTop="12dp"
+                android:text="회원정보 수정"
+                android:textColor="@color/black"
+                android:textSize="32sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/cl_ModifyUser" />
 
-            <TextView
-                android:id="@+id/tv_ModifyUser_nickname"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/ll_ModifyUser_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="20dp"
-                android:text="닉네임"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                app:layout_constraintStart_toEndOf="@id/iv_profileImg"
-                app:layout_constraintTop_toTopOf="@+id/cl_ModifyUser"/>
-
-            <EditText
-                android:id="@+id/et_ModifyUser_nickname"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:hint="8자 이내 한글 혹은 영문"
-                android:paddingStart="12sp"
-                android:backgroundTint="#B4EFEC"
-                app:layout_constraintStart_toStartOf="@+id/tv_ModifyUser_nickname"
-                app:layout_constraintTop_toBottomOf="@id/tv_ModifyUser_nickname"/>
-
-            <TextView
-                android:id="@+id/tv_ModifyUser_gender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="32dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_ModifyUser_profileImg"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/feed_profile" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="닉네임"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_ModifyUser_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:backgroundTint="#B4EFEC"
+                        android:hint="8자 이내 한글 혹은 영문"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
                 android:text="성별"
+                android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv_profileImg"/>
+                app:layout_constraintTop_toBottomOf="@+id/ll_ModifyUser_name" />
 
             <RadioGroup
-                android:id="@+id/rg_gender"
+                android:id="@+id/rg_ModifyUser_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="4dp"
-                app:layout_constraintStart_toStartOf="@+id/tv_ModifyUser_gender"
-                app:layout_constraintTop_toBottomOf="@id/tv_ModifyUser_gender">
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_gender">
 
                 <RadioButton
                     android:id="@+id/rb_men"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
-                    android:text="남성"/>
+                    android:text="남성" />
 
                 <RadioButton
                     android:id="@+id/rb_women"
-                    android:layout_marginStart="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="여성"/>
+                    android:layout_marginStart="20dp"
+                    android:text="여성" />
             </RadioGroup>
 
             <TextView
-                android:id="@+id/tv_ModifyUser_birth"
+                android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
                 android:text="생년월일"
+                android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rg_gender"/>
+                app:layout_constraintTop_toBottomOf="@+id/rg_ModifyUser_gender" />
 
             <Button
                 android:id="@+id/btn_ModifyUser_pickdate"
-                android:layout_width="wrap_content"
+                style="?android:spinnerStyle"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginStart="24dp"
+                android:onClick="openDatePicker"
                 android:text="2022 - 01 - 01"
                 android:textColor="@color/black"
-                style="?android:spinnerStyle"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_ModifyUser_birth" />
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="32dp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="20sp"
                 android:text="지역 설정"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_ModifyUser_pickdate" />
 
             <LinearLayout
-                android:id="@+id/ll_SignUp3_region"
+                android:id="@+id/ll_ModifyUser_region"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
@@ -161,35 +175,35 @@
                 android:gravity="center"
                 android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3">
+                app:layout_constraintTop_toBottomOf="@+id/textView8">
 
                 <Spinner
-                    android:id="@+id/spin_SignUp3_region1"
+                    android:id="@+id/spin_ModifyUser_region1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
                 <Spinner
-                    android:id="@+id/spin_SignUp3_region2"
+                    android:id="@+id/spin_ModifyUser_region2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
             </LinearLayout>
 
             <TextView
-                android:id="@+id/tv_ModifyUser_temperature"
+                android:id="@+id/tv_sensitivity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="32dp"
                 android:text="온도 민감도"
+                android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ll_SignUp3_region"/>
+                app:layout_constraintTop_toBottomOf="@+id/ll_ModifyUser_region" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -198,55 +212,59 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="4dp"
                 android:text="추위에 어느 정도 민감하신가요?"
-                android:textSize="16sp"
                 android:textColor="@color/black"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_ModifyUser_temperature" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_sensitivity" />
 
             <RadioGroup
-                android:id="@+id/rg_SignUp3_cold"
+                android:id="@+id/rg_ModifyUser_cold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="4dp"
+                android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4">
 
                 <RadioButton
-                    android:id="@+id/rb_SignUp3_cold1"
+                    android:id="@+id/rb_ModifyUser_cold1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매우둔함"
-                    android:textSize="11sp"/>
+                    android:textSize="11sp" />
+
                 <RadioButton
-                    android:id="@+id/rb_SignUp3_cold2"
+                    android:id="@+id/rb_ModifyUser_cold2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="둔함"
-                    android:textSize="11sp"/>
+                    android:textSize="11sp" />
+
                 <RadioButton
-                    android:id="@+id/rb_SignUp3_cold3"
+                    android:id="@+id/rb_ModifyUser_cold3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="보통"
-                    android:textSize="11sp"/>
+                    android:textSize="11sp" />
+
                 <RadioButton
-                    android:id="@+id/rb_SignUp3_cold4"
+                    android:id="@+id/rb_ModifyUser_cold4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="민감"
-                    android:textSize="11sp"/>
+                    android:textSize="11sp" />
+
                 <RadioButton
-                    android:id="@+id/rb_SignUp3_cold5"
+                    android:id="@+id/rb_ModifyUser_cold5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매우민감"
-                    android:textSize="11sp"/>
+                    android:textSize="11sp" />
             </RadioGroup>
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -255,66 +273,69 @@
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rg_SignUp3_cold" />
+                app:layout_constraintTop_toBottomOf="@+id/rg_ModifyUser_cold" />
 
             <RadioGroup
-                android:id="@+id/rg_SignUp3_heat"
+                android:id="@+id/rg_ModifyUser_heat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="4dp"
+                android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5">
+                app:layout_constraintTop_toBottomOf="@+id/textView7">
 
                 <RadioButton
-                    android:id="@+id/rb_SignUp3_heat1"
+                    android:id="@+id/rb_ModifyUser_heat1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매우둔함"
-                    android:textSize="11sp"/>
+                    android:textSize="11sp" />
+
                 <RadioButton
-                    android:id="@+id/rb_SignUp3_heat2"
+                    android:id="@+id/rb_ModifyUser_heat2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="둔함"
-                    android:textSize="11sp"/>
+                    android:textSize="11sp" />
+
                 <RadioButton
-                    android:id="@+id/rb_SignUp3_heat3"
+                    android:id="@+id/rb_ModifyUser_heat3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="보통"
-                    android:textSize="11sp"/>
+                    android:textSize="11sp" />
+
                 <RadioButton
-                    android:id="@+id/rb_SignUp3_heat4"
+                    android:id="@+id/rb_ModifyUser_heat4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="민감"
-                    android:textSize="11sp"/>
+                    android:textSize="11sp" />
+
                 <RadioButton
-                    android:id="@+id/rb_SignUp3_heat5"
+                    android:id="@+id/rb_ModifyUser_heat5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매우민감"
-                    android:textSize="11sp"/>
+                    android:textSize="11sp" />
             </RadioGroup>
 
             <Button
-                android:id="@+id/btn_ModifyUser_modify"
+                android:id="@+id/btn_ModifyUser_next"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:layout_marginHorizontal="24dp"
-                android:text="완료"
-                android:textSize="20sp"
-                android:textColor="@color/black"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="36dp"
                 android:background="@drawable/bg_basicbtn"
-                app:layout_constraintStart_toStartOf="parent"
+                android:text="완료"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rg_SignUp3_heat"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rg_ModifyUser_heat" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

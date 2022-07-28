@@ -57,7 +57,7 @@ class LikeFragment : Fragment() {
             override fun handleOnBackPressed() {
                 Log.d("TestLog", "백프레스")
                 activity?.supportFragmentManager?.beginTransaction()
-                    ?.replace(R.id.main_screen_panel, MyPageFragment())?.commit()
+                    ?.replace(R.id.main_screen_panel, HomeFragment())?.commit()
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(this, callback)
