@@ -33,7 +33,6 @@ class ClosetFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_closet, container, false)
-        view.findViewById<Button>(R.id.btn_logout).setOnClickListener(this)
         view.findViewById<Button>(R.id.btn_Closet_plus).setOnClickListener(this)
         view.findViewById<ImageButton>(R.id.btn_Closet_Calendar).setOnClickListener(this)
         view.findViewById<TextView>(R.id.tv_Closet_all).setOnClickListener(this)
@@ -84,12 +83,7 @@ class ClosetFragment : Fragment(), View.OnClickListener {
                 startActivity(intent)
                 requireActivity().overridePendingTransition(0, 0)
             }
-            R.id.btn_logout -> {
-                val intent = Intent(requireContext(), LoginActivity::class.java)
-                startActivity(intent)
-                requireActivity().overridePendingTransition(0, 0)
-                Toast.makeText(requireContext(), "로그아웃 완료!!", Toast.LENGTH_SHORT).show()
-            }
+
             R.id.tv_Closet_all -> {
                 requireActivity().supportFragmentManager.beginTransaction()
                     .replace(R.id.view_Closet, MyFeedAllFragment())

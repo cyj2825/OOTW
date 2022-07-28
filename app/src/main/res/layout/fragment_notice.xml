@@ -67,8 +67,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
-                android:layout_marginVertical="4dp"
+                android:padding="8dp"
                 android:textSize="16sp"
+                android:textColor="@color/black"
                 android:text="출시 기념 이벤트!"/>
 
             <View
@@ -83,8 +84,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
-                android:layout_marginVertical="4dp"
+                android:padding="8dp"
                 android:textSize="16sp"
+                android:textColor="@color/black"
                 android:text="0.0.01 업데이트 안내"/>
 
             <View
@@ -99,8 +101,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
-                android:layout_marginVertical="4dp"
+                android:padding="8dp"
                 android:textSize="16sp"
+                android:textColor="@color/black"
                 android:text="세계최고의 패션 앱 OOTW 출시!"/>
 
             <View
