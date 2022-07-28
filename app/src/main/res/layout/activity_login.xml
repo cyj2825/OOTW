@@ -9,7 +9,7 @@
     tools:context=".LoginActivity">
 
     <ImageView
-        android:id="@+id/iv_main_logo"
+        android:id="@+id/iv_Login_logo"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:layout_marginTop="60dp"
@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/mainlogo" />
 
     <EditText
-        android:id="@+id/et_main_id"
+        android:id="@+id/et_Login_id"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
@@ -30,10 +30,10 @@
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_main_logo"/>
+        app:layout_constraintTop_toBottomOf="@+id/iv_Login_logo"/>
 
     <EditText
-        android:id="@+id/et_main_pw"
+        android:id="@+id/et_Login_pw"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="12dp"
@@ -45,10 +45,10 @@
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_main_id"/>
+        app:layout_constraintTop_toBottomOf="@+id/et_Login_id"/>
 
     <Button
-        android:id="@+id/btn_main_login"
+        android:id="@+id/btn_Login_login"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
@@ -59,7 +59,7 @@
         android:background="@drawable/bg_basicbtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_main_pw"/>
+        app:layout_constraintTop_toBottomOf="@+id/et_Login_pw"/>
 <!--
     <ImageButton
         android:id="@+id/kakao_login_button"
@@ -81,10 +81,10 @@
         android:layout_marginTop="52dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_main_login">
+        app:layout_constraintTop_toBottomOf="@+id/btn_Login_login">
 
         <TextView
-            android:id="@+id/tv_find_id"
+            android:id="@+id/tv_Login_find_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="아이디 찾기"
@@ -99,7 +99,7 @@
             android:background="@color/black"/>
 
         <TextView
-            android:id="@+id/tv_find_pw"
+            android:id="@+id/tv_Login_find_pw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="비밀번호 찾기"
@@ -114,7 +114,7 @@
             android:background="@color/black"/>
 
         <TextView
-            android:id="@+id/tv_signup"
+            android:id="@+id/tv_Login_signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="회원가입"

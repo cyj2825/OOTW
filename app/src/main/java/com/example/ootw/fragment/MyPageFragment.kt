@@ -24,7 +24,6 @@ class MyPageFragment : Fragment(), View.OnClickListener {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_my_page, container, false)
         view.findViewById<TextView>(R.id.tv_my_page_update).setOnClickListener(this)
-        view.findViewById<TextView>(R.id.tv_my_page_like).setOnClickListener(this)
         view.findViewById<TextView>(R.id.tv_my_page_notice).setOnClickListener(this)
         return view
     }
@@ -34,10 +33,6 @@ class MyPageFragment : Fragment(), View.OnClickListener {
             R.id.tv_my_page_update -> {
                 parentFragmentManager.beginTransaction()
                     .replace(R.id.main_screen_panel, ModifyUserFragment()).commitNow()
-            }
-            R.id.tv_my_page_like -> {
-                parentFragmentManager.beginTransaction()
-                    .replace(R.id.main_screen_panel, LikeFragment()).commitNow()
             }
             R.id.tv_my_page_notice -> {
                 parentFragmentManager.beginTransaction()

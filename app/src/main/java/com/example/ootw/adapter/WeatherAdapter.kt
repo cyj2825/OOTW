@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ootw.R
+import com.example.ootw.constants.mSkyState
 import com.example.ootw.data.ModelWeather
 
 class WeatherAdapter (var items : Array<ModelWeather>) : RecyclerView.Adapter<WeatherAdapter.ViewHolder>() {
@@ -105,5 +106,12 @@ class WeatherAdapter (var items : Array<ModelWeather>) : RecyclerView.Adapter<We
             else -> R.drawable.ic_launcher_foreground   // 오류
         }
     }
+
+//    fun setRainState(type: String) {
+//        when(type) {
+//            "1" -> mSkyState = "비"
+//            "3" -> mSkyState = "눈"
+//        }
+//    }
 
 }

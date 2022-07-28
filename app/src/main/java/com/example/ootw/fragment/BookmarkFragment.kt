@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.ootw.R
-import com.example.ootw.model.PostDTO
+import com.example.ootw.model.Post
 import kotlinx.android.synthetic.main.fragment_bookmark.view.*
 
 
@@ -35,19 +35,9 @@ class BookmarkFragment : Fragment() {
     }
 
     inner class BookmarkFragmentRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-        var postDTOs = arrayListOf<PostDTO>(
-            PostDTO("test1", "user1", "", "27", "", "성북구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            PostDTO("test2", "user2", "", "27", "", "영등포구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            PostDTO("test3", "user3", "", "27", "", "도봉구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            PostDTO("test4", "user4", "", "27", "", "노원구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            PostDTO("test5", "user5", "", "27", "", "영등포구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            PostDTO("test6", "user6", "", "27", "", "중구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            PostDTO("test7", "user7", "", "27", "", "강남구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            PostDTO("test8", "user8", "", "27", "", "송파구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            PostDTO("test9", "user9", "", "27", "", "서초구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            PostDTO("test10", "user10", "", "27", "", "양천구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            PostDTO("test11", "user11", "", "27", "", "강서구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
-            PostDTO("test12", "user12", "", "27", "", "금천구", "상의", "나시", "오늘은 참 덥네요!", "22.07.15"),
+        var postDTOs = arrayListOf<Post>(
+            Post("test1", "", "오늘은 참 덥네요!", "", 26, "나시", "2022-07-20T07:20:07.000Z", "2022-07-20T07:20:07.000Z", "user1", ""),
+
         )
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -68,9 +58,9 @@ class BookmarkFragment : Fragment() {
 
         override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
             var imageview = (holder as CustomViewHolder).imageview
-            Glide.with(holder.itemView.context).load(postDTOs[position].imageUrl).apply(
+            Glide.with(holder.itemView.context).load(postDTOs[position].imgURL).apply(
                 RequestOptions().centerCrop()).into(imageview)
-            Log.d("bookmark", "post: "+postDTOs[position].uid)
+            Log.d("bookmark", "post: "+postDTOs[position].id)
 
         }
     }
