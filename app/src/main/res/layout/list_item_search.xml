@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_borderbox"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="20dp"
+    android:layout_marginHorizontal="20dp"
+    android:paddingVertical="20dp">
+
+    <TextView
+        android:id="@+id/tv_Search_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="제목"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_Search_feedphoto"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="32dp"
+        android:background="@drawable/tshirt"
+        android:clipToOutline="true"
+        app:layout_constraintTop_toBottomOf="@id/tv_Search_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_Search_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="32dp"
+        android:text="yejin"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_Search_feedphoto"/>
+
+    <TextView
+        android:id="@+id/tv_Search_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="32dp"
+        android:text="yy.mm.dd"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Search_name"/>
+
+    <TextView
+        android:id="@+id/tv_Search_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="20dp"
+        android:text="28"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/tv_Search_create"
+        app:layout_constraintTop_toBottomOf="@id/tv_Search_name"/>
+
+    <TextView
+        android:id="@+id/tv_Search_temp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="도"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/tv_Search_temp"
+        app:layout_constraintTop_toBottomOf="@id/tv_Search_name"/>
+
+    <TextView
+        android:id="@+id/tv_Search_classify"
+        android:layout_width="60dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/bg_search"
+        android:text="반팔티"
+        android:textSize="16sp"
+        android:textColor="#B4EFEC"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/tv_Search_temp2"
+        app:layout_constraintTop_toTopOf="@id/tv_Search_temp2"
+        app:layout_constraintBottom_toBottomOf="@id/tv_Search_temp2"/>
+
+    <TextView
+        android:id="@+id/tv_Search_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="32dp"
+        android:text="내용~!"
+        android:background="@drawable/bg_edit_text_gray"
+        app:layout_constraintTop_toBottomOf="@id/tv_Search_create"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
