@@ -8,11 +8,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.ootw.R
+import com.example.ootw.fragment.LikeFragment
 import com.example.ootw.model.Post
 
-class PostListRVAdapter(val context: Context, val postList: ArrayList<Post>):
-    RecyclerView.Adapter<PostListRVAdapter.ItemViewHolder>() {
+class PostListRVAdapter(val posts: ArrayList<Post>): RecyclerView.Adapter<PostListRVAdapter.ViewHolder>() {
 
     var mPosition = 0
 
@@ -20,54 +21,38 @@ class PostListRVAdapter(val context: Context, val postList: ArrayList<Post>):
         return mPosition
     }
 
-    inner class ItemViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        var postImage = view.findViewById<ImageView>(R.id.iv_PostItem_image)
-        var postWeather = view.findViewById<TextView>(R.id.tv_PostItem_temperature)
-        var postIcon = view.findViewById<ImageView>(R.id.iv_PostItem_weather_icon)
-        var postRegion = view.findViewById<TextView>(R.id.tv_PostItem_region)
-        var postBody = view.findViewById<TextView>(R.id.tv_PostItem_body)
-
-        fun bind(post: Post, context: Context) {
-            if (post.imgURL != "") {
-                val resourceId = context.resources.getIdentifier(post.imgURL, "drawable", context.packageName)
-                postImage?.setImageResource(resourceId)
-            } else {
-                postImage?.setImageResource(R.mipmap.ic_launcher)
-            }
-
-            if (post.imgURL != "") {
-                val resourceId = context.resources.getIdentifier(post.imgURL, "drawable", context.packageName)
-                postIcon?.setImageResource(resourceId)
-            } else {
-                postIcon?.setImageResource(R.mipmap.ic_launcher)
-            }
-
-            postWeather?.text = post.temp.toString()
-            // TODO: User 모델클래스의 area 필드 가져와야
-//            postRegion?.text = post.region
-            postBody?.text = post.body
-
-            Log.d("postList", "body: "+post.body)
-        }
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.list_item_post, parent, false)
-        return ItemViewHolder(view)
-    }
-
-    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        holder.bind(postList[position], context)
-
-        holder.itemView.setOnClickListener {
-
-        }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item_post, parent, false)
+        return ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        return postList.size
+        if (posts != null) {
+            return posts.size
+        }
+        return 0
     }
 
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(posts[position])
+    }
+
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
+        private val tvDate: TextView = itemView.findViewById(R.id.tv_PostItem_date)
+        private val tvRegion: TextView = itemView.findViewById(R.id.tv_PostItem_region)
+        private val tvTemperature: TextView = itemView.findViewById(R.id.tv_PostItem_temperature)
+        private val ivImage: ImageView = itemView.findViewById(R.id.iv_PostItem_image)
+        private val tvBody: TextView = itemView.findViewById(R.id.tv_PostItem_body)
+
+        fun bind(item: Post) {
+            tvDate.text = item.createdAt
+            tvTemperature.text = item.temp.toString()
+            Glide.with(itemView).load(item.imgURL).into(ivImage)
+            tvBody.text = item.body
+
+        }
+    }
 
 }
 
