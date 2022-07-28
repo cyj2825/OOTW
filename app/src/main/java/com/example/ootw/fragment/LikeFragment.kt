@@ -1,24 +1,27 @@
 package com.example.ootw.fragment
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
-import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.request.RequestOptions
+import android.widget.Toast
 import com.example.ootw.R
-import com.example.ootw.adapter.PostListRVAdapter
-import com.example.ootw.model.Post
+import com.example.ootw.adapter.PostAdapter
+import com.example.ootw.api.PostLikeServiceCreator
+import com.example.ootw.data.response.ResponsePostLikeData
+import com.example.ootw.databinding.FragmentLikeBinding
+import com.example.ootw.model.SearchData
 import kotlinx.android.synthetic.main.fragment_like.*
 import kotlinx.android.synthetic.main.fragment_like.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LikeFragment : Fragment() {
-    private lateinit var callback: OnBackPressedCallback
-    lateinit var postAdapter: PostListRVAdapter
+    lateinit var binding: FragmentLikeBinding
+    private lateinit var postAdapter: PostAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,90 +31,80 @@ class LikeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_like, container, false)
-        // rv ver1: 화면에 아무것도 안뜸
-//        view?.rv_Like_post?.adapter = LikeFragmentRecyclerViewAdapter()
-//        view.rv_Like_post?.layoutManager = GridLayoutManager(requireActivity(), 3)
-//        LikeFragmentRecyclerViewAdapter().getLog()
+        binding = FragmentLikeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-        // rv ver2: null pointer exception...
-//        var imgUrl = "https://cdn.pixabay.com/photo/2021/08/03/07/03/orange-6518675_960_720.jpg"
-//        var posts = ArrayList<Post>()
-//        posts.add(Post("test1", "", "오늘은 참 덥네요!", imgUrl, 26, "나시", "2022-07-20T07:20:07.000Z", "2022-07-20T07:20:07.000Z", "user1", "1"))
-//        posts.add(Post("test2", "", "오늘은 참 덥네요!!!", imgUrl, 28, "반팔", "2022-07-20T07:20:07.000Z", "2022-07-20T07:20:07.000Z", "user1", "1"),)
-//        posts.add(Post("test3", "", "오늘은 참 덥네요!@@@", imgUrl, 29, "반바지", "2022-07-20T07:20:07.000Z", "2022-07-20T07:20:07.000Z", "user1", "1"),)
-//        posts.add(Post("test4", "", "오늘은 참 덥네요~~!!", imgUrl, 27, "반팔셔츠", "2022-07-20T07:20:07.000Z", "2022-07-20T07:20:07.000Z", "user1", "1"),)
-//
-//        val adapter = PostListRVAdapter(posts)
-//        rv_Like_post.adapter = adapter
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        Log.d("Network_like", "like post")
 
-//        initRecycler()
-        return view
+        PostLikeServiceCreator.postlikeService.getlikePosts(1).enqueue(object :
+            Callback<ResponsePostLikeData> {
+            override fun onResponse(
+                call: Call<ResponsePostLikeData>,
+                response: Response<ResponsePostLikeData>
+            ) {
+                Log.d("datavalue", "like post_data 값 => "+ PostLikeServiceCreator.postlikeService.getlikePosts(1))
+                val data = response.body().toString()
+                val itemdata1 = response.body()?.posts?.get(0)
+                // val itemdata2 = response.body()?.posts?.get(1)
+                // val itemdata3 = response.body()?.posts?.get(2)
+                Log.d("responsevalue", "like post_response 값 => "+ data)
+                // 네트워크 통신에 성공한 경우
+                if(response.isSuccessful){
+                    Log.d("NetworkTest", "like post success")
+
+                    // 통신 성공시 toast 메시지
+                    Toast.makeText(requireContext(), "좋아요 게시글 get 완료!!", Toast.LENGTH_SHORT).show()
+                    var arr1 = itemdata1?.Post?.createdAt?.split("T")
+                    //var arr2 = itemdata2?.createdAt?.split("T")
+                    //var arr3 = itemdata3?.createdAt?.split("T")
+
+                    // 우리가 사용할 어뎁터의 초기값을 넣어줌
+                    postAdapter = PostAdapter()
+                    // RecyclerView에 어뎁터를 우리가 만든 어뎁터로!
+                    binding.rvLike.adapter = postAdapter
+
+                    //add data
+                    postAdapter.postdataList.addAll(
+                        listOf<SearchData>(
+                            SearchData(
+                                itemdata1!!.Post!!.title,
+                                R.drawable.hoodt3,
+                                "suheon",
+                                R.drawable.fullheart,
+                                arr1!!.get(0),
+                                itemdata1!!.Post!!.temp.toString(),
+                                itemdata1!!.Post!!.item,
+                                itemdata1!!.Post!!.body)
+                        )
+                    )
+                    postAdapter.notifyDataSetChanged()
+                }else{
+                    // 이곳은 에러 발생할 경우 실행됨
+                    Log.d("NetworkTest_like post", "여긴가?")
+                }
+            }
+            // 네트워크 통신 자체가 실패한 경우 해당 함수를 retrofit이 실행!
+            override fun onFailure(call: Call<ResponsePostLikeData>, t: Throwable) {
+                Log.d("NetworkTest", "좋아요 게시글 get error!")
+            }
+        })
+
     }
 
 //  뒤로가기 버튼 실행시
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        callback = object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                Log.d("TestLog", "백프레스")
-                activity?.supportFragmentManager?.beginTransaction()
-                    ?.replace(R.id.main_screen_panel, HomeFragment())?.commit()
-            }
-        }
-        requireActivity().onBackPressedDispatcher.addCallback(this, callback)
-    }
-
-    private fun initRecycler() {
-//        postAdapter = PostListRVAdapter(requireContext())
-//        rv_Like_post.adapter = postAdapter
-
-//        var imgUrl = "https://cdn.pixabay.com/photo/2021/08/03/07/03/orange-6518675_960_720.jpg"
-//        posts.apply {
-//            add(Post("test1", "", "오늘은 참 덥네요!", imgUrl, 26, "나시", "2022-07-20T07:20:07.000Z", "2022-07-20T07:20:07.000Z", "user1", "1"),)
-//            add(Post("test2", "", "오늘은 참 덥네요!!!", imgUrl, 28, "반팔", "2022-07-20T07:20:07.000Z", "2022-07-20T07:20:07.000Z", "user1", "1"),)
-//            add(Post("test3", "", "오늘은 참 덥네요!@@@", imgUrl, 29, "반바지", "2022-07-20T07:20:07.000Z", "2022-07-20T07:20:07.000Z", "user1", "1"),)
-//            add(Post("test4", "", "오늘은 참 덥네요~~!!", imgUrl, 27, "반팔셔츠", "2022-07-20T07:20:07.000Z", "2022-07-20T07:20:07.000Z", "user1", "1"),)
-//            postAdapter.posts = posts
-//            postAdapter.notifyDataSetChanged()
+//    override fun onAttach(context: Context) {
+//        super.onAttach(context)
+//        callback = object : OnBackPressedCallback(true) {
+//            override fun handleOnBackPressed() {
+//                Log.d("TestLog", "백프레스")
+//                activity?.supportFragmentManager?.beginTransaction()
+//                    ?.replace(R.id.main_screen_panel, MyPageFragment())?.commit()
+//            }
 //        }
-//        posts.apply { postAdapter.posts = posts
-//            postAdapter.notifyDataSetChanged() }
-    }
-
-//    inner class LikeFragmentRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-//        var imgUrl = "https://cdn.pixabay.com/photo/2021/08/03/07/03/orange-6518675_960_720.jpg"
-//        var postDTOs : ArrayList<Post> = arrayListOf(
-//            Post("test1", "", "오늘은 참 덥네요!", imgUrl, 26, "나시", "2022-07-20T07:20:07.000Z", "2022-07-20T07:20:07.000Z", "user1", "1"),
-//        )
-//
-//        fun getLog() {
-//            Log.d("ViewAdapter-LikeFragment", "Post: "+ postDTOs[0].body)
-//        }
-//
-//        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-//            var width = resources.displayMetrics.widthPixels / 3
-//
-//            var imageview = ImageView(parent.context)
-//            imageview.layoutParams = LinearLayoutCompat.LayoutParams(width, width)
-//            return CustomViewHolder(imageview)
-//        }
-//
-//        inner class CustomViewHolder(var imageview: ImageView): RecyclerView.ViewHolder(imageview) {
-//
-//        }
-//
-//        override fun getItemCount(): Int {
-//            return postDTOs.size
-//        }
-//
-//        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-//            var imageview = (holder as CustomViewHolder).imageview
-//            Glide.with(holder.itemView.context).load(postDTOs[position].imgURL)
-//                .apply(RequestOptions().centerCrop()).into(imageview)
-//            Log.d("LikeFragment", "post: "+postDTOs[position].id)
-//
-//        }
+//        requireActivity().onBackPressedDispatcher.addCallback(this, callback)
 //    }
 }

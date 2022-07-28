@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="16dp"
     tools:context=".fragment.BookmarkFragment">
 
     <ImageView
@@ -18,29 +19,34 @@
         app:srcCompat="@drawable/mainlogo" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tv_like"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="24dp"
+        android:layout_marginHorizontal="20dp"
         android:text="좋아요한 게시글"
-        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_bookmark_logo" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_Like_post"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginHorizontal="24dp"
-        tools:listitem="@layout/list_item_post"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ScrollView
+        android:id="@+id/sv_like"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:paddingBottom="160dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_like">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_like"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/list_item_search" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
