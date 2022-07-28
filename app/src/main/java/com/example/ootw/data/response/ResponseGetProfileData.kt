@@ -6,5 +6,4 @@ import com.example.ootw.model.User
 data class ResponseGetProfileData(
     val message: String,
     val userProfile: User,
-    val userPosts: Post,
 )

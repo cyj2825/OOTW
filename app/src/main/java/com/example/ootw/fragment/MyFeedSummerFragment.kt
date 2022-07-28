@@ -71,6 +71,7 @@ class MyFeedSummerFragment : Fragment() {
                                 itemdata1!!.title,
                                 R.drawable.tshirt4,
                                 "yejin",
+                                R.drawable.emptyheart,
                                 arr1!!.get(0),
                                 itemdata1!!.temp.toString(),
                                 itemdata1!!.item,

@@ -4,6 +4,7 @@ data class SearchData(
     val title: String,
     val img: Int,
     val writer: String,
+    val good: Int,
     val create: String,
     val temp: String,
     val item: String,

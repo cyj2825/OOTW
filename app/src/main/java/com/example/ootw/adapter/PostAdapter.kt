@@ -29,6 +29,7 @@ class PostAdapter : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
             binding.tvSearchTitle.text = searchData.title
             binding.ivSearchFeedphoto.setImageResource(searchData.img)
             binding.tvSearchName.text = searchData.writer
+            binding.ivSearchGood.setImageResource(searchData.good)
             binding.tvSearchCreate.text = searchData.create
             binding.tvSearchTemp.text = searchData.temp
             binding.tvSearchClassify.text = searchData.item
