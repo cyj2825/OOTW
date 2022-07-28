@@ -13,32 +13,41 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.example.ootw.PostActivity
+import com.example.ootw.PostListActivity
+import com.example.ootw.R
+import com.example.ootw.adapter.GridRecyclerAdapter
 import com.example.ootw.adapter.WeatherAdapter
+import com.example.ootw.api.SearchItemServiceCreator
 import com.example.ootw.component.Common
 import com.example.ootw.constants.mSkyState
 import com.example.ootw.constants.mTemperature
 import com.example.ootw.data.ITEM
 import com.example.ootw.data.ModelWeather
 import com.example.ootw.data.WEATHER
+import com.example.ootw.data.response.ResponseSearchItemData
 import com.example.ootw.databinding.FragmentHomeBinding
+import com.example.ootw.model.SearchData
 import com.example.ootw.network.WeatherObject
 import com.google.android.gms.location.*
+import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
 
 class HomeFragment : Fragment() {
-    companion object {
 
-    }
     private var baseDate = "20220701"  // 발표 일자
     private var baseTime = "1400"      // 발표 시각
     private var curPoint : Point? = null    // 현재 위치의 격자 좌표를 저장할 포인트
     private lateinit var locationClient: FusedLocationProviderClient
     private val TAG = "Weather api"
+    // private lateinit var gridRecyclerAdapter: GridRecyclerAdapter
+    var data = ""
 
     lateinit var binding: FragmentHomeBinding
     @SuppressLint("SetTextI18n", "MissingPermission")
@@ -51,9 +60,12 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         binding.btnHomeItem1.setOnClickListener {
-            val intent = Intent(requireContext(), PostActivity::class.java)
+            val intent = Intent(requireContext(), PostListActivity::class.java)
             startActivity(intent)
             requireActivity().overridePendingTransition(0, 0)
+        }
+        binding.btnHomeItem2.setOnClickListener{
+
         }
         return binding.root
     }
