@@ -11,5 +11,5 @@ class Post(var id: String? = null, // post id
            var writer: String? = null,
            var itemId: String? = null,
 )
-//  하늘상태, 옷 카테고리 필드는 없어도 되는지?
+//  하늘상태, 옷 카테고리, 지역 필드는 없어도 되는지?
 //  title 필드 의미?

@@ -40,14 +40,13 @@ class ClosetFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         // test용 아이디 입력
-        val call: Call<ResponseGetProfileData> = GetProfileServiceCreator.getProfileService.getProfile("1")
+        val call: Call<ResponseGetProfileData> = GetProfileServiceCreator.getProfileService.getProfile(1)
         call.enqueue(object : Callback<ResponseGetProfileData> {
             override fun onResponse(
                 call: Call<ResponseGetProfileData>,
                 response: Response<ResponseGetProfileData>
             ) {
                 if (response.isSuccessful) {
-                    // 로그 출력 안됨..
                     Log.d("NetworkTest-ClosetFragment", "success")
                     val data = response.body()
                     Log.d("ResponseValues-ClosetFragment", "response 값-> "+ data.toString())
@@ -56,8 +55,9 @@ class ClosetFragment : Fragment(), View.OnClickListener {
                     // 에러 발생할 경우
                 }
             }
+            // 실패로그 뜸.. todo: 예진님께 회원가입 서버 통신 어떻게 성공했냐고 여쭤보기
             override fun onFailure(call: Call<ResponseGetProfileData>, t: Throwable) {
-                Log.d("NetworkTest", "error!")
+                Log.d("NetworkTest-ClosetFragment", "error!")
             }
         })
     }
