@@ -7,11 +7,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.ImageView
 import androidx.activity.OnBackPressedCallback
 import com.example.ootw.R
+import com.example.ootw.databinding.FragmentNoticeBinding
 
 class NoticeFragment : Fragment() {
     private lateinit var callback: OnBackPressedCallback
+    lateinit var binding: FragmentNoticeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,8 +25,14 @@ class NoticeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notice, container, false)
+        binding = FragmentNoticeBinding.inflate(inflater, container, false)
+
+        // 뒤로가기 imageView 클릭시
+        binding.ivNoticeBack.setOnClickListener {
+            fragmentManager?.beginTransaction()?.replace(R.id.main_screen_panel, MyPageFragment())?.commit()
+        }
+
+        return binding.root
     }
 
 //  뒤로가기 버튼 실행시

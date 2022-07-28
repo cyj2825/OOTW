@@ -7,48 +7,17 @@
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/drawable/bg_borderbox.xml" value="0.10277777777777777" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/drawable/bg_clothes_btn.xml" value="0.16025641025641027" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/drawable/bg_edit_text_gray.xml" value="0.18072916666666666" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/drawable/bg_edit_text_skyblue.xml" value="0.15822784810126583" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/drawable/bg_edittext_border.xml" value="0.12685185185185185" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/drawable/bg_image.xml" value="0.15822784810126583" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/drawable/ic_information.xml" value="0.15443037974683543" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/drawable/ic_mainlogo.xml" value="0.15822784810126583" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/drawable/layout_weather_background.xml" value="0.15443037974683543" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_calendar.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_create_post.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_find_id.xml" value="0.13999999999999999" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_find_pw.xml" value="0.11068376068376068" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_onboarding.xml" value="0.147008547008547" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_post.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_main.xml" value="0.14855072463768115" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_sign_up.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_user.xml" value="0.14356884057971014" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_user_set_up.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_user_setup_two.xml" value="0.12692307692307692" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/bottom_navigation_tab.xml" value="0.1" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_bookmark.xml" value="0.1" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_closet.xml" value="0.14666666666666667" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_home.xml" value="0.22" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_like.xml" value="0.12393162393162394" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_modify_user.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_my_feed_all.xml" value="0.11367521367521367" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_my_feed_autumn.xml" value="0.12393162393162394" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_user_set_up.xml" value="0.22" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_modify_user.xml" value="0.13405797101449277" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_my_page.xml" value="0.22" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_notice.xml" value="0.12393162393162394" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_search.xml" value="0.147008547008547" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_sign_up1.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_sign_up2.xml" value="0.22" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_sign_up3.xml" value="0.14666666666666667" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/list_item_day.xml" value="0.1" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/list_item_month.xml" value="0.10299145299145299" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/list_item_search.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/list_item_weather.xml" value="0.14316239316239315" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/recycler_bookmark.xml" value="0.10170940170940171" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/menu/bottom_navigation_main.xml" value="0.147008547008547" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/xml/network_security_config.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/searchview_background.xml" value="0.22" />
         <entry key="app/src/main/res/drawable/bg_borderbox.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_clothes_btn.xml" value="0.1" />
@@ -80,7 +49,7 @@
         <entry key="app/src/main/res/layout/fragment_create_post.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_like.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_modify_user.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/fragment_modify_user.xml" value="0.3365650969529086" />
         <entry key="app/src/main/res/layout/fragment_my_feed_all.xml" value="0.1425925925925926" />
         <entry key="app/src/main/res/layout/fragment_my_feed_autumn.xml" value="0.1425925925925926" />
         <entry key="app/src/main/res/layout/fragment_my_feed_spring.xml" value="0.37604166666666666" />

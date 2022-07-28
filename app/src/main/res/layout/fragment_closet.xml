@@ -18,6 +18,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <ImageView
+        android:id="@+id/iv_Closet_mainlogo"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:src="@drawable/mainlogo"
+        android:layout_gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/iv_Closet_profileImg"
         android:layout_width="80dp"
