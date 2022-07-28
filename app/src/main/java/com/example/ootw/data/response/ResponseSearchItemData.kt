@@ -11,6 +11,8 @@ data class Posts(
     val body: String,
     val temp: Int,
     val item: String,
+    @SerializedName("imgURL")
+    val imgURL: String,
     val createdAt: String,
     val updatedAt: String,
     val writer: Int,
