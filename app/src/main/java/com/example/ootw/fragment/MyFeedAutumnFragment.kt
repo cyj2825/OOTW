@@ -6,55 +6,56 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.ootw.R
+import com.example.ootw.adapter.PostAdapter
+import com.example.ootw.databinding.FragmentMyFeedAllBinding
+import com.example.ootw.databinding.FragmentMyFeedAutumnBinding
+import com.example.ootw.model.SearchData
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MyFeedAutumnFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MyFeedAutumnFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    lateinit var binding: FragmentMyFeedAutumnBinding
+    private lateinit var postAdapter: PostAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_feed_autumn, container, false)
+        binding = FragmentMyFeedAutumnBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MyFeedAutumnFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MyFeedAutumnFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // 우리가 사용할 어뎁터의 초기값을 넣어줌
+        postAdapter = PostAdapter()
+        // RecyclerView에 어뎁터를 우리가 만든 어뎁터로!
+        binding.rvClosetfeedautumn.adapter = postAdapter
+
+        //add data
+        postAdapter.postdataList.addAll(
+            listOf<SearchData>(
+                SearchData(
+                    "제목7",
+                    R.drawable.tshirt,
+                    "jeehee",
+                    "1111",
+                    "21",
+                    "바지",
+                    "모두 와서 구경해보세요~"),
+                SearchData(
+                    "제목8",
+                    R.drawable.tshirt2,
+                    "jun",
+                    "222",
+                    "28",
+                    "안경",
+                    "ㄴㅇㄹㄴㅇㄹㄴㅇㄹ")
+            )
+        )
+        postAdapter.notifyDataSetChanged()
     }
 }
