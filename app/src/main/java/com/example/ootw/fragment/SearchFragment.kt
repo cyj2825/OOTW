@@ -54,13 +54,47 @@ class SearchFragment : Fragment() {
                     ) {
                         Log.d("datavalue", "data 값 => "+ searchitemService.postSearchItem(item))
                         data = response.body().toString()
+                        val itemdata1 = response.body()?.posts?.get(0)
+                        val itemdata2 = response.body()?.posts?.get(1)
                         Log.d("responsevalue", "response 값1 => "+ data)
                         // 네트워크 통신에 성공한 경우
                         if(response.isSuccessful){
                             Log.d("NetworkTest", "search item success")
 
                             // 통신 성공시 toast 메시지
-                            Toast.makeText(requireContext(), "아이템 서치 완료!!", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "item search 완료!!", Toast.LENGTH_SHORT).show()
+                            var arr1 = itemdata1?.createdAt?.split("T")
+                            var arr2 = itemdata2?.createdAt?.split("T")
+
+                            // 우리가 사용할 어뎁터의 초기값을 넣어줌
+                            gridRecyclerAdapter = GridRecyclerAdapter()
+                            // RecyclerView에 어뎁터를 우리가 만든 어뎁터로!
+                            binding.rvSearch.adapter = gridRecyclerAdapter
+                            // rv_search.layoutManager = GridLayoutManager(requireContext(),2)
+
+                            //add data
+                            gridRecyclerAdapter.dataList.addAll(
+                                listOf<SearchData>(
+                                    SearchData(
+                                        itemdata1!!.title,
+                                        R.drawable.tshirt2,
+                                        "jeehee",
+                                        arr1!!.get(0),
+                                        itemdata1!!.temp.toString(),
+                                        itemdata1!!.item,
+                                        itemdata1!!.body),
+                                    SearchData(
+                                        itemdata2!!.title,
+                                        R.drawable.tshirt3,
+                                        "jun",
+                                        arr2!!.get(0),
+                                        itemdata2!!.temp.toString(),
+                                        itemdata2!!.item,
+                                        itemdata2!!.body)
+                                )
+
+                            )
+                            gridRecyclerAdapter.notifyDataSetChanged()
                         }else{
                             // 이곳은 에러 발생할 경우 실행됨
                             Log.d("NetworkTest", "여긴가?")
@@ -84,35 +118,5 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        // 우리가 사용할 어뎁터의 초기값을 넣어줌
-        gridRecyclerAdapter = GridRecyclerAdapter()
-        // RecyclerView에 어뎁터를 우리가 만든 어뎁터로!
-        binding.rvSearch.adapter = gridRecyclerAdapter
-        // rv_search.layoutManager = GridLayoutManager(requireContext(),2)
-
-        //add data
-        gridRecyclerAdapter.dataList.addAll(
-            listOf<SearchData>(
-                SearchData(
-                    "제목1",
-                    R.drawable.tshirt,
-                    "jeehee",
-                    "2022.07.21",
-                    "24",
-                    "반팔티",
-                    "오늘 반팔티 입었어요~~~><"),
-                SearchData(
-                    "제목2",
-                    R.drawable.tshirt,
-                    "jun",
-                    "2022.07.11",
-                    "30",
-                    "프리티",
-                    "안녕 여러분? 나 오늘 반팔티 입었음")
-            )
-
-        )
-        gridRecyclerAdapter.notifyDataSetChanged()
     }
 }
