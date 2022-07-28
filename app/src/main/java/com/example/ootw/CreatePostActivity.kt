@@ -78,12 +78,12 @@ class CreatePostActivity : AppCompatActivity(), PrimarySpinnerObservable, Second
                 title = binding.etCreatePostTitle.text.toString(),
                 body = binding.etCreatePostContent.text.toString(),
                 temp = binding.etCreatePostTemperature.text.toString().toInt(),
-                item = binding.spinCreatePostCategory2.toString(),
-                imgURL = binding.ivCreatePostGallery?.toString()
+                item = "원피스", // binding.spinCreatePostCategory2.toString(),
+                imgURL = "https://ziriootw.s3.ap-northeast-2.amazonaws.com/original/1658373729961%C3%AB%C2%B0%C2%B1%C3%AC%C2%97%C2%94%C3%AB%C2%93%C2%9C.jpg"
             )
             // 현재 사용자의 정보를 받아올 것을 명시
             // 서버 통신은 I/O 작업이므로 비동기적으로 받아올 Callback 내부 코드는 나중에 데이터를 받아오고 실행
-            val call: Call<ResponsePostWriteData> = PostWriteServiceCreator.postwriteService.postPostWrite(requestPostWriteData)
+            val call: Call<ResponsePostWriteData> = PostWriteServiceCreator.postwriteService.postPostWrite(1, requestPostWriteData)
 
             // enqueue 함수를 이용해 Call이 비동기 작업 이후 동작한 Callback을 등록할 수 있다
             // 해당 함수 호출은 Callback을 등록만하고 실제 서버 통신을 요청 이후 통신 결과가 나왔을 때 실행
@@ -93,10 +93,10 @@ class CreatePostActivity : AppCompatActivity(), PrimarySpinnerObservable, Second
                     call: Call<ResponsePostWriteData>,
                     response: Response<ResponsePostWriteData>
                 ) {
+                    Log.d("datavalue_CreatePost", "data 값 => "+ requestPostWriteData)
                     // 네트워크 통신에 성공한 경우
                     if(response.isSuccessful){
-                        Log.d("NetworkTest", "게시물 생성 success")
-                        Log.d("datavalue", "data 값 => "+ requestPostWriteData)
+                        Log.d("NetworkTest_CreatePost", "게시물 생성 success")
                         // val data = response.body().toString()
                         // Log.d("responsevalue", "response 값 => "+ data)
                         // 통신 성공시 toast 메시지
@@ -105,12 +105,12 @@ class CreatePostActivity : AppCompatActivity(), PrimarySpinnerObservable, Second
                         // 통신 성공할 경우 ClosetFragment로 넘어가도록 함
                         finish()
                     }else{
-                        // 이곳은 에러 발생할 경우 실행됨
+                        Log.d("NetworkTest_CreatePost", "서버 통신 성공 못함!")
                     }
                 }
                 // 네트워크 통신 자체가 실패한 경우 해당 함수를 retrofit이 실행!
                 override fun onFailure(call: Call<ResponsePostWriteData>, t: Throwable) {
-                    Log.d("NetworkTest", "게시물 생성 error!")
+                    Log.d("NetworkTest_CreatePost", "게시물 생성 error!")
                 }
             })
         }
@@ -140,8 +140,23 @@ class CreatePostActivity : AppCompatActivity(), PrimarySpinnerObservable, Second
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 when (position) {
                     // 직접입력
-                    0 -> {
-
+                    1 -> {
+                        binding.tvCreatePostSkyState.setText("맑음")
+                    }
+                    2 -> {
+                        binding.tvCreatePostSkyState.setText("흐림")
+                    }
+                    3 -> {
+                        binding.tvCreatePostSkyState.setText("구름 많음")
+                    }
+                    4 -> {
+                        binding.tvCreatePostSkyState.setText("비")
+                    }
+                    5 -> {
+                        binding.tvCreatePostSkyState.setText("바람")
+                    }
+                    6 -> {
+                        binding.tvCreatePostSkyState.setText("눈")
                     }
                 }
             }

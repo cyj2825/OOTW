@@ -62,7 +62,7 @@ class SearchFragment : Fragment() {
                             Log.d("NetworkTest", "search item success")
 
                             // 통신 성공시 toast 메시지
-                            Toast.makeText(requireContext(), "item search 완료!!", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "아이템 서치 완료!!", Toast.LENGTH_SHORT).show()
                             var arr1 = itemdata1?.createdAt?.split("T")
                             var arr2 = itemdata2?.createdAt?.split("T")
 
