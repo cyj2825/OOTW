@@ -56,7 +56,7 @@ class MyFeedWinterFragment : Fragment() {
                     Log.d("NetworkTest", "feed winter success")
 
                     // 통신 성공시 toast 메시지
-                    Toast.makeText(requireContext(), "사용자 게시글 get 완료!!", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(requireContext(), "사용자 게시글 get 완료!!", Toast.LENGTH_SHORT).show()
                     var arr1 = itemdata1?.createdAt?.split("T")
                     var arr2 = itemdata2?.createdAt?.split("T")
 

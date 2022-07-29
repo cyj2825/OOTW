@@ -50,7 +50,7 @@ class PostListActivity : AppCompatActivity() {
                     Log.d("NetworkTest", "homeitem success")
 
                     // 통신 성공시 toast 메시지
-                    Toast.makeText(this@PostListActivity, "홈 아이템 완료!!", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(this@PostListActivity, "홈 아이템 완료!!", Toast.LENGTH_SHORT).show()
                     var arr1 = itemdata1?.createdAt?.split("T")
                     var arr2 = itemdata2?.createdAt?.split("T")
                     var arr3 = itemdata2?.createdAt?.split("T")
