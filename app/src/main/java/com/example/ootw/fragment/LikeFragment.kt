@@ -49,8 +49,8 @@ class LikeFragment : Fragment() {
                 Log.d("datavalue", "like post_data 값 => "+ PostLikeServiceCreator.postlikeService.getlikePosts(1))
                 val data = response.body().toString()
                 val itemdata1 = response.body()?.posts?.get(0)
-                // val itemdata2 = response.body()?.posts?.get(1)
-                // val itemdata3 = response.body()?.posts?.get(2)
+                val itemdata2 = response.body()?.posts?.get(1)
+                val itemdata3 = response.body()?.posts?.get(2)
                 Log.d("responsevalue", "like post_response 값 => "+ data)
                 // 네트워크 통신에 성공한 경우
                 if(response.isSuccessful){
@@ -59,8 +59,8 @@ class LikeFragment : Fragment() {
                     // 통신 성공시 toast 메시지
                     Toast.makeText(requireContext(), "좋아요 게시글 get 완료!!", Toast.LENGTH_SHORT).show()
                     var arr1 = itemdata1?.Post?.createdAt?.split("T")
-                    //var arr2 = itemdata2?.createdAt?.split("T")
-                    //var arr3 = itemdata3?.createdAt?.split("T")
+                    var arr2 = itemdata2?.Post?.createdAt?.split("T")
+                    var arr3 = itemdata3?.Post?.createdAt?.split("T")
 
                     // 우리가 사용할 어뎁터의 초기값을 넣어줌
                     postAdapter = PostAdapter()
@@ -72,13 +72,31 @@ class LikeFragment : Fragment() {
                         listOf<SearchData>(
                             SearchData(
                                 itemdata1!!.Post!!.title,
-                                R.drawable.hoodt3,
+                                R.drawable.shirt2,
                                 "suheon",
                                 R.drawable.fullheart,
                                 arr1!!.get(0),
                                 itemdata1!!.Post!!.temp.toString(),
                                 itemdata1!!.Post!!.item,
-                                itemdata1!!.Post!!.body)
+                                itemdata1!!.Post!!.body),
+                            SearchData(
+                                itemdata2!!.Post!!.title,
+                                R.drawable.shirt3,
+                                "myungjun",
+                                R.drawable.fullheart,
+                                arr2!!.get(0),
+                                itemdata2!!.Post!!.temp.toString(),
+                                itemdata2!!.Post!!.item,
+                                itemdata2!!.Post!!.body),
+                            SearchData(
+                                itemdata3!!.Post!!.title,
+                                R.drawable.nasi,
+                                "jeehee",
+                                R.drawable.fullheart,
+                                arr3!!.get(0),
+                                itemdata3!!.Post!!.temp.toString(),
+                                itemdata3!!.Post!!.item,
+                                itemdata3!!.Post!!.body)
                         )
                     )
                     postAdapter.notifyDataSetChanged()

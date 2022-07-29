@@ -39,23 +39,23 @@ class MyFeedAutumnFragment : Fragment() {
         postAdapter.postdataList.addAll(
             listOf<SearchData>(
                 SearchData(
-                    "제목7",
+                    "안녕",
                     R.drawable.tshirt,
-                    "jeehee",
+                    "yejin",
                     R.drawable.fullheart,
-                    "1111",
-                    "21",
+                    "2021-10-12",
+                    "18",
                     "바지",
                     "모두 와서 구경해보세요~"),
                 SearchData(
-                    "제목8",
-                    R.drawable.tshirt2,
-                    "jun",
+                    "너무 예쁘다",
+                    R.drawable.hoodt,
+                    "yejin",
                     R.drawable.emptyheart,
-                    "222",
-                    "28",
-                    "안경",
-                    "ㄴㅇㄹㄴㅇㄹㄴㅇㄹ")
+                    "2021-09-14",
+                    "21",
+                    "후드티",
+                    "후드티 진짜 내 마음에 쏙!!")
             )
         )
         postAdapter.notifyDataSetChanged()

@@ -40,17 +40,21 @@ class PostListActivity : AppCompatActivity() {
             ) {
                 Log.d("datavalue_homeitem", "data 값 => "+ SearchItemServiceCreator.searchitemService.postSearchItem(item))
                 val data = response.body().toString()
-                // val itemdata1 = response.body()?.posts?.get(0)
-                // val itemdata2 = response.body()?.posts?.get(1)
+                val itemdata1 = response.body()?.posts?.get(0)
+                val itemdata2 = response.body()?.posts?.get(1)
+                val itemdata3 = response.body()?.posts?.get(2)
                 Log.d("responsevalue_homeitem", "response 값 => "+ data)
+
                 // 네트워크 통신에 성공한 경우
                 if(response.isSuccessful){
                     Log.d("NetworkTest", "homeitem success")
 
                     // 통신 성공시 toast 메시지
                     Toast.makeText(this@PostListActivity, "홈 아이템 완료!!", Toast.LENGTH_SHORT).show()
-                    // var arr1 = itemdata1?.createdAt?.split("T")
-                    // var arr2 = itemdata2?.createdAt?.split("T")
+                    var arr1 = itemdata1?.createdAt?.split("T")
+                    var arr2 = itemdata2?.createdAt?.split("T")
+                    var arr3 = itemdata2?.createdAt?.split("T")
+
                     // 우리가 사용할 어뎁터의 초기값을 넣어줌
                     postAdapter = PostAdapter()
                     // RecyclerView에 어뎁터를 우리가 만든 어뎁터로!
@@ -60,14 +64,34 @@ class PostListActivity : AppCompatActivity() {
                     postAdapter.postdataList.addAll(
                         listOf<SearchData>(
                             SearchData(
-                                "제목",
-                                R.drawable.hoodt3,
+                                itemdata1!!.title,
+                                R.drawable.shirt,
+                                "yejin",
+                                R.drawable.emptyheart,
+                                arr1!!.get(0),
+                                itemdata1!!.temp.toString(),
+                                itemdata1!!.item,
+                                itemdata1!!.body
+                            ),
+                            SearchData(
+                                itemdata2!!.title,
+                                R.drawable.shirt2,
                                 "suheon",
                                 R.drawable.fullheart,
-                                "2343",
-                                "21",
-                                "ㄴㅇㄹ",
-                                "324234"
+                                arr2!!.get(0),
+                                itemdata2!!.temp.toString(),
+                                itemdata2!!.item,
+                                itemdata2!!.body
+                            ),
+                            SearchData(
+                                itemdata3!!.title,
+                                R.drawable.shirt3,
+                                "myungjun",
+                                R.drawable.fullheart,
+                                arr3!!.get(0),
+                                itemdata3!!.temp.toString(),
+                                itemdata3!!.item,
+                                itemdata3!!.body
                             )
                         )
                     )
