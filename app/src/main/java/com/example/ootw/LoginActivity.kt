@@ -94,7 +94,7 @@ class LoginActivity : AppCompatActivity() {
                         // 회원가입 된 이메일과 비밀번호일 경우 해당 if문 실행
                         if(data == "ResponseLoginData(message=login success)"){
                             // 통신 성공시 toast 메시지
-                            Toast.makeText(this@LoginActivity, "로그인 완료!!", Toast.LENGTH_SHORT).show()
+//                            Toast.makeText(this@LoginActivity, "로그인 완료!!", Toast.LENGTH_SHORT).show()
 
                             // 통신 성공할 경우 MainActivity로 넘어가도록 함
                             val nextIntent = Intent(this@LoginActivity, MainActivity::class.java)

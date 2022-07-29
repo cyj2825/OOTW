@@ -47,7 +47,7 @@ class MyPageFragment : Fragment(), View.OnClickListener {
                 val intent = Intent(requireContext(), LoginActivity::class.java)
                 startActivity(intent)
                 requireActivity().overridePendingTransition(0, 0)
-                Toast.makeText(requireContext(), "로그아웃 완료!!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "로그아웃", Toast.LENGTH_SHORT).show()
             }
 
             else -> {
