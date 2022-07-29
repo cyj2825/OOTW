@@ -31,6 +31,7 @@
         android:id="@+id/sv_Post"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="152dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_mainlogo">
@@ -40,9 +41,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_borderbox"
-            android:layout_marginVertical="24dp"
             android:layout_marginHorizontal="20dp"
-            android:paddingVertical="20dp">
+            android:paddingVertical="24dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_profileImg"
@@ -59,8 +59,8 @@
                 android:id="@+id/tv_Post_nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:text="닉네임"
+                android:layout_marginStart="8dp"
+                android:text="yejin"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
@@ -68,89 +68,15 @@
                 app:layout_constraintTop_toTopOf="@+id/iv_profileImg"
                 app:layout_constraintBottom_toBottomOf="@id/iv_profileImg"/>
 
-            <TextView
-                android:id="@+id/tv_Post_year"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="32dp"
-                android:text="yy"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv_profileImg"/>
-
-            <TextView
-                android:id="@+id/tv_period1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="."
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                app:layout_constraintStart_toEndOf="@+id/tv_Post_year"
-                app:layout_constraintTop_toBottomOf="@id/iv_profileImg"/>
-
-            <TextView
-                android:id="@+id/tv_Post_month"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="mm"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                app:layout_constraintStart_toEndOf="@id/tv_period1"
-                app:layout_constraintTop_toBottomOf="@+id/iv_profileImg"/>
-
-            <TextView
-                android:id="@+id/tv_period2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="."
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                app:layout_constraintStart_toEndOf="@+id/tv_Post_month"
-                app:layout_constraintTop_toBottomOf="@id/iv_profileImg"/>
-
-            <TextView
-                android:id="@+id/tv_Post_day"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="dd"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                app:layout_constraintStart_toEndOf="@id/tv_period2"
-                app:layout_constraintTop_toBottomOf="@+id/iv_profileImg"/>
-
-            <TextView
-                android:id="@+id/tv_Post_area"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="32dp"
-                android:text="지역"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                app:layout_constraintStart_toEndOf="@id/tv_Post_day"
-                app:layout_constraintTop_toBottomOf="@+id/iv_profileImg"/>
-
             <ImageView
                 android:id="@+id/iv_Post_feedphoto"
                 android:layout_width="match_parent"
                 android:layout_height="288dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginHorizontal="32dp"
                 android:background="@drawable/bg_borderfeedphoto"
                 android:clipToOutline="true"
-                app:layout_constraintTop_toBottomOf="@id/tv_Post_year"
+                app:layout_constraintTop_toBottomOf="@id/iv_profileImg"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -165,8 +91,43 @@
                 app:layout_constraintStart_toStartOf="parent"/>
 
             <TextView
+                android:id="@+id/tv_Post_create"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="yy.mm.dd"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_Post_good"
+                app:layout_constraintStart_toEndOf="@id/iv_Post_good"
+                app:layout_constraintTop_toTopOf="@+id/iv_Post_good" />
+
+            <TextView
+                android:id="@+id/tv_Post_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="28"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_Post_create"
+                app:layout_constraintStart_toEndOf="@id/tv_Post_create"
+                app:layout_constraintTop_toTopOf="@+id/tv_Post_create" />
+
+            <TextView
+                android:id="@+id/tv_Post_temp2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="도"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_Post_create"
+                app:layout_constraintStart_toEndOf="@id/tv_Post_temp"
+                app:layout_constraintTop_toTopOf="@+id/tv_Post_create" />
+
+            <TextView
                 android:id="@+id/tv_Post_classify"
-                android:layout_width="48dp"
+                android:layout_width="100dp"
                 android:layout_height="28dp"
                 android:layout_marginStart="16dp"
                 android:background="@drawable/bg_search"
@@ -175,7 +136,7 @@
                 android:textColor="#B4EFEC"
                 android:textAlignment="center"
                 android:gravity="center"
-                app:layout_constraintStart_toEndOf="@id/iv_Post_good"
+                app:layout_constraintStart_toEndOf="@id/tv_Post_temp2"
                 app:layout_constraintTop_toTopOf="@id/iv_Post_good"
                 app:layout_constraintBottom_toBottomOf="@id/iv_Post_good"/>
 
