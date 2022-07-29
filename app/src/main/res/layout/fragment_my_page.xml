@@ -33,7 +33,7 @@
         android:id="@+id/tv_MyPage_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="yejin"
         android:textSize="16sp"
@@ -55,14 +55,36 @@
         app:layout_constraintTop_toTopOf="@id/tv_MyPage_name" />
 
     <TextView
-        android:id="@+id/tv_Closet_keyword"
+        android:id="@+id/tv_Closet_keyword_region"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="#서울특별시 서초구 #더위 민감 #스타일"
+        android:layout_marginStart="16dp"
+        android:text="#서울특별시 서초구"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="@id/iv_MyPage_profileImg"
         app:layout_constraintStart_toEndOf="@id/iv_MyPage_profileImg"
+        app:layout_constraintTop_toBottomOf="@id/tv_MyPage_name" />
+
+    <TextView
+        android:id="@+id/tv_Closet_keyword_sensitivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="#더위 민감"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_MyPage_profileImg"
+        app:layout_constraintStart_toEndOf="@id/tv_Closet_keyword_region"
+        app:layout_constraintTop_toBottomOf="@id/tv_MyPage_name" />
+
+    <TextView
+        android:id="@+id/tv_Closet_keyword_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="#놈코어"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_MyPage_profileImg"
+        app:layout_constraintStart_toEndOf="@id/tv_Closet_keyword_sensitivity"
         app:layout_constraintTop_toBottomOf="@id/tv_MyPage_name" />
 
     <LinearLayout

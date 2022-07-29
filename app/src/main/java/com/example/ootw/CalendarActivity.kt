@@ -67,7 +67,7 @@ class CalendarActivity : AppCompatActivity() {
                     Log.d("NetworkTest", "searchmonth success")
 
                     // 통신 성공시 toast 메시지
-                    Toast.makeText(this@CalendarActivity, "게시물 get 완료!!", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(this@CalendarActivity, "게시물 get 완료!!", Toast.LENGTH_SHORT).show()
                     // var arr1 = itemdata1?.createdAt?.split("T")
                     // var arr2 = itemdata2?.createdAt?.split("T")
 

@@ -57,7 +57,7 @@ class LikeFragment : Fragment() {
                     Log.d("NetworkTest", "like post success")
 
                     // 통신 성공시 toast 메시지
-                    Toast.makeText(requireContext(), "좋아요 게시글 get 완료!!", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(requireContext(), "좋아요 게시글 get 완료!!", Toast.LENGTH_SHORT).show()
                     var arr1 = itemdata1?.Post?.createdAt?.split("T")
                     var arr2 = itemdata2?.Post?.createdAt?.split("T")
                     var arr3 = itemdata3?.Post?.createdAt?.split("T")
