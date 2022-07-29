@@ -1,7 +1,10 @@
 package com.example.ootw.fragment
 
+import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.text.TextUtils.replace
 import android.util.Log
@@ -18,9 +21,12 @@ import com.example.ootw.api.GetProfileServiceCreator
 import com.example.ootw.data.response.ResponseGetProfileData
 import com.example.ootw.databinding.FragmentHomeBinding
 import com.example.ootw.databinding.FragmentModifyUserBinding
+import kotlinx.android.synthetic.main.fragment_modify_user.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ModifyUserFragment : Fragment() {
     private lateinit var callback: OnBackPressedCallback
@@ -41,6 +47,21 @@ class ModifyUserFragment : Fragment() {
         // 뒤로가기 imageView 클릭시
         binding.ivModifyUserBack.setOnClickListener {
             fragmentManager?.beginTransaction()?.replace(R.id.main_screen_panel, MyPageFragment())?.commit()
+        }
+
+        var formatDate = SimpleDateFormat("yyyy - MM - dd", Locale.KOREA)
+        binding.btnModifyUserPickdate.setOnClickListener {
+            val getDate: Calendar = Calendar.getInstance()
+            val datePicker = DatePickerDialog(requireContext(), android.R.style.Theme_Holo_Dialog_MinWidth, DatePickerDialog.OnDateSetListener{ datePicker, i, i2, i3 ->
+                val selectDate = Calendar.getInstance()
+                selectDate.set(Calendar.YEAR, i)
+                selectDate.set(Calendar.MONTH, i2)
+                selectDate.set(Calendar.DAY_OF_MONTH, i3)
+                val date = formatDate.format(selectDate.time)
+                binding.btnModifyUserPickdate.text = date
+            }, getDate.get(Calendar.YEAR), getDate.get(Calendar.MONTH), getDate.get(Calendar.DAY_OF_MONTH))
+            datePicker.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            datePicker.show()
         }
 
         return binding.root

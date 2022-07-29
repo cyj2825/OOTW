@@ -73,7 +73,7 @@ class CreatePostActivity : AppCompatActivity(), PrimarySpinnerObservable, Second
 
         binding.tvCreatePostSubmit.setOnClickListener {
             onBackPressed()
-            Toast.makeText(this, "게시물 작성 완료!!", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, "게시물 작성 완료!!", Toast.LENGTH_SHORT).show()
             /*
             Log.d("Network", "creatpost")
             // 서버로 보낼 게시글 데이터 생성

@@ -1,6 +1,9 @@
 package com.example.ootw
 
+import android.app.DatePickerDialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -67,6 +70,20 @@ class UserSetUpActivity : AppCompatActivity(), PrimarySpinnerObservable, Seconda
                 R.id.rb_women -> result1 = "여성"
             }
         }
+        var formatDate = SimpleDateFormat("yyyy - MM - dd", Locale.KOREA)
+        binding.btnUserSetUpPickdate.setOnClickListener {
+            val getDate: Calendar = Calendar.getInstance()
+            val datePicker = DatePickerDialog(this, android.R.style.Theme_Holo_Dialog_MinWidth, DatePickerDialog.OnDateSetListener{ datePicker, i, i2, i3 ->
+                val selectDate = Calendar.getInstance()
+                selectDate.set(Calendar.YEAR, i)
+                selectDate.set(Calendar.MONTH, i2)
+                selectDate.set(Calendar.DAY_OF_MONTH, i3)
+                val date = formatDate.format(selectDate.time)
+                binding.btnUserSetUpPickdate.text = date
+            }, getDate.get(Calendar.YEAR), getDate.get(Calendar.MONTH), getDate.get(Calendar.DAY_OF_MONTH))
+            datePicker.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            datePicker.show()
+        }
         binding.rgSignUp3Cold.setOnCheckedChangeListener { radioGroup, i ->
             when(i){
                 R.id.rb_SignUp3_cold1 -> result2 = 1
@@ -93,7 +110,7 @@ class UserSetUpActivity : AppCompatActivity(), PrimarySpinnerObservable, Seconda
                 loginId = binding.etSignUp1Id.text.toString(),
                 email = binding.etSignUpEmail1.text.toString()+"@"+binding.etSignUpEmail2.text.toString(),
                 password = binding.etSignUp1Pw.text.toString(),
-                birth = binding.btnSignUp2Pickdate.text.toString(),
+                birth = binding.btnUserSetUpPickdate.text.toString(),
                 nickname = binding.etSignUpName.text.toString(),
                 gender = result1,
                 coldSensitivity = result2,
@@ -138,7 +155,7 @@ class UserSetUpActivity : AppCompatActivity(), PrimarySpinnerObservable, Seconda
                     Log.d("NetworkTest2", "error!")
                 }
             })
-            // startActivity(Intent(this, LoginActivity::class.java))
+             startActivity(Intent(this, LoginActivity::class.java))
         }
 
         // 이메일 도메인 spinner
@@ -183,14 +200,6 @@ class UserSetUpActivity : AppCompatActivity(), PrimarySpinnerObservable, Seconda
         )
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spin_SignUp3_region1.adapter = arrayAdapter
-    }
-
-    // 이부분은 주희님께 물어보자 7/26
-    fun openDatePicker(view: View?){
-        binding.btnSignUp2Pickdate.setOnClickListener {
-            var formatDate = SimpleDateFormat("yyyy - MM - dd", Locale.KOREA)
-            val getDate: Calendar = Calendar.getInstance()
-        }
     }
 
     override fun updatePrimary(position: Int) {
