@@ -233,7 +233,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/rg_SignUp_gender" />
 
             <Button
-                android:id="@+id/btn_SignUp2_pickdate"
+                android:id="@+id/btn_UserSetUp_pickdate"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -242,8 +242,7 @@
                 android:textColor="@color/black"
                 style="?android:spinnerStyle"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView6"
-                android:onClick="openDatePicker" />
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
             <TextView
                 android:id="@+id/tv_signup_email"
@@ -256,7 +255,7 @@
                 android:text="이메일"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_SignUp2_pickdate" />
+                app:layout_constraintTop_toBottomOf="@+id/btn_UserSetUp_pickdate" />
 
             <LinearLayout
                 android:id="@+id/ll_SignUp_email"

@@ -20,7 +20,7 @@
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_onboarding.xml" value="0.147008547008547" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_post.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_post.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_post_list.xml" value="0.1252136752136752" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_sign_up.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/activity_user.xml" value="0.14356884057971014" />
@@ -46,8 +46,7 @@
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/fragment_sign_up3.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/list_item_day.xml" value="0.1" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/list_item_month.xml" value="0.10299145299145299" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/list_item_post.xml" value="0.1" />
-        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/list_item_search.xml" value="0.12" />
+        <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/list_item_search.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/list_item_weather.xml" value="0.14316239316239315" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/layout/recycler_bookmark.xml" value="0.10170940170940171" />
         <entry key="..\:/Users/82107/AndroidStudioProjects/OOTW/app/src/main/res/menu/bottom_navigation_main.xml" value="0.147008547008547" />
@@ -72,6 +71,8 @@
         <entry key="app/src/main/res/layout/activity_find_pw.xml" value="0.26034393310546877" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25307718912760413" />
+        <entry key="app/src/main/res/layout/activity_post.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/activity_post_list.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.23072916666666668" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/activity_user_set_up.xml" value="0.37604166666666666" />
@@ -97,6 +98,7 @@
         <entry key="app/src/main/res/layout/fragment_sign_up2.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_sign_up3.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_sign_up_fst.xml" value="0.3619791666666667" />
+        <entry key="app/src/main/res/layout/list_item_day.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/list_item_post.xml" value="0.33" />
         <entry key="app/src/main/res/layout/list_item_search.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/list_item_weather.xml" value="0.8233448734989872" />
