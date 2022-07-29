@@ -15,13 +15,11 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.example.ootw.api.PostWriteServiceCreator
-import com.example.ootw.constants.mSkyState
-import com.example.ootw.constants.mTemperature
+import com.example.ootw.constants.WeatherAuto.mSkyState
+import com.example.ootw.constants.WeatherAuto.mTemperature
 import com.example.ootw.data.request.RequestPostWriteData
 import com.example.ootw.data.response.ResponsePostWriteData
 import com.example.ootw.databinding.ActivityCreatePostBinding
-import com.example.ootw.fragment.BookmarkFragment
-import com.example.ootw.fragment.ClosetFragment
 import com.example.ootw.spinner.PrimarySpinnerListener
 import com.example.ootw.spinner.PrimarySpinnerObservable
 import com.example.ootw.spinner.SecondarySpinnerListener
@@ -49,6 +47,8 @@ class CreatePostActivity : AppCompatActivity(), PrimarySpinnerObservable, Second
 
     private lateinit var categorySpinnerListner: PrimarySpinnerListener
     private lateinit var itemSpinnerListener: SecondarySpinnerListener
+
+    private val TAG = "CreatePost"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -117,17 +117,12 @@ class CreatePostActivity : AppCompatActivity(), PrimarySpinnerObservable, Second
 
         // 날씨 자동 입력
         binding.tvCreatePostWeatherAuto.setOnClickListener {
-            // 숫자값 -> 문자열값으로 수정 필요(skyState에 rainType, skyType 두가지 있음)
-            when (mSkyState) {
-                "1" -> {
-                    binding.tvCreatePostSkyState.setText("맑음")
-                } "3" -> {
-                binding.tvCreatePostSkyState.setText("구름많음")
-            } "4" -> {
-                binding.tvCreatePostSkyState.setText("흐림")
-            }
-            }
-            binding.etCreatePostTemperature.setText(mTemperature)
+//            Log.d(TAG, "onCreate: Weather auto"+ mSkyState)
+//            binding.tvCreatePostSkyState.setText(mSkyState)
+//            binding.etCreatePostTemperature.setText(mTemperature)
+            // constants-WeatherAuto 상수 사용시 강제종료 되어 임의로 값 설정해둠
+            binding.tvCreatePostSkyState.setText("구름 많음")
+            binding.etCreatePostTemperature.setText("33")
         }
 
         // 날씨 spinner
@@ -271,4 +266,5 @@ class CreatePostActivity : AppCompatActivity(), PrimarySpinnerObservable, Second
         }
 
     }
+
 }
