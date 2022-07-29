@@ -120,9 +120,7 @@ class UserSetUpActivity : AppCompatActivity(), PrimarySpinnerObservable, Seconda
                     call: Call<ResponseSignupData>,
                     response: Response<ResponseSignupData>
                 ) {
-                    Log.d("Network2", "값 => "+ requestSignupData)
                     val data = response.body().toString()
-                    Log.d("responsevalue", "response 값~!! => "+ data)
                     // 네트워크 통신에 성공한 경우 실행
                     if(response.isSuccessful){
                         Log.d("NetworkTest2", "success")
