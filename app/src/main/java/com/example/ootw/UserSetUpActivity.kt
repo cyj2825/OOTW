@@ -155,7 +155,7 @@ class UserSetUpActivity : AppCompatActivity(), PrimarySpinnerObservable, Seconda
                     Log.d("NetworkTest2", "error!")
                 }
             })
-            // startActivity(Intent(this, LoginActivity::class.java))
+             startActivity(Intent(this, LoginActivity::class.java))
         }
 
         // 이메일 도메인 spinner

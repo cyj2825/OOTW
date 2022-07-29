@@ -21,6 +21,7 @@ import com.example.ootw.api.GetProfileServiceCreator
 import com.example.ootw.data.response.ResponseGetProfileData
 import com.example.ootw.databinding.FragmentHomeBinding
 import com.example.ootw.databinding.FragmentModifyUserBinding
+import kotlinx.android.synthetic.main.fragment_modify_user.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
