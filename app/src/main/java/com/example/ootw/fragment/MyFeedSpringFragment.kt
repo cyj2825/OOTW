@@ -38,23 +38,23 @@ class MyFeedSpringFragment : Fragment() {
         postAdapter.postdataList.addAll(
             listOf<SearchData>(
                 SearchData(
-                    "제목3",
-                    R.drawable.tshirt,
-                    "jeehee",
+                    "구경해보실래요?",
+                    R.drawable.tshirt2,
+                    "yejin",
                     R.drawable.emptyheart,
-                    "1111",
-                    "21",
+                    "2022-07-11",
+                    "24",
                     "바지",
                     "모두 와서 구경해보세요~"),
                 SearchData(
-                    "제목4",
+                    "반팔티 필수 아이템!",
                     R.drawable.tshirt3,
-                    "jun",
+                    "yejin",
                     R.drawable.fullheart,
-                    "222",
+                    "2022-07-18",
                     "28",
-                    "안경",
-                    "ㄴㅇㄹㄴㅇㄹㄴㅇㄹ")
+                    "반팔티",
+                    "반팔티 너무 예쁘지 않나요?? 하나 꼭 장만해야할 아이템!")
             )
         )
         postAdapter.notifyDataSetChanged()

@@ -70,16 +70,16 @@ class MyFeedWinterFragment : Fragment() {
                         listOf<SearchData>(
                             SearchData(
                                 itemdata1!!.title,
-                                R.drawable.hoodt2,
+                                R.drawable.coat,
                                 "yejin",
-                                R.drawable.fullheart,
+                                R.drawable.emptyheart,
                                 arr1!!.get(0),
                                 itemdata1!!.temp.toString(),
                                 itemdata1!!.item,
                                 itemdata1!!.body),
                             SearchData(
                                 itemdata2!!.title,
-                                R.drawable.hoodt,
+                                R.drawable.hoodt2,
                                 "yejin",
                                 R.drawable.fullheart,
                                 arr2!!.get(0),

@@ -1,6 +1,5 @@
 package com.example.ootw.network
 
-import com.example.ootw.BuildConfig
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
