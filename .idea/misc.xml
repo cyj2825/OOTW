@@ -64,6 +64,7 @@
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.22" />
         <entry key="app/src/main/res/drawable/layout_weather_background.xml" value="0.1535" />
         <entry key="app/src/main/res/drawable/like.xml" value="0.1245" />
+        <entry key="app/src/main/res/font/font.xml" value="0.20555555555555555" />
         <entry key="app/src/main/res/layout/activity_calendar.xml" value="0.13697916666666668" />
         <entry key="app/src/main/res/layout/activity_create_post.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_find_id.xml" value="0.25" />

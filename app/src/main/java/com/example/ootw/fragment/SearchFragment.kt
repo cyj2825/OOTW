@@ -62,7 +62,7 @@ class SearchFragment : Fragment() {
                             Log.d("NetworkTest", "search item success")
 
                             // 통신 성공시 toast 메시지
-                            Toast.makeText(requireContext(), "아이템 서치 완료!!", Toast.LENGTH_SHORT).show()
+//                            Toast.makeText(requireContext(), "아이템 서치 완료!!", Toast.LENGTH_SHORT).show()
                             var arr1 = itemdata1?.createdAt?.split("T")
                             var arr2 = itemdata2?.createdAt?.split("T")
 
@@ -77,7 +77,7 @@ class SearchFragment : Fragment() {
                                 listOf<SearchData>(
                                     SearchData(
                                         itemdata1!!.title,
-                                        R.drawable.tshirt2,
+                                        R.drawable.shirt,
                                         "jeehee",
                                         R.drawable.fullheart,
                                         arr1!!.get(0),
@@ -86,7 +86,7 @@ class SearchFragment : Fragment() {
                                         itemdata1!!.body),
                                     SearchData(
                                         itemdata2!!.title,
-                                        R.drawable.tshirt3,
+                                        R.drawable.shirt2,
                                         "jun",
                                         R.drawable.emptyheart,
                                         arr2!!.get(0),
