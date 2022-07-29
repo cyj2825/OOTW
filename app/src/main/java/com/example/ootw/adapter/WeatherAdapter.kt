@@ -8,10 +8,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ootw.R
-import com.example.ootw.constants.mSkyState
 import com.example.ootw.data.ModelWeather
 
 class WeatherAdapter (var items : Array<ModelWeather>) : RecyclerView.Adapter<WeatherAdapter.ViewHolder>() {
+
+
     // 뷰 홀더 만들어서 반환, 뷰릐 레이아웃은 list_item_weather.xml
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeatherAdapter.ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_item_weather, parent, false)
@@ -48,7 +49,6 @@ class WeatherAdapter (var items : Array<ModelWeather>) : RecyclerView.Adapter<We
         if(factTime != "지금"){
             var hourSystem : Int = factTime.toInt()
             var hourSystemString = ""
-
 
             if(hourSystem == 0){
                 return "오전 12시"
@@ -107,11 +107,5 @@ class WeatherAdapter (var items : Array<ModelWeather>) : RecyclerView.Adapter<We
         }
     }
 
-//    fun setRainState(type: String) {
-//        when(type) {
-//            "1" -> mSkyState = "비"
-//            "3" -> mSkyState = "눈"
-//        }
-//    }
 
 }

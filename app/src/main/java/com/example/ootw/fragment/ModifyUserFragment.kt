@@ -14,8 +14,13 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
 import com.example.ootw.PostActivity
 import com.example.ootw.R
+import com.example.ootw.api.GetProfileServiceCreator
+import com.example.ootw.data.response.ResponseGetProfileData
 import com.example.ootw.databinding.FragmentHomeBinding
 import com.example.ootw.databinding.FragmentModifyUserBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class ModifyUserFragment : Fragment() {
     private lateinit var callback: OnBackPressedCallback
@@ -39,6 +44,31 @@ class ModifyUserFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        GetProfileServiceCreator.getProfileService.getProfile(1).enqueue(object :
+            Callback<ResponseGetProfileData> {
+            override fun onResponse(
+                call: Call<ResponseGetProfileData>,
+                response: Response<ResponseGetProfileData>
+            ) {
+                Log.d("datavalue", "회원정보 수정 데이터 값: "+ GetProfileServiceCreator.getProfileService.getProfile(1))
+                val data = response.body().toString()
+                // message, userProfile 값 null
+                Log.d("responsevalue", "modify_user_response 값 => "+ data)
+                if (response.isSuccessful) {
+                    Log.d("NetworkTest", "modify user success")
+
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseGetProfileData>, t: Throwable) {
+                Log.d("NetworkTest", "modify user failure")
+            }
+            })
     }
 
 //  핸드폰 뒤로가기 실행시
