@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.ootw.databinding.ActivityPostBinding
 
+
 class PostActivity : AppCompatActivity() {
     // 전역 변수로 바인딩 객체 선언
     private var mBinding: ActivityPostBinding? = null
@@ -17,6 +18,12 @@ class PostActivity : AppCompatActivity() {
         mBinding = ActivityPostBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.ivPostFeedphoto.setImageResource(R.drawable.onepiece)
+        binding.ivPostGood.setImageResource(R.drawable.fullheart)
+        binding.tvPostCreate.text = "2022-07-28"
+        binding.tvPostTemp.text = "27"
+        binding.tvPostClassify.text = "원피스"
+        binding.tvPostContent.text = "원피스만큼 편한게 없는 것 같아요ㅎㅎ"
         binding.ivBack.setOnClickListener {
             onBackPressed()
         }
