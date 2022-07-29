@@ -298,8 +298,9 @@
                         android:layout_height="300dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginHorizontal="32dp"
-                        android:background="@drawable/tshirt"
+                        android:src="@drawable/tshirt"
                         android:clipToOutline="true"
+                        android:scaleType="centerCrop"
                         app:layout_constraintTop_toBottomOf="@id/tv_newpost"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"/>
@@ -322,7 +323,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="서울특별시 서초구 잠원동"
+                        android:text="서울특별시 서초구"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="@id/tv_post_name"
                         app:layout_constraintTop_toBottomOf="@id/tv_post_name"/>
@@ -342,16 +343,15 @@
                         android:id="@+id/tv_newpost_classify"
                         android:layout_width="60dp"
                         android:layout_height="28dp"
-                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="32dp"
                         android:background="@drawable/bg_search"
-                        android:text="반팔티"
-                        android:textSize="16sp"
-                        android:textColor="#B4EFEC"
-                        android:textAlignment="center"
                         android:gravity="center"
-                        app:layout_constraintStart_toEndOf="@id/tv_newpost_temp"
-                        app:layout_constraintTop_toTopOf="@id/tv_newpost_temp"
-                        app:layout_constraintBottom_toBottomOf="@id/tv_newpost_temp"/>
+                        android:text="반팔티"
+                        android:textAlignment="center"
+                        android:textColor="@color/blue_400"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_newpost_temp"
+                        app:layout_constraintEnd_toEndOf="parent"/>
 
                     <TextView
                         android:id="@+id/tv_newpost_content"
@@ -359,6 +359,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:layout_marginHorizontal="32dp"
+                        android:padding="4dp"
                         android:text="실크 코디 상의 반팔티\n오늘은 연두색 실크 반팔티를 입고 스타벅스를 다녀왔다. 무척 더운 날씨였지만 예쁜티를 입어 기분이 매우 좋았다!\n정말 예쁜 티입니다~! 구매해서 입어보세요!ㅎㅎ "
                         android:background="@drawable/bg_edit_text_gray"
                         app:layout_constraintTop_toBottomOf="@id/tv_newpost_area"

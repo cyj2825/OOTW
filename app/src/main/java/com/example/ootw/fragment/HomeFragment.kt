@@ -13,28 +13,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.annotation.RequiresApi
-import com.example.ootw.PostActivity
+import com.example.ootw.CreatePostActivity
 import com.example.ootw.PostListActivity
-import com.example.ootw.R
-import com.example.ootw.adapter.GridRecyclerAdapter
 import com.example.ootw.adapter.WeatherAdapter
-import com.example.ootw.api.SearchItemServiceCreator
 import com.example.ootw.component.Common
-import com.example.ootw.constants.mSkyState
-import com.example.ootw.constants.mTemperature
+import com.example.ootw.constants.WeatherAuto.mSkyState
+import com.example.ootw.constants.WeatherAuto.mTemperature
 import com.example.ootw.data.ITEM
 import com.example.ootw.data.ModelWeather
 import com.example.ootw.data.WEATHER
-import com.example.ootw.data.response.ResponseSearchItemData
 import com.example.ootw.databinding.FragmentHomeBinding
-import com.example.ootw.model.SearchData
 import com.example.ootw.network.WeatherObject
 import com.google.android.gms.location.*
-import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
-import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
@@ -140,8 +132,8 @@ class HomeFragment : Fragment() {
                     // 각 날짜 배열 시간 설정
                     for (i in 1..5) weatherArr[i].fcstTime = it[i].fcstTime
                     // 상수로 저장
-                    mSkyState = weatherArr[0].skyState
-                    mTemperature = weatherArr[0].temperature
+//                    mSkyState = weatherArr[0].skyState
+//                    mTemperature = weatherArr[0].temperature
 
                     // 리사이클러 뷰에 데이터 연결
                     binding.rvHomeWeather.adapter = WeatherAdapter(weatherArr)
